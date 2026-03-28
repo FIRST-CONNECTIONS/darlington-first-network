@@ -303,6 +303,59 @@
   .timeline-content h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
   .timeline-content p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 
+  /* NETWORKING CARDS */
+  .net-card {
+    border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;
+    border: 1px solid rgba(30,58,122,0.1); transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .net-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(30,58,122,0.12); }
+  .net-card-live { border-color: rgba(30,58,122,0.2); }
+  .net-card-soon { opacity: 0.88; }
+  .net-card-top {
+    background: var(--navy); padding: 2rem 1.75rem 1.5rem; text-align: center;
+  }
+  .net-card-live .net-card-top { background: var(--navy); }
+  .net-card-soon .net-card-top { background: var(--navy-dark); }
+  .net-icon { font-size: 2.2rem; margin-bottom: 0.75rem; display: block; }
+  .net-title {
+    font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900;
+    color: white; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 0.15rem;
+  }
+  .net-subtitle {
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+  .net-city-badge {
+    display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
+    padding: 0.3rem 0.75rem; border-radius: 100px; margin-bottom: 1rem;
+  }
+  .net-badge-live { background: rgba(46,125,50,0.25); color: #a5d6a7; }
+  .net-badge-soon { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+  .net-card-body {
+    background: white; padding: 1.5rem 1.75rem; flex: 1;
+  }
+  .net-desc {
+    font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem;
+  }
+  .net-features {
+    list-style: none; display: flex; flex-direction: column; gap: 0.4rem;
+  }
+  .net-features li {
+    font-size: 0.82rem; color: var(--navy); font-weight: 600;
+    padding-left: 1.25rem; position: relative;
+  }
+  .net-features li::before {
+    content: "✓"; position: absolute; left: 0; color: var(--gold-dark); font-weight: 700;
+  }
+  .net-card-footer {
+    background: white; padding: 0 1.75rem 1.75rem;
+    border-top: 1px solid rgba(30,58,122,0.06);
+    padding-top: 1.25rem;
+  }
+  @media (max-width: 700px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+
   /* SOCIAL VALUE ROWS */
   .sv-row {
     display: grid;
@@ -908,34 +961,80 @@
     <h2 class="section-title">What We're Building</h2>
     <p class="section-muted max-680" style="margin:0 auto;">Darlington First isn't just events. We're building a lasting ecosystem that generates real opportunities for businesses and communities across the region.</p>
     <!-- NETWORKING ROW -->
-    <h3 style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin:2.5rem 0 1rem;letter-spacing:-0.01em;">Business Networking</h3>
-    <div class="card-grid-3 max-900" style="margin-top:0;">
-      <div class="project-card">
-        <div class="project-header"><span class="icon">🤝</span><h3>Darlington First Networking</h3></div>
-        <div class="project-body">
-          <span class="project-status live">● Live</span>
-          <p style="margin-top:1rem;">Free monthly coffee mornings and varied networking events in rotating local venues. No fees, no barriers — just great people and genuine connections.</p>
-          <p>Events range from traditional networking to creative experiences: local sport, padel, bowling, and more. No two events are the same.</p>
-          <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="btn-primary" style="font-size:0.85rem;padding:0.65rem 1.25rem;">Book a Ticket</a>
-        </div>
+    <div style="margin:3rem 0 0;">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem;">
+        <div style="width:36px;height:3px;background:var(--gold);border-radius:2px;"></div>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700;color:var(--navy);letter-spacing:-0.01em;text-transform:uppercase;font-size:0.8rem;letter-spacing:0.1em;">Business Networking</h3>
       </div>
-      <div class="project-card" style="opacity:0.9;">
-        <div class="project-header" style="background:var(--navy-dark);"><span class="icon">🤝</span><h3>Newcastle First Networking</h3></div>
-        <div class="project-body">
-          <span class="project-status">● Coming Soon</span>
-          <p style="margin-top:1rem;">The First Connections model is heading to Newcastle — bringing free, barrier-free business networking to the heart of one of the North East's most vibrant cities.</p>
-          <p>Stay tuned for launch dates, venues, and how to get involved from the ground up.</p>
-          <a onclick="showPage('contact')" class="btn-navy" style="font-size:0.85rem;padding:0.65rem 1.25rem;cursor:pointer;">Get Notified</a>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+
+        <!-- DARLINGTON - LIVE -->
+        <div class="net-card net-card-live">
+          <div class="net-card-top">
+            <div class="net-city-badge net-badge-live">● Live</div>
+            <div class="net-icon">🤝</div>
+            <h3 class="net-title">Darlington First</h3>
+            <p class="net-subtitle">Networking</p>
+          </div>
+          <div class="net-card-body">
+            <p class="net-desc">Free monthly coffee mornings and varied networking events in rotating local venues. No fees, no barriers — just great people and genuine connections.</p>
+            <ul class="net-features">
+              <li>Monthly coffee mornings</li>
+              <li>Creative event formats</li>
+              <li>Rotating local venues</li>
+              <li>100% free to attend</li>
+            </ul>
+          </div>
+          <div class="net-card-footer">
+            <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="btn-primary" style="width:100%;text-align:center;display:block;font-size:0.85rem;padding:0.75rem;">Book a Ticket</a>
+          </div>
         </div>
-      </div>
-      <div class="project-card" style="opacity:0.9;">
-        <div class="project-header" style="background:var(--navy-dark);"><span class="icon">🤝</span><h3>Durham First Networking</h3></div>
-        <div class="project-body">
-          <span class="project-status">● Coming Soon</span>
-          <p style="margin-top:1rem;">Durham is next on the map. We're bringing the same free, community-first networking experience to Durham — connecting its brilliant businesses and ambitious entrepreneurs.</p>
-          <p>Register your interest and be among the first to know when we launch.</p>
-          <a onclick="showPage('contact')" class="btn-navy" style="font-size:0.85rem;padding:0.65rem 1.25rem;cursor:pointer;">Get Notified</a>
+
+        <!-- NEWCASTLE - COMING SOON -->
+        <div class="net-card net-card-soon">
+          <div class="net-card-top">
+            <div class="net-city-badge net-badge-soon">● Coming Soon</div>
+            <div class="net-icon" style="opacity:0.6;">🤝</div>
+            <h3 class="net-title">Newcastle First</h3>
+            <p class="net-subtitle">Networking</p>
+          </div>
+          <div class="net-card-body">
+            <p class="net-desc">The First Connections model is heading to Newcastle — bringing free, barrier-free networking to the heart of one of the North East's most vibrant cities.</p>
+            <ul class="net-features">
+              <li>Launching soon</li>
+              <li>Free to attend</li>
+              <li>Local venue rotation</li>
+              <li>Be first to know</li>
+            </ul>
+          </div>
+          <div class="net-card-footer">
+            <a onclick="showPage('contact')" class="btn-navy" style="width:100%;text-align:center;display:block;font-size:0.85rem;padding:0.75rem;cursor:pointer;">Get Notified</a>
+          </div>
         </div>
+
+        <!-- DURHAM - COMING SOON -->
+        <div class="net-card net-card-soon">
+          <div class="net-card-top">
+            <div class="net-city-badge net-badge-soon">● Coming Soon</div>
+            <div class="net-icon" style="opacity:0.6;">🤝</div>
+            <h3 class="net-title">Durham First</h3>
+            <p class="net-subtitle">Networking</p>
+          </div>
+          <div class="net-card-body">
+            <p class="net-desc">Durham is next on the map — bringing the same free, community-first networking experience to connect Durham's brilliant businesses and ambitious entrepreneurs.</p>
+            <ul class="net-features">
+              <li>Launching soon</li>
+              <li>Free to attend</li>
+              <li>Local venue rotation</li>
+              <li>Be first to know</li>
+            </ul>
+          </div>
+          <div class="net-card-footer">
+            <a onclick="showPage('contact')" class="btn-navy" style="width:100%;text-align:center;display:block;font-size:0.85rem;padding:0.75rem;cursor:pointer;">Get Notified</a>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -1073,7 +1172,7 @@
           <div class="resource-mini-card" style="margin-top:0.75rem;">
             <p style="font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">How to book:</p>
             <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.4rem;">To arrange either offer, simply get in touch with the team:</p>
-            <p style="font-size:0.85rem;margin-bottom:0.25rem;">✉️ <a href="/cdn-cgi/l/email-protection#6f070a0303002f09061d1c1b420c0001010a0c1b0600011c410c0002"><span class="__cf_email__" data-cfemail="a4ccc1c8c8cbe4c2cdd6d7d089c7cbcacac1c7d0cdcbcad78ac7cbc9">[email&#160;protected]</span></a></p>
+            <p style="font-size:0.85rem;margin-bottom:0.25rem;">✉️ <a href="mailto:hello@first-connections.com">hello@first-connections.com</a></p>
             <p style="font-size:0.85rem;">📞 <a href="tel:01325734871" style="color:var(--navy);font-weight:600;">01325 734 871</a></p>
           </div>
           <a href="https://www.nebic.co.uk" target="_blank" class="resource-link" style="margin-top:1rem;display:inline-block;">Visit Website →</a>
@@ -1403,7 +1502,7 @@
         <h3>Let's Connect</h3>
         <div class="contact-item">
           <span class="ci-icon">📧</span>
-          <div><h4>Email Us</h4><p><a href="/cdn-cgi/l/email-protection#29414c454546694f405b5a5d044a4647474c4a5d4046475a074a4644"><span class="__cf_email__" data-cfemail="f69e939a9a99b6909f848582db959998989395829f999885d895999b">[email&#160;protected]</span></a></p></div>
+          <div><h4>Email Us</h4><p><a href="mailto:hello@first-connections.com">hello@first-connections.com</a></p></div>
         </div>
         <div class="contact-item">
           <span class="ci-icon">📍</span>
@@ -1451,7 +1550,7 @@
           <label>Message</label>
           <textarea placeholder="Tell us a bit about yourself and what you're looking for..."></textarea>
         </div>
-        <a href="/cdn-cgi/l/email-protection#afc7cac3c3c0efc9c6dddcdb82ccc0c1c1caccdbc6c0c1dc81ccc0c2"><span class="__cf_email__" data-cfemail="84ece1e8e8ebc4e2edf6f7f0a9e7ebeaeae1e7f0edebeaf7aae7ebe9">[email&#160;protected]</span></a>
+        <a href="mailto:hello@first-connections.com">hello@first-connections.com</a>
       </div>
     </div>
   </section>
@@ -1464,12 +1563,52 @@
     <li><a onclick="showPage('about')">About</a></li>
     <li><a onclick="showPage('events')">Events</a></li>
     <li><a onclick="showPage('contact')">Contact</a></li>
-    <li><a href="/cdn-cgi/l/email-protection#650d0009090a25030c17161148060a0b0b0006110c0a0b164b060a08"><span class="__cf_email__" data-cfemail="a6cec3cacac9e6c0cfd4d5d28bc5c9c8c8c3c5d2cfc9c8d588c5c9cb">[email&#160;protected]</span></a></li>
+    <li><a href="mailto:hello@first-connections.com">hello@first-connections.com</a></li>
   </ul>
   <p class="footer-sponsors">Sponsored by: <a href="https://www.roam-everywhere.com" target="_blank">roam</a>, <a href="https://ironing-man.co.uk/?gad_source=1" target="_blank">The Ironing Man</a>, <a href="https://www.nebic.co.uk" target="_blank">NE BIC</a></p>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+<script>
   function showPage(id) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-    con
+    var page = document.getElementById('page-' + id);
+    if (page) page.classList.add('active');
+    var navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function toggleMenu() {
+    var menu = document.getElementById('mobile-menu');
+    var btn = document.getElementById('hamburger');
+    if (!menu || !btn) return;
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  function closeMenu() {
+    var menu = document.getElementById('mobile-menu');
+    var btn = document.getElementById('hamburger');
+    if (menu) menu.classList.remove('open');
+    if (btn) btn.classList.remove('open');
+  }
+
+  function navTo(id) {
+    showPage(id);
+    closeMenu();
+  }
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(e) {
+    var menu = document.getElementById('mobile-menu');
+    var btn = document.getElementById('hamburger');
+    if (menu && menu.classList.contains('open')) {
+      if (!menu.contains(e.target) && !btn.contains(e.target)) {
+        closeMenu();
+      }
+    }
+  });
+</script>
+</body>
+</html>
