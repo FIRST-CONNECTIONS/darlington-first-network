@@ -303,6 +303,52 @@
   .timeline-content h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
   .timeline-content p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
 
+  /* SOCIAL VALUE ROWS */
+  .sv-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 60px;
+    gap: 1.75rem;
+    align-items: center;
+    background: white;
+    border: 1px solid rgba(30,58,122,0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .sv-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(30,58,122,0.09);
+  }
+  .sv-row-alt {
+    grid-template-columns: 60px 1fr 80px;
+  }
+  .sv-icon-col {
+    width: 80px; height: 80px; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .sv-text-col { flex: 1; }
+  .sv-title {
+    font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 700;
+    color: var(--navy); margin-bottom: 0.5rem; letter-spacing: -0.01em;
+  }
+  .sv-desc {
+    font-size: 0.92rem; color: var(--muted); line-height: 1.75;
+  }
+  .sv-number {
+    font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 900;
+    color: rgba(30,58,122,0.1); letter-spacing: -0.02em; text-align: center;
+    flex-shrink: 0;
+  }
+  @media (max-width: 640px) {
+    .sv-row, .sv-row-alt {
+      grid-template-columns: 1fr !important;
+    }
+    .sv-number { display: none; }
+    .sv-text-col { text-align: left !important; }
+    .sv-icon-col { width: 60px; height: 60px; }
+  }
+
   /* FC PILLAR CARDS */
   .fc-pillar-card {
     background: white; border-radius: 20px; padding: 2.25rem 1.75rem;
@@ -602,14 +648,63 @@
   </section>
 
   <section class="section-pad section-center" style="background:white;">
-    <span class="pill-badge dark">More Than Networking</span>
-    <h2 class="section-title" style="margin-top:0.5rem;">Our Social Value</h2>
-    <p class="section-muted max-680" style="margin:0 auto 0.5rem;">Darlington First isn't just about business cards and handshakes. We're here to create real, lasting social value for our community.</p>
-    <div class="card-grid-2 max-900">
-      <div class="card"><span class="icon">💡</span><h3>Inspiring Stories</h3><p>We'll be introducing guests with inspiring stories — real people doing great work in our region, sharing their journeys to motivate and energise the room.</p></div>
-      <div class="card"><span class="icon">🌱</span><h3>Great Ideas Deserve Support</h3><p>You don't need a business degree to have a brilliant idea. We're here to help those with passion and vision prosper — even if they're just getting started.</p></div>
-      <div class="card"><span class="icon">🏆</span><h3>Celebrating Community Heroes</h3><p>Through our High Street Heroes Awards, we'll be shining a spotlight on the unsung heroes making a real difference on our high streets and in our communities.</p></div>
-      <div class="card"><span class="icon">🤝</span><h3>Coaches &amp; Connections</h3><p>We'll be making introductions to business coaches and likeminded individuals — connecting you with the right people who can help take your ideas to the next level.</p></div>
+    <div style="max-width:900px;margin:0 auto;">
+
+      <!-- HEADER -->
+      <div style="text-align:center;margin-bottom:4rem;">
+        <span class="pill-badge dark">More Than Networking</span>
+        <h2 style="font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--navy);letter-spacing:-0.03em;margin:0.75rem 0 1.25rem;">Our Social Value</h2>
+        <p class="section-muted max-680" style="margin:0 auto;font-size:1.05rem;">Darlington First isn't just about business cards and handshakes. We're here to create real, lasting social value for our community.</p>
+      </div>
+
+      <!-- VALUE ITEMS - alternating layout -->
+      <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+        <div class="sv-row">
+          <div class="sv-icon-col" style="background:var(--light-blue);">
+            <span style="font-size:2.2rem;">💡</span>
+          </div>
+          <div class="sv-text-col">
+            <h3 class="sv-title">Inspiring Stories</h3>
+            <p class="sv-desc">We'll be introducing guests with inspiring stories — real people doing great work in our region, sharing their journeys to motivate and energise the room.</p>
+          </div>
+          <div class="sv-number">01</div>
+        </div>
+
+        <div class="sv-row sv-row-alt">
+          <div class="sv-number" style="color:var(--navy);">02</div>
+          <div class="sv-text-col" style="text-align:right;">
+            <h3 class="sv-title">Great Ideas Deserve Support</h3>
+            <p class="sv-desc">You don't need a business degree to have a brilliant idea. We're here to help those with passion and vision prosper — even if they're just getting started and learning as they go.</p>
+          </div>
+          <div class="sv-icon-col" style="background:var(--light-yellow);">
+            <span style="font-size:2.2rem;">🌱</span>
+          </div>
+        </div>
+
+        <div class="sv-row">
+          <div class="sv-icon-col" style="background:rgba(245,197,24,0.15);">
+            <span style="font-size:2.2rem;">🏆</span>
+          </div>
+          <div class="sv-text-col">
+            <h3 class="sv-title">Celebrating Community Heroes</h3>
+            <p class="sv-desc">Through our High Street Heroes Awards, we'll be shining a spotlight on the unsung heroes — the people and businesses making a real difference on our high streets and in our communities.</p>
+          </div>
+          <div class="sv-number">03</div>
+        </div>
+
+        <div class="sv-row sv-row-alt">
+          <div class="sv-number" style="color:var(--navy);">04</div>
+          <div class="sv-text-col" style="text-align:right;">
+            <h3 class="sv-title">Coaches &amp; Connections</h3>
+            <p class="sv-desc">We'll be making introductions to business coaches and likeminded individuals — connecting you with the right people who can help take your ideas to the next level.</p>
+          </div>
+          <div class="sv-icon-col" style="background:var(--light-blue);">
+            <span style="font-size:2.2rem;">🤝</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -978,7 +1073,7 @@
           <div class="resource-mini-card" style="margin-top:0.75rem;">
             <p style="font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">How to book:</p>
             <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.4rem;">To arrange either offer, simply get in touch with the team:</p>
-            <p style="font-size:0.85rem;margin-bottom:0.25rem;">✉️ <a href="mailto:hello@first-connections.com">hello@first-connections.com</a></p>
+            <p style="font-size:0.85rem;margin-bottom:0.25rem;">✉️ <a href="/cdn-cgi/l/email-protection#6f070a0303002f09061d1c1b420c0001010a0c1b0600011c410c0002"><span class="__cf_email__" data-cfemail="a4ccc1c8c8cbe4c2cdd6d7d089c7cbcacac1c7d0cdcbcad78ac7cbc9">[email&#160;protected]</span></a></p>
             <p style="font-size:0.85rem;">📞 <a href="tel:01325734871" style="color:var(--navy);font-weight:600;">01325 734 871</a></p>
           </div>
           <a href="https://www.nebic.co.uk" target="_blank" class="resource-link" style="margin-top:1rem;display:inline-block;">Visit Website →</a>
@@ -1308,7 +1403,7 @@
         <h3>Let's Connect</h3>
         <div class="contact-item">
           <span class="ci-icon">📧</span>
-          <div><h4>Email Us</h4><p><a href="mailto:hello@first-connections.com">hello@first-connections.com</a></p></div>
+          <div><h4>Email Us</h4><p><a href="/cdn-cgi/l/email-protection#29414c454546694f405b5a5d044a4647474c4a5d4046475a074a4644"><span class="__cf_email__" data-cfemail="f69e939a9a99b6909f848582db959998989395829f999885d895999b">[email&#160;protected]</span></a></p></div>
         </div>
         <div class="contact-item">
           <span class="ci-icon">📍</span>
@@ -1356,7 +1451,7 @@
           <label>Message</label>
           <textarea placeholder="Tell us a bit about yourself and what you're looking for..."></textarea>
         </div>
-        <a href="mailto:hello@first-connections.com">hello@first-connections.com</a>
+        <a href="/cdn-cgi/l/email-protection#afc7cac3c3c0efc9c6dddcdb82ccc0c1c1caccdbc6c0c1dc81ccc0c2"><span class="__cf_email__" data-cfemail="84ece1e8e8ebc4e2edf6f7f0a9e7ebeaeae1e7f0edebeaf7aae7ebe9">[email&#160;protected]</span></a>
       </div>
     </div>
   </section>
@@ -1369,34 +1464,12 @@
     <li><a onclick="showPage('about')">About</a></li>
     <li><a onclick="showPage('events')">Events</a></li>
     <li><a onclick="showPage('contact')">Contact</a></li>
-    <li><a href="mailto:hello@first-connections.com">hello@first-connections.com</a></li>
+    <li><a href="/cdn-cgi/l/email-protection#650d0009090a25030c17161148060a0b0b0006110c0a0b164b060a08"><span class="__cf_email__" data-cfemail="a6cec3cacac9e6c0cfd4d5d28bc5c9c8c8c3c5d2cfc9c8d588c5c9cb">[email&#160;protected]</span></a></li>
   </ul>
   <p class="footer-sponsors">Sponsored by: <a href="https://www.roam-everywhere.com" target="_blank">roam</a>, <a href="https://ironing-man.co.uk/?gad_source=1" target="_blank">The Ironing Man</a>, <a href="https://www.nebic.co.uk" target="_blank">NE BIC</a></p>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function showPage(id) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-    const page = document.getElementById('page-' + id);
-    if (page) page.classList.add('active');
-    const navEl = document.getElementById('nav-' + id);
-    if (navEl) navEl.classList.add('active');
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  }
-  function toggleMenu() {
-    const menu = document.getElementById('mobile-menu');
-    const btn = document.getElementById('hamburger');
-    menu.classList.toggle('open');
-    btn.classList.toggle('open');
-  }
-  function closeMenu() {
-    document.getElementById('mobile-menu').classList.remove('open');
-    document.getElementById('hamburger').classList.remove('open');
-  }
-  function navTo(id) {
-    showPage(id);
-    closeMenu();
-  }
-</script>
-</body>
-</html>
+    con
