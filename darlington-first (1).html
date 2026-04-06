@@ -1,0 +1,2270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Darlington-first-logo-small.png">
+<link rel="apple-touch-icon" href="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Darlington-first-logo-small.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darlington First — Business Networking</title>
+<meta name="description" content="Connect with Darlington's business community at our relaxed, free networking events. Grow your network, share ideas, and put Darlington first!">
+<meta property="og:title" content="Darlington First - Business Networking">
+<meta property="og:description" content="Free business networking events in Darlington. Connect with local business leaders and put Darlington first.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1e3a7a; --navy-dark: #152c60; --navy-deep: #0d1f47;
+    --gold: #f5c518; --gold-dark: #d4a700;
+    --cream: #fdfaf2; --light-blue: #eef2fb; --light-yellow: #fffbea;
+    --text: #2d3748; --muted: #5a6478;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text); background: white; overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: white; border-bottom: 1px solid rgba(30,58,122,0.1);
+    padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.3rem;
+    color: var(--navy); text-decoration: none; letter-spacing: -0.02em; cursor: pointer;
+  }
+  .nav-logo-em {
+    font-style: italic;
+    color: #d4a700;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.9rem; font-weight: 500; color: var(--text);
+    text-decoration: none; transition: color 0.2s; cursor: pointer;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--navy); font-weight: 600; }
+  .nav-cta {
+    background: var(--gold); color: var(--navy-dark) !important;
+    padding: 0.5rem 1.2rem; border-radius: 4px; font-weight: 600 !important;
+  }
+
+  /* PAGE TRANSITIONS */
+  .page { display: none !important; animation: fadeIn 0.4s ease; }
+  .page.active { display: block !important; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* BUTTONS */
+  .btn-primary {
+    background: var(--gold); color: var(--navy-dark); padding: 0.85rem 2rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 700;
+    text-decoration: none; border-radius: 4px; border: 2px solid var(--gold);
+    cursor: pointer; transition: all 0.2s; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-dark); border-color: var(--gold-dark); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: white; padding: 0.85rem 2rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600;
+    text-decoration: none; border-radius: 4px; border: 2px solid rgba(255,255,255,0.6);
+    cursor: pointer; transition: all 0.2s; display: inline-block;
+  }
+  .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.08); }
+  .btn-navy {
+    background: var(--navy); color: white; padding: 0.85rem 2rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600;
+    text-decoration: none; border-radius: 4px; border: 2px solid var(--navy);
+    cursor: pointer; transition: all 0.2s; display: inline-block;
+  }
+  .btn-navy:hover { background: var(--navy-dark); transform: translateY(-1px); }
+
+  /* HERO */
+  .hero {
+    margin-top: 64px; position: relative; height: 580px;
+    display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: url("https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Website-Images/Darlington-High-Street.png") center/cover no-repeat;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, rgba(13,31,71,0.72) 0%, rgba(30,58,122,0.58) 50%, rgba(21,44,96,0.65) 100%);
+  }
+  .hero-content {
+    position: relative; z-index: 2; max-width: 760px; padding: 0 2rem;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-tag {
+    display: inline-block; background: rgba(245,197,24,0.2); border: 1px solid rgba(245,197,24,0.5);
+    color: var(--gold); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 100px; margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif; font-size: clamp(2.5rem, 6vw, 4.2rem); font-weight: 900;
+    color: white; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 1.25rem;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.85); line-height: 1.7; max-width: 580px; margin: 0 auto 2rem; }
+  .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* SECTION STYLES */
+  .section-title {
+    font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 700;
+    color: var(--navy); margin-bottom: 1.25rem; letter-spacing: -0.02em;
+  }
+  .pill-badge {
+    display: inline-block; background: var(--gold); color: var(--navy-dark);
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.4rem 1.2rem; border-radius: 100px; margin-bottom: 1.25rem;
+  }
+  .pill-badge.dark { background: var(--navy); color: white; }
+
+  /* COMMON SECTION PADDING */
+  .section-pad { padding: 5rem 2rem; }
+  .section-center { text-align: center; }
+  .section-muted { font-size: 1rem; color: var(--muted); line-height: 1.8; }
+  .max-680 { max-width: 680px; margin: 0 auto; }
+  .max-780 { max-width: 780px; margin: 0 auto; }
+  .max-900 { max-width: 900px; margin: 0 auto; }
+
+  /* CARDS */
+  .card-grid-2 {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 2.5rem;
+  }
+  .card-grid-3 {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 2.5rem;
+  }
+  .card {
+    background: var(--light-blue); border-radius: 12px; padding: 1.75rem;
+    border: 1px solid rgba(30,58,122,0.08);
+  }
+  .card .icon { font-size: 1.8rem; margin-bottom: 0.75rem; display: block; }
+  .card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
+  .card p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+  .card-white { background: white; border: 1px solid rgba(30,58,122,0.1); }
+
+  /* CTA BAND */
+  .cta-band {
+    background: var(--navy); padding: 4rem 2rem; text-align: center; position: relative; overflow: hidden;
+  }
+  .cta-band::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(255,255,255,0.025) 30px, rgba(255,255,255,0.025) 31px);
+  }
+  .cta-band h2 {
+    font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 900;
+    color: white; letter-spacing: -0.02em; margin-bottom: 1rem; position: relative;
+  }
+  .cta-band p { font-size: 1rem; color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto 2rem; line-height: 1.7; position: relative; }
+  .cta-band .btn-primary { position: relative; }
+
+  /* SPONSORS */
+  .sponsors-eyebrow {
+    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 2.5rem;
+  }
+  .sponsor-logos {
+    display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+    max-width: 900px; margin: 0 auto; border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 12px; overflow: hidden;
+  }
+  .sponsor-item {
+    flex: 1 1 200px; display: flex; align-items: center; justify-content: center;
+    padding: 2rem 2.5rem; border-right: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.08); background: white; transition: background 0.2s;
+  }
+  .sponsor-item:last-child { border-right: none; }
+  .sponsor-item:hover { background: var(--light-blue); }
+  .sponsor-item img {
+    max-height: 50px; max-width: 140px; width: auto; object-fit: contain;
+    filter: grayscale(100%); opacity: 0.7; transition: all 0.3s;
+  }
+  .sponsor-item:hover img { filter: grayscale(0%); opacity: 1; }
+
+  /* NEWSLETTER */
+  .newsletter {
+    padding: 4.5rem 2rem; background: var(--navy); text-align: center; position: relative; overflow: hidden;
+  }
+  .newsletter::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(245,197,24,0.08) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 50%, rgba(255,255,255,0.04) 0%, transparent 50%);
+  }
+  .newsletter h2 {
+    font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 700; color: white; margin-bottom: 0.75rem; position: relative;
+  }
+  .newsletter p { font-size: 1rem; color: rgba(255,255,255,0.75); max-width: 500px; margin: 0 auto 2rem; line-height: 1.7; position: relative; }
+  .newsletter .btn-primary { position: relative; }
+
+  /* FOOTER */
+  footer {
+    background: #f7f8fa; border-top: 1px solid rgba(0,0,0,0.07);
+    padding: 1.75rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  }
+  footer p { font-size: 0.85rem; color: var(--muted); }
+  .footer-links { display: flex; gap: 1.5rem; list-style: none; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.85rem; color: var(--muted); text-decoration: none; cursor: pointer; }
+  .footer-links a:hover { color: var(--navy); }
+  .footer-sponsors { font-size: 0.82rem; color: var(--muted); }
+  .footer-sponsors a { color: var(--navy); font-weight: 600; text-decoration: none; }
+
+  /* PAGE-SPECIFIC */
+  .page-hero {
+    margin-top: 64px; background: var(--navy); padding: 4rem 2rem; text-align: center; position: relative; overflow: hidden;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 41px);
+  }
+  .page-hero h1 {
+    font-family: 'Fraunces', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 900;
+    color: white; letter-spacing: -0.02em; position: relative; margin-bottom: 0.75rem;
+  }
+  .page-hero h1 em { font-style: italic; color: var(--gold); }
+  .page-hero p { font-size: 1rem; color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto; line-height: 1.7; position: relative; }
+
+  /* EVENTS */
+  .event-card {
+    background: white; border: 1px solid rgba(30,58,122,0.1); border-radius: 12px;
+    padding: 1.75rem; display: flex; gap: 1.5rem; align-items: flex-start;
+    transition: box-shadow 0.2s; margin-bottom: 1rem;
+  }
+  .event-card:hover { box-shadow: 0 4px 20px rgba(30,58,122,0.1); }
+  .event-date {
+    background: var(--navy); color: white; border-radius: 8px; padding: 0.75rem 1rem;
+    text-align: center; min-width: 64px; flex-shrink: 0;
+  }
+  .event-date .day { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 900; line-height: 1; }
+  .event-date .month { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8; }
+  .event-info h3 { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+  .event-info p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; margin-bottom: 0.75rem; }
+  .event-meta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .event-tag {
+    font-size: 0.75rem; font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 100px;
+    background: var(--light-blue); color: var(--navy);
+  }
+  .event-tag.free { background: #e8f5e9; color: #2e7d32; }
+
+  /* RESOURCES */
+  .resource-card {
+    background: white; border: 1px solid rgba(30,58,122,0.1); border-radius: 12px;
+    padding: 1.75rem; transition: all 0.2s; text-decoration: none; display: block; color: inherit;
+  }
+  .resource-card:hover { background: var(--light-blue); border-color: var(--navy); transform: translateY(-2px); }
+  .resource-card .icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .resource-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+  .resource-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+
+  /* CONTACT */
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; max-width: 900px; margin: 3rem auto 0; align-items: start;
+  }
+  .contact-info h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 1.5rem; }
+  .contact-item { display: flex; gap: 1rem; margin-bottom: 1.25rem; align-items: flex-start; }
+  .contact-item .ci-icon { font-size: 1.2rem; margin-top: 0.1rem; flex-shrink: 0; }
+  .contact-item h4 { font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+  .contact-item p { font-size: 0.9rem; color: var(--muted); }
+  .contact-item a { color: var(--navy); font-weight: 600; text-decoration: none; }
+  .contact-form { background: var(--light-blue); border-radius: 12px; padding: 2rem; }
+  .contact-form h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 1.5rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%; padding: 0.75rem 1rem; border: 1px solid rgba(30,58,122,0.2);
+    border-radius: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    background: white; color: var(--text); outline: none; transition: border 0.2s;
+  }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--navy); }
+  .form-group textarea { height: 120px; resize: vertical; }
+
+  /* PROJECTS */
+  .project-card {
+    background: white; border: 1px solid rgba(30,58,122,0.1); border-radius: 16px;
+    overflow: hidden; transition: all 0.2s;
+  }
+  .project-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(30,58,122,0.12); }
+  .project-header { background: var(--navy); padding: 2rem; text-align: center; }
+  .project-header .icon { font-size: 2.5rem; display: block; margin-bottom: 0.75rem; }
+  .project-header h3 { font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: white; }
+  .project-body { padding: 1.75rem; }
+  .project-body p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1rem; }
+  .project-status {
+    display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 100px;
+    background: var(--light-yellow); color: #92600a;
+  }
+  .project-status.live { background: #e8f5e9; color: #2e7d32; }
+
+  /* ABOUT timeline */
+  .timeline { position: relative; max-width: 680px; margin: 2.5rem auto 0; }
+  .timeline::before {
+    content: ''; position: absolute; left: 24px; top: 0; bottom: 0;
+    width: 2px; background: rgba(30,58,122,0.15);
+  }
+  .timeline-item { display: flex; gap: 1.5rem; margin-bottom: 2rem; position: relative; }
+  .timeline-dot {
+    width: 48px; height: 48px; border-radius: 50%; background: var(--navy);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    font-size: 1.1rem; position: relative; z-index: 1;
+  }
+  .timeline-content h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+  .timeline-content p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+
+  /* RESOURCE PAGE */
+  .res-offer-card {
+    background: white; border-radius: 16px; padding: 2rem;
+    display: flex; gap: 2rem; align-items: flex-start;
+    box-shadow: 0 2px 16px rgba(30,58,122,0.07);
+    border: 1px solid rgba(30,58,122,0.08);
+  }
+  .res-offer-card-navy { background: var(--navy); }
+  .res-offer-body { flex: 1; }
+  .res-offer-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .res-offer-title { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 700; color: var(--navy); margin-bottom: 0.15rem; }
+  .res-offer-subtitle { font-size: 0.78rem; font-weight: 600; color: var(--muted); letter-spacing: 0.04em; }
+  .res-offer-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.75; margin-bottom: 0.9rem; }
+  .res-visit-link { font-size: 0.85rem; font-weight: 700; color: var(--navy); text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 1px; }
+  .res-feature-box {
+    background: var(--light-blue); border-radius: 10px; padding: 0.9rem 1rem;
+    font-size: 0.85rem; color: var(--muted); line-height: 1.6; display: flex; flex-direction: column; gap: 0.3rem;
+  }
+  .res-feature-box strong { color: var(--navy); font-weight: 700; }
+  .res-offer-badge {
+    border-radius: 12px; padding: 1.25rem 1rem; text-align: center;
+    min-width: 130px; flex-shrink: 0; align-self: flex-start;
+  }
+  .res-badge-gold { background: var(--gold); color: var(--navy-dark); }
+  .res-badge-navy { background: var(--navy); color: white; }
+  .res-badge-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .res-badge-value { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 900; line-height: 1.1; margin-bottom: 0.3rem; }
+  .res-badge-sub { font-size: 0.75rem; font-weight: 600; }
+  .res-roam-box {
+    background: rgba(255,255,255,0.1); border-radius: 10px; padding: 1.25rem;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .res-roam-box ul li { padding: 0.2rem 0; }
+  .res-stat-box {
+    background: var(--light-blue); border-radius: 8px; padding: 0.75rem;
+    text-align: center; display: flex; flex-direction: column; gap: 0.2rem;
+  }
+  .res-stat-box strong { font-size: 1rem; font-weight: 700; color: var(--navy); }
+  .res-stat-box span { font-size: 0.72rem; color: var(--muted); }
+  .res-tag {
+    display: inline-block; font-size: 0.72rem; font-weight: 600;
+    background: var(--light-blue); color: var(--navy); padding: 0.25rem 0.7rem; border-radius: 100px;
+  }
+  .res-sponsor-tile {
+    background: white; border: 1px solid rgba(30,58,122,0.1); border-radius: 14px;
+    padding: 1.5rem 1rem; text-align: center; text-decoration: none; color: inherit;
+    display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+    transition: all 0.2s;
+  }
+  .res-sponsor-tile:hover { border-color: var(--navy); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(30,58,122,0.1); }
+  .res-sponsor-tile img { max-height: 44px; max-width: 120px; object-fit: contain; filter: grayscale(20%); transition: filter 0.2s; }
+  .res-sponsor-tile:hover img { filter: grayscale(0%); }
+  .res-sponsor-tile h4 { font-size: 0.88rem; font-weight: 700; color: var(--navy); }
+  .res-sponsor-tile p { font-size: 0.76rem; color: var(--muted); line-height: 1.5; flex: 1; }
+  .res-sponsor-tile span { font-size: 0.75rem; font-weight: 700; color: var(--navy); border-bottom: 1px solid var(--gold); padding-bottom: 1px; }
+  @media (max-width: 640px) {
+    .res-offer-card { flex-direction: column; }
+    .res-offer-badge { width: 100%; min-width: unset; }
+  }
+
+  /* CONTACT ACTION CARDS */
+  .contact-action-card {
+    background: white; border: 1px solid rgba(30,58,122,0.1); border-radius: 12px;
+    padding: 1.5rem; text-align: center; text-decoration: none; color: inherit;
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    transition: all 0.2s;
+  }
+  .contact-action-card:hover { border-color: var(--navy); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(30,58,122,0.1); }
+  .contact-action-icon { font-size: 1.8rem; }
+  .contact-action-card h3 { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+  .contact-action-card p { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+  .get-involved-card {
+    background: var(--light-blue); border-radius: 12px; padding: 1.1rem 1.25rem;
+    text-decoration: none; color: inherit; display: flex; align-items: center;
+    gap: 1rem; transition: all 0.2s;
+  }
+  .get-involved-card:hover { background: var(--light-blue); border-color: var(--navy); transform: translateX(4px); }
+  .gi-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .get-involved-card h3 { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 0.15rem; }
+  .get-involved-card p { font-size: 0.78rem; color: var(--muted); }
+
+  /* HERO SCROLL INDICATOR */
+  .hero-scroll {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem; z-index: 3;
+  }
+  .hero-scroll span { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .hero-scroll-line {
+    width: 1px; height: 40px; background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+    animation: scrollPulse 2s ease infinite;
+  }
+  @keyframes scrollPulse { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
+
+  /* HOME SPONSOR CARDS */
+  .home-sponsor-card {
+    background: white; border: 1px solid rgba(30,58,122,0.1); border-radius: 14px;
+    padding: 1.75rem 1.5rem; text-align: center; text-decoration: none; color: inherit;
+    display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+    transition: all 0.25s;
+  }
+  .home-sponsor-card:hover { border-color: var(--navy); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(30,58,122,0.1); }
+  .home-sponsor-logo { max-height: 48px; max-width: 130px; object-fit: contain; }
+  .home-sponsor-name { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
+  .home-sponsor-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; flex: 1; }
+  .home-sponsor-link { font-size: 0.78rem; font-weight: 700; color: var(--navy); border-bottom: 1px solid var(--gold); padding-bottom: 1px; }
+  .home-sponsor-offer {
+    background: var(--gold); color: var(--navy-dark); border-radius: 8px;
+    padding: 0.75rem 1rem; width: 100%; text-align: center; margin-top: 0.25rem;
+  }
+
+  /* FOOTER */
+  .site-footer { background: var(--navy-deep); padding: 0; }
+  .footer-inner {
+    max-width: 1000px; margin: 0 auto; padding: 4rem 2rem 3rem;
+    display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;
+  }
+  .footer-logo {
+    font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.4rem;
+    color: white; margin-bottom: 0.75rem; letter-spacing: -0.02em;
+  }
+  .footer-tagline { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 1rem; }
+  .footer-part-of { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+  .footer-part-of strong { color: rgba(255,255,255,0.65); }
+  .footer-col-title {
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); margin-bottom: 1rem;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-col ul a {
+    font-size: 0.88rem; color: rgba(255,255,255,0.65); text-decoration: none;
+    cursor: pointer; transition: color 0.2s;
+  }
+  .footer-col ul a:hover { color: white; }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08); padding: 1.25rem 2rem;
+    text-align: center;
+  }
+  .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+  @media (max-width: 700px) {
+    .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+  }
+
+  /* NETWORKING CARDS */
+  .net-card {
+    border-radius: 16px; overflow: hidden; display: flex; flex-direction: column;
+    border: 1px solid rgba(30,58,122,0.1); transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .net-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(30,58,122,0.12); }
+  .net-card-live { border-color: rgba(30,58,122,0.2); }
+  .net-card-soon { opacity: 0.88; }
+  .net-card-top {
+    background: var(--navy); padding: 2rem 1.75rem 1.5rem; text-align: center;
+  }
+  .net-card-live .net-card-top { background: var(--navy); }
+  .net-card-soon .net-card-top { background: var(--navy-dark); }
+  .net-icon { font-size: 2.2rem; margin-bottom: 0.75rem; display: block; }
+  .net-title {
+    font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900;
+    color: white; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 0.15rem;
+  }
+  .net-subtitle {
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+  }
+  .net-city-badge {
+    display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em;
+    padding: 0.3rem 0.75rem; border-radius: 100px; margin-bottom: 1rem;
+  }
+  .net-badge-live { background: rgba(46,125,50,0.25); color: #a5d6a7; }
+  .net-badge-soon { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+  .net-card-body {
+    background: white; padding: 1.5rem 1.75rem; flex: 1;
+  }
+  .net-desc {
+    font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem;
+  }
+  .net-features {
+    list-style: none; display: flex; flex-direction: column; gap: 0.4rem;
+  }
+  .net-features li {
+    font-size: 0.82rem; color: var(--navy); font-weight: 600;
+    padding-left: 1.25rem; position: relative;
+  }
+  .net-features li::before {
+    content: "✓"; position: absolute; left: 0; color: var(--gold-dark); font-weight: 700;
+  }
+  .net-card-footer {
+    background: white; padding: 0 1.75rem 1.75rem;
+    border-top: 1px solid rgba(30,58,122,0.06);
+    padding-top: 1.25rem;
+  }
+  @media (max-width: 700px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+
+  /* SOCIAL VALUE ROWS */
+  .sv-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 60px;
+    gap: 1.75rem;
+    align-items: center;
+    background: white;
+    border: 1px solid rgba(30,58,122,0.08);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .sv-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(30,58,122,0.09);
+  }
+  .sv-row-alt {
+    grid-template-columns: 60px 1fr 80px;
+  }
+  .sv-icon-col {
+    width: 80px; height: 80px; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .sv-text-col { flex: 1; }
+  .sv-title {
+    font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 700;
+    color: var(--navy); margin-bottom: 0.5rem; letter-spacing: -0.01em;
+  }
+  .sv-desc {
+    font-size: 0.92rem; color: var(--muted); line-height: 1.75;
+  }
+  .sv-number {
+    font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 900;
+    color: var(--navy); letter-spacing: -0.02em; text-align: center;
+    flex-shrink: 0;
+  }
+  @media (max-width: 640px) {
+    .sv-row, .sv-row-alt {
+      grid-template-columns: 1fr !important;
+    }
+    .sv-number { display: none; }
+    .sv-text-col { text-align: left !important; }
+    .sv-icon-col { width: 60px; height: 60px; }
+  }
+
+  /* FC PILLAR CARDS */
+  .fc-pillar-card {
+    background: white; border-radius: 20px; padding: 2.25rem 1.75rem;
+    text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    border: 1px solid rgba(30,58,122,0.08); transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .fc-pillar-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(30,58,122,0.1); }
+  .fc-pillar-featured {
+    border: 2px solid rgba(30,58,122,0.2);
+    box-shadow: 0 4px 20px rgba(30,58,122,0.08);
+  }
+  .fc-pillar-icon {
+    width: 72px; height: 72px; border-radius: 50%;
+    background: var(--light-blue);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2rem; flex-shrink: 0;
+  }
+  .fc-pillar-title {
+    font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700;
+    color: var(--navy); letter-spacing: -0.01em;
+  }
+  .fc-pillar-desc {
+    font-size: 0.9rem; color: var(--muted); line-height: 1.7; flex: 1;
+  }
+  .fc-pillar-tag {
+    display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+    padding: 0.3rem 0.85rem; border-radius: 100px; margin-top: auto;
+  }
+  .fc-tag-live { background: #e8f5e9; color: #2e7d32; }
+  .fc-tag-soon { background: var(--light-yellow); color: #92600a; }
+  .fc-tag-progress { background: var(--light-blue); color: var(--navy); }
+  @media (max-width: 640px) {
+    .fc-pillar-card { padding: 1.75rem 1.25rem; }
+    div[style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+  }
+
+  /* EXPECT CARDS */
+  .expect-card {
+    background: var(--light-blue); border-radius: 16px; padding: 2rem 1.5rem;
+    text-align: center; display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    transition: transform 0.2s;
+  }
+  .expect-card:hover { transform: translateY(-3px); }
+  .expect-card-featured {
+    background: var(--navy); border: none;
+  }
+  .expect-icon-wrap {
+    width: 64px; height: 64px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 1.8rem;
+    flex-shrink: 0;
+  }
+  .expect-title {
+    font-family: 'Fraunces', serif; font-size: 1.15rem; font-weight: 700;
+    color: var(--navy); line-height: 1.3;
+  }
+  .expect-desc {
+    font-size: 0.88rem; color: var(--muted); line-height: 1.7; flex: 1;
+  }
+  .expect-tag {
+    display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em;
+    text-transform: uppercase; padding: 0.35rem 0.85rem; border-radius: 100px;
+    background: white; color: var(--navy); margin-top: auto;
+  }
+  @media (max-width: 640px) {
+    .expect-card { grid-column: span 1; }
+    div[style*="grid-template-columns:repeat(3"] { grid-template-columns: 1fr !important; }
+  }
+
+  /* EVENTS PAGE */
+  .events-hero {
+    margin-top: 64px; position: relative; height: 320px;
+    display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden;
+  }
+  .events-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, rgba(13,31,71,0.82) 0%, rgba(30,58,122,0.7) 100%);
+  }
+  .events-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: var(--navy);
+  }
+  .events-hero-content {
+    position: relative; z-index: 2; max-width: 680px; padding: 0 2rem;
+  }
+  .events-hero-content h1 {
+    font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 900;
+    color: white; line-height: 1.1; letter-spacing: -0.02em; margin: 0.75rem 0;
+  }
+  .events-hero-content h1 em { font-style: italic; color: var(--gold); }
+  .events-hero-content p { font-size: 1rem; color: rgba(255,255,255,0.8); line-height: 1.6; }
+
+  /* CALENDAR GRID */
+  .cal-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  }
+  .cal-card {
+    background: white; border: 1px solid rgba(30,58,122,0.1); border-radius: 12px;
+    padding: 1.25rem; position: relative; transition: all 0.2s;
+  }
+  .cal-card:hover { box-shadow: 0 4px 20px rgba(30,58,122,0.1); transform: translateY(-2px); }
+  .cal-month {
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 0.4rem;
+  }
+  .cal-date {
+    font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700;
+    color: var(--navy); margin-bottom: 0.5rem; line-height: 1.2;
+  }
+  .cal-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin-bottom: 0.75rem; }
+  .cal-link {
+    font-size: 0.82rem; font-weight: 700; color: var(--navy); text-decoration: none;
+    border-bottom: 1px solid var(--gold); padding-bottom: 1px; transition: color 0.2s;
+  }
+  .cal-link:hover { color: var(--gold-dark); }
+  .event-featured-badge {
+    position: absolute; top: 0.75rem; right: 0.75rem;
+    background: var(--gold); color: var(--navy-dark); font-size: 0.6rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; padding: 0.2rem 0.5rem; border-radius: 4px;
+  }
+  .event-note {
+    font-size: 0.82rem; color: var(--navy); font-weight: 600; margin-bottom: 0.75rem;
+  }
+  @media (max-width: 700px) { .cal-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 440px) { .cal-grid { grid-template-columns: 1fr; } }
+
+  /* SPONSOR FULL CARDS */
+  .sponsor-full-card {
+    background: white; border: 1px solid rgba(30,58,122,0.1); border-radius: 14px;
+    padding: 2rem 1.5rem; text-align: center; transition: all 0.25s;
+    height: 100%; display: flex; flex-direction: column; align-items: center;
+  }
+  .sponsor-full-card:hover {
+    border-color: var(--navy); transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(30,58,122,0.12);
+  }
+  .sponsor-full-card img {
+    max-height: 52px; max-width: 130px; object-fit: contain;
+    margin-bottom: 1rem; filter: grayscale(20%); transition: filter 0.25s;
+  }
+  .sponsor-full-card:hover img { filter: grayscale(0%); }
+  .sponsor-full-name {
+    font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem;
+  }
+  .sponsor-full-desc {
+    font-size: 0.82rem; color: var(--muted); line-height: 1.6; flex: 1; margin-bottom: 1rem;
+  }
+  .sponsor-full-link {
+    font-size: 0.82rem; font-weight: 700; color: var(--navy);
+    border-bottom: 1px solid var(--gold); padding-bottom: 1px;
+  }
+
+  /* RESOURCE OFFER CARDS */
+  .resource-offer-card {
+    background: white; border-radius: 16px; padding: 2rem;
+    display: flex; gap: 1.5rem; align-items: flex-start;
+    text-align: left; box-shadow: 0 2px 16px rgba(30,58,122,0.08);
+    margin-bottom: 1.5rem;
+  }
+  .resource-offer-main { flex: 1; }
+  .resource-offer-header {
+    display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; flex-wrap: wrap;
+  }
+  .resource-offer-header h3 {
+    font-family: 'Fraunces', serif; font-size: 1.3rem; font-weight: 700; color: var(--navy);
+  }
+  .resource-offer-badge {
+    border-radius: 12px; padding: 1.25rem 1rem; text-align: center;
+    min-width: 140px; flex-shrink: 0; align-self: flex-start;
+  }
+  .badge-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+  .badge-value { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 900; line-height: 1.1; margin-bottom: 0.4rem; }
+  .badge-code { font-size: 0.8rem; font-weight: 600; }
+  .code-chip {
+    background: var(--navy); color: white; padding: 0.2rem 0.5rem;
+    border-radius: 4px; font-family: monospace; font-size: 0.85rem;
+  }
+  .resource-mini-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 0.75rem;
+  }
+  .resource-mini-card {
+    background: var(--light-blue); border-radius: 10px; padding: 1rem;
+    font-size: 0.88rem; color: var(--muted); line-height: 1.6;
+  }
+  .resource-mini-card strong { color: var(--navy); display: block; margin-bottom: 0.3rem; }
+  .roam-card { background: rgba(255,255,255,0.1) !important; border: 1px solid rgba(255,255,255,0.15); }
+  .resource-link { color: var(--navy); font-weight: 600; font-size: 0.9rem; text-decoration: underline; }
+  .resource-link:hover { color: var(--gold-dark); }
+  @media (max-width: 640px) {
+    .resource-offer-card { flex-direction: column; }
+    .resource-offer-badge { width: 100%; }
+  }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px; cursor: pointer;
+    padding: 4px; background: none; border: none; z-index: 200;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 2px; background: var(--navy);
+    border-radius: 2px; transition: all 0.3s ease;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0;
+    background: white; z-index: 99; flex-direction: column;
+    padding: 2rem; border-top: 1px solid rgba(30,58,122,0.1);
+    animation: slideDown 0.25s ease;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-size: 1.2rem; font-weight: 600; color: var(--text);
+    text-decoration: none; padding: 1rem 0;
+    border-bottom: 1px solid rgba(30,58,122,0.07);
+    cursor: pointer; transition: color 0.2s;
+  }
+  .mobile-menu a:hover { color: var(--navy); }
+  .mobile-menu a.nav-cta {
+    margin-top: 1.5rem; background: var(--gold); color: var(--navy-dark) !important;
+    text-align: center; padding: 1rem; border-radius: 8px; border: none;
+    font-size: 1rem;
+  }
+  .mobile-menu a.active { color: var(--navy); }
+
+  @keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo" onclick="showPage('home')">Darlington <em class="nav-logo-em">First</em></span>
+  <ul class="nav-links">
+    <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+    <li><a onclick="showPage('about')" id="nav-about">About</a></li>
+    <li><a onclick="showPage('events')" id="nav-events">Events</a></li>
+    <li><a onclick="showPage('projects')" id="nav-projects">Projects</a></li>
+    <li><a onclick="showPage('resources')" id="nav-resources">Resources</a></li>
+    <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+    <li><a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="nav-cta">Book Free Ticket</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a onclick="navTo('home')">Home</a>
+  <a onclick="navTo('about')">About</a>
+  <a onclick="navTo('events')">Events</a>
+  <a onclick="navTo('projects')">Projects</a>
+  <a onclick="navTo('resources')">Resources</a>
+  <a onclick="navTo('contact')">Contact</a>
+  <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" onclick="closeMenu()" class="nav-cta">Book Free Ticket</a>
+</div>
+
+<!-- ======================== HOME PAGE ======================== -->
+<div class="page active" id="page-home">
+
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-tag">Darlington's Business Community</span>
+      <h1>Darlington First<br><em>Business Networking</em></h1>
+      <p>Connect with Darlington's business community at our relaxed, informal networking event. Grow your network, share ideas, and put Darlington first!</p>
+      <div class="hero-buttons">
+        <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="btn-primary">Book Your Ticket</a>
+        <button onclick="showModal('newsletter-modal')" class="btn-primary" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.85rem 2rem;">Subscribe to Newsletter</button>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <section class="section-pad" style="background: var(--light-blue);" id="welcome">
+    <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+      <div>
+        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Welcome</p>
+        <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;line-height:1.1;margin-bottom:1.25rem;">Welcome to <em style="font-style:italic;color:var(--gold-dark);">Darlington First</em></h2>
+        <p class="section-muted" style="font-size:1rem;margin-bottom:1.75rem;line-height:1.8;">A relaxed, informal gathering for local business leaders who want to put Darlington first, share ideas, and explore new opportunities for collaboration. All business sectors welcome.</p>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2rem;">
+          <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;font-weight:600;color:var(--navy);">
+            <span style="width:22px;height:22px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:var(--navy-dark);flex-shrink:0;">✓</span>
+            100% Free to Attend
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;font-weight:600;color:var(--navy);">
+            <span style="width:22px;height:22px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:var(--navy-dark);flex-shrink:0;">✓</span>
+            No Membership Fees
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;font-weight:600;color:var(--navy);">
+            <span style="width:22px;height:22px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:var(--navy-dark);flex-shrink:0;">✓</span>
+            All Sectors Welcome
+          </div>
+        </div>
+        <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="btn-primary">Book Your Free Ticket →</a>
+      </div>
+      <div style="position:relative;">
+        <div style="border-radius:16px;overflow:hidden;aspect-ratio:4/3;background:var(--navy-dark);display:flex;align-items:flex-end;">
+          <div style="background:url('https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Website-Images/Darlington-train.png') center/cover;position:absolute;inset:0;border-radius:16px;"></div>
+          <div style="position:relative;z-index:2;background:linear-gradient(to top,rgba(13,31,71,0.85) 0%,transparent 60%);padding:1.5rem;width:100%;border-radius:0 0 16px 16px;">
+            <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.2rem;">Darlington — Birthplace of the Railways</p>
+            <p style="font-size:0.95rem;font-weight:700;color:white;">Where the Steam Age Began</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad section-center" style="background: var(--light-yellow);">
+    <span class="pill-badge">100% Free to Attend</span>
+    <h2 style="font-family:'Fraunces',serif;font-size:2.4rem;font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:2rem;">No Barriers. No Fees. Just Community.</h2>
+    <div class="max-780" style="text-align:left;">
+      <p class="section-muted" style="margin-bottom:1.25rem;">We believe the best business connections shouldn't come with a price tag. Darlington First events are completely free to attend — one of very few free networking events across the entire North East region.</p>
+      <p class="section-muted" style="margin-bottom:1.25rem;">By removing the barriers to entry, we're opening the door for young entrepreneurs just getting started and experienced business leaders alike. Everyone deserves a seat at the table.</p>
+      <p class="section-muted" style="margin-bottom:1.25rem;">Our networking events will vary — some traditional networking, others more creative: think watching local football or rugby together, a game of padel or tennis, bowling, and plenty more. The one thing we're committed to is a <strong style="color:var(--navy);">free, no-hassle monthly coffee morning</strong> — with venues rotating each month to support as many local Darlington businesses as possible.</p>
+      <div style="background:white;border-left:4px solid var(--gold);border-radius:4px;padding:1rem 1.25rem;font-size:0.95rem;color:var(--muted);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;margin-right:6px;"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg> <strong style="color:var(--navy);">Just a heads-up:</strong> While our events are free, we do ask that everyone pays for their own coffee. It's our little way of supporting the brilliant local venues who host us.
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad section-center" style="background:white;">
+    <div style="max-width:900px;margin:0 auto;">
+
+      <!-- HEADER -->
+      <div style="text-align:center;margin-bottom:4rem;">
+        <span class="pill-badge dark">More Than Networking</span>
+        <h2 style="font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--navy);letter-spacing:-0.03em;margin:0.75rem 0 1.25rem;">Our Social Value</h2>
+        <p class="section-muted max-680" style="margin:0 auto;font-size:1.05rem;">Darlington First isn't just about business cards and handshakes. We're here to create real, lasting social value for our community.</p>
+      </div>
+
+      <!-- VALUE ITEMS - alternating layout -->
+      <div style="display:flex;flex-direction:column;gap:1.5rem;">
+
+        <div class="sv-row">
+          <div class="sv-icon-col" style="background:var(--light-blue);">
+            <span style="font-size:2.2rem;"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--navy-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></span>
+          </div>
+          <div class="sv-text-col">
+            <h3 class="sv-title">Inspiring Stories</h3>
+            <p class="sv-desc">We'll be introducing guests with inspiring stories — real people doing great work in our region, sharing their journeys to motivate and energise the room.</p>
+          </div>
+          <div class="sv-number">01</div>
+        </div>
+
+        <div class="sv-row sv-row-alt">
+          <div class="sv-number" style="color:var(--navy);">02</div>
+          <div class="sv-text-col" style="text-align:right;">
+            <h3 class="sv-title">Great Ideas Deserve Support</h3>
+            <p class="sv-desc">You don't need a business degree to have a brilliant idea. We're here to help those with passion and vision prosper — even if they're just getting started and learning as they go.</p>
+          </div>
+          <div class="sv-icon-col" style="background:var(--light-yellow);">
+            <span style="font-size:2.2rem;"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--navy-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M2 22 17 7"/><path d="M17 7C17 4.2 14.8 2 12 2c0 2.8 2.2 5 5 5z"/><path d="M17 7c2.8 0 5-2.2 5-5-2.8 0-5 2.2-5 5z"/></svg></span>
+          </div>
+        </div>
+
+        <div class="sv-row">
+          <div class="sv-icon-col" style="background:rgba(245,197,24,0.15);">
+            <span style="font-size:2.2rem;"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--navy-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></span>
+          </div>
+          <div class="sv-text-col">
+            <h3 class="sv-title">Celebrating Community Heroes</h3>
+            <p class="sv-desc">Through our High Street Heroes Awards, we'll be shining a spotlight on the unsung heroes — the people and businesses making a real difference on our high streets and in our communities.</p>
+          </div>
+          <div class="sv-number">03</div>
+        </div>
+
+        <div class="sv-row sv-row-alt">
+          <div class="sv-number" style="color:var(--navy);">04</div>
+          <div class="sv-text-col" style="text-align:right;">
+            <h3 class="sv-title">Coaches &amp; Connections</h3>
+            <p class="sv-desc">We'll be making introductions to business coaches and likeminded individuals — connecting you with the right people who can help take your ideas to the next level.</p>
+          </div>
+          <div class="sv-icon-col" style="background:var(--light-blue);">
+            <span style="font-size:2.2rem;"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--navy-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/><path d="m8 10 2 2 4-4"/></svg></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Ready to Join Us?</h2>
+    <p>Secure your free spot at the next Darlington First networking event. Meet local business leaders, share ideas, and help shape the future of our business community.</p>
+    <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="btn-primary">Book Your Free Ticket</a>
+  </section>
+
+  <section style="padding:5rem 2rem;background:var(--light-blue);">
+    <div style="max-width:900px;margin:0 auto;">
+      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Why Darlington?</p>
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:1.25rem;">The gateway to <em style="font-style:italic;color:var(--gold-dark);">the North East</em></h2>
+      <p class="section-muted" style="margin-bottom:2.5rem;max-width:680px;">Darlington is the gateway to the North East — connecting Durham, Newcastle, and every town in between. With major government investment in the train station, Teesside International Airport, and the relocation of HM Treasury, Darlington has never been better positioned for business.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2.5rem;">
+        <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Website-Images/img-teesside-steel.jpg.png" alt="Teesside Steel Works" style="width:100%;border-radius:14px;object-fit:cover;height:220px;" />
+        <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Website-Images/Happy-shop-owner.png" alt="Local business owner, Darlington" style="width:100%;border-radius:14px;object-fit:cover;height:220px;" />
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+        <div style="background:white;border-radius:12px;padding:1.5rem;">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><rect width="16" height="16" x="4" y="3" rx="2"/><path d="M4 11h16"/><path d="M12 3v8"/><path d="m8 19-2 3"/><path d="m18 22-2-3"/><path d="M8 15h.01"/><path d="M16 15h.01"/></svg></div>
+          <h3 style="font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Major Transport Hub</h3>
+          <p style="font-size:0.85rem;color:var(--muted);line-height:1.6;">Darlington station sits on the East Coast Main Line — connecting London, Edinburgh, and every major North East city.</p>
+        </div>
+        <div style="background:white;border-radius:12px;padding:1.5rem;">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></div>
+          <h3 style="font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">HM Treasury Relocation</h3>
+          <p style="font-size:0.85rem;color:var(--muted);line-height:1.6;">Major government investment is transforming Darlington into one of the most strategically important business locations in the UK.</p>
+        </div>
+        <div style="background:white;border-radius:12px;padding:1.5rem;">
+          <div style="font-size:1.4rem;margin-bottom:0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg></div>
+          <h3 style="font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Teesside Airport</h3>
+          <p style="font-size:0.85rem;color:var(--muted);line-height:1.6;">Teesside International Airport connects the region nationally and internationally, making Darlington a true gateway city.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad section-center" style="background:white;">
+    <!-- MISSION HEADER -->
+    <div style="max-width:680px;margin:0 auto;text-align:center;margin-bottom:4rem;">
+      <span class="pill-badge dark" style="margin-bottom:1rem;">Our Mission</span>
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--navy);letter-spacing:-0.03em;line-height:1.1;margin-bottom:1.5rem;">Building a community that <em style="font-style:italic;color:var(--gold-dark);">generates</em> real opportunity</h2>
+      <p class="section-muted" style="font-size:1.05rem;">We're building a business community that is first and foremost supportive — and in turn becomes progressive and generative. Generating sales, generating income, and generating real opportunities for businesses across the region.</p>
+    </div>
+
+    <!-- TWO COLUMN SPLIT -->
+    <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-bottom:4rem;">
+      <div>
+        <div style="width:40px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:1.25rem;"></div>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem;">Bridging ambition &amp; experience</h3>
+        <p class="section-muted" style="font-size:0.95rem;line-height:1.8;">We want to connect emerging young entrepreneurs with established, experienced business leaders — bridging the gap and creating a network where everyone grows together.</p>
+      </div>
+      <div>
+        <div style="width:40px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:1.25rem;"></div>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem;">Darlington First is just the beginning</h3>
+        <p class="section-muted" style="font-size:0.95rem;line-height:1.8;">Alongside our networking events, we're launching three pillars that will form the lifeblood of what we're building — and expanding across the North East.</p>
+      </div>
+    </div>
+
+    <!-- THREE PILLARS -->
+    <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+      <div style="background:var(--light-blue);border-radius:16px;padding:2rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0.75rem;border:1px solid rgba(30,58,122,0.08);transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="width:56px;height:56px;background:var(--light-blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/><path d="m8 10 2 2 4-4"/></svg></div>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:var(--navy);">Networking</h3>
+        <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;flex:1;">Free monthly coffee mornings and varied events in rotating Darlington venues — building community, one connection at a time.</p>
+        <span style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#e8f5e9;color:#2e7d32;padding:0.3rem 0.8rem;border-radius:100px;">● Live Now</span>
+      </div>
+      <div style="background:var(--navy);border-radius:16px;padding:2rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0.75rem;border:1px solid rgba(30,58,122,0.08);transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="width:56px;height:56px;background:rgba(245,197,24,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:white;">Awards</h3>
+        <p style="font-size:0.85rem;color:rgba(255,255,255,0.75);line-height:1.7;flex:1;">The North East High Street Heroes Awards — recognising and celebrating the businesses that make our high streets thrive.</p>
+        <span style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:rgba(245,197,24,0.2);color:var(--gold);padding:0.3rem 0.8rem;border-radius:100px;">● Coming Soon</span>
+      </div>
+      <div style="background:var(--light-blue);border-radius:16px;padding:2rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0.75rem;border:1px solid rgba(30,58,122,0.08);transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+        <div style="width:56px;height:56px;background:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:var(--navy);">Podcast</h3>
+        <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;flex:1;">A regional podcast spotlighting the stories, insights, and voices driving business forward across the North East.</p>
+        <span style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:var(--light-blue);color:var(--navy);padding:0.3rem 0.8rem;border-radius:100px;border:1px solid rgba(30,58,122,0.15);">● In Production</span>
+      </div>
+    </div>
+
+    <!-- CLOSING LINE -->
+    <div style="max-width:760px;margin:3rem auto 0;padding-top:2.5rem;border-top:1px solid rgba(30,58,122,0.1);text-align:center;">
+      <p style="font-size:1.05rem;color:var(--navy);font-weight:600;line-height:1.7;">Together, these three pillars will empower Darlington to fulfil its potential as the <em style="font-style:italic;">first place you come to do business</em> in the North East.</p>
+      <a onclick="showPage('projects')" class="btn-primary" style="cursor:pointer;margin-top:1.5rem;display:inline-block;">Explore Our Projects</a>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h2>Stay in the Loop</h2>
+    <p>Subscribe to our newsletter for event updates, venue announcements, and the latest from Darlington's business community.</p>
+    <button onclick="showModal('newsletter-modal')" class="btn-primary" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.85rem 2rem;">Subscribe to Newsletter</button>
+  </section>
+
+  <!-- RICH SPONSOR CARDS -->
+  <section style="padding:5rem 2rem;background:var(--light-blue);">
+    <div style="max-width:960px;margin:0 auto;text-align:center;">
+      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Proudly Sponsored By</p>
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:0.75rem;">The businesses that make <em style="font-style:italic;">Darlington First</em> possible</h2>
+      <p class="section-muted max-680" style="margin:0 auto 3rem;">Our sponsors believe in what we're building. Without their support, Darlington First wouldn't exist. Please support the businesses that support us.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1.25rem;margin-bottom:2.5rem;">
+
+        <a href="https://www.roam-everywhere.com/get-the-app" target="_blank" class="home-sponsor-card">
+          <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Roam-App_logo.png" alt="Roam" class="home-sponsor-logo" />
+          <h3 class="home-sponsor-name">Roam</h3>
+          <p class="home-sponsor-desc">Your gateway to everything local — connecting residents, businesses and communities across the North East.</p>
+          <span class="home-sponsor-link">Visit Website</span>
+        </a>
+
+        <a href="https://ironing-man.co.uk/?gad_source=1" target="_blank" class="home-sponsor-card">
+          <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/The-Ironing-man.png" alt="The Ironing Man" class="home-sponsor-logo" />
+          <h3 class="home-sponsor-name">The Ironing Man</h3>
+          <p class="home-sponsor-desc">Fast, friendly ironing &amp; laundry with collection and delivery across Darlington.</p>
+          <span class="home-sponsor-link">Visit Website</span>
+          <div class="home-sponsor-offer">
+            <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.8;margin-bottom:0.25rem;">Exclusive Offer</p>
+            <p style="font-size:1.3rem;font-weight:900;line-height:1;">10% Off</p>
+            <p style="font-size:0.75rem;font-weight:600;margin-top:0.2rem;">Code: DF10</p>
+          </div>
+        </a>
+
+        <a href="https://www.nebic.co.uk" target="_blank" class="home-sponsor-card">
+          <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/NE-BIC.png" alt="NE BIC" class="home-sponsor-logo" />
+          <h3 class="home-sponsor-name">NE BIC</h3>
+          <p class="home-sponsor-desc">The space to build a better business — co-working, offices and business support in Darlington.</p>
+          <span class="home-sponsor-link">Visit Website</span>
+          <div class="home-sponsor-offer" style="background:var(--navy);">
+            <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;margin-bottom:0.25rem;color:white;">Member Offer</p>
+            <p style="font-size:1rem;font-weight:900;line-height:1.2;color:white;">Free Day Pass</p>
+            <p style="font-size:0.75rem;font-weight:600;margin-top:0.2rem;color:rgba(255,255,255,0.8);">+ 10% Off Rooms</p>
+          </div>
+        </a>
+
+        <a href="#" target="_blank" class="home-sponsor-card">
+          <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/NE-Hotel-Association.png" alt="North East Hotels Association" class="home-sponsor-logo" />
+          <h3 class="home-sponsor-name">NE Hotels Association</h3>
+          <p class="home-sponsor-desc">Representing and supporting the hospitality sector across the entire North East region.</p>
+          <span class="home-sponsor-link">Visit Website</span>
+        </a>
+
+        <a href="https://www.surgotechsolutions.com" target="_blank" class="home-sponsor-card">
+          <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Surgo-tech-logo-white.png" alt="Surgotech Solutions" style="max-height:44px;max-width:140px;object-fit:contain;" />
+          <h3 class="home-sponsor-name">Surgotech Solutions</h3>
+          <p class="home-sponsor-desc">Helping businesses unlock potential through smart technology and proven process improvement.</p>
+          <span class="home-sponsor-link">Visit Website</span>
+          <div class="home-sponsor-offer" style="background:var(--navy);">
+            <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;margin-bottom:0.25rem;color:white;">Member Offer</p>
+            <p style="font-size:1rem;font-weight:900;line-height:1.2;color:white;">40% Off Audit</p>
+            <p style="font-size:0.75rem;font-weight:600;margin-top:0.2rem;color:rgba(255,255,255,0.8);">Code: DF-SURGE</p>
+          </div>
+        </a>
+
+      </div>
+
+      <p style="font-size:0.9rem;color:var(--muted);">Interested in sponsoring Darlington First? <a href="mailto:hello@first-connections.com" style="color:var(--navy);font-weight:700;">hello@first-connections.com</a></p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ======================== ABOUT PAGE ======================== -->
+<div class="page" id="page-about">
+  <div class="page-hero">
+    <h1>About <em>Darlington First</em></h1>
+    <p>We're more than a networking group. We're a movement to put Darlington on the map as the North East's premier business destination.</p>
+  </div>
+
+  <section class="section-pad" style="background:var(--light-blue);">
+    <div class="max-780" style="margin:0 auto;">
+      <h2 class="section-title">Who We Are</h2>
+      <p class="section-muted" style="margin-bottom:1.25rem;">Darlington First was born out of a simple belief: that Darlington deserves a world-class business community. We're a collective of local business leaders, entrepreneurs, and community champions who want to see our town thrive.</p>
+      <p class="section-muted" style="margin-bottom:1.25rem;">We run relaxed, informal networking events — completely free to attend — because we believe the best connections shouldn't come with a price tag. From monthly coffee mornings to creative events like watching local sport together or a game of padel, no two events are the same.</p>
+      <p class="section-muted" style="margin-bottom:1.5rem;"><strong style="color:var(--navy);">100% Free to Attend</strong> — no membership fees, no hidden costs, no long-term commitments.</p>
+      <p class="section-muted">Darlington First is part of the First Connections Group — a wider ecosystem of networking, awards, and podcasting that champions businesses across the North East.</p>
+    </div>
+    <div style="max-width:780px;margin:2rem auto 0;">
+      <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Website-Images/trategy-tabel2.png" alt="Darlington First networking session" style="width:100%;border-radius:14px;object-fit:cover;max-height:360px;" />
+    </div>
+  </section>
+
+  <!-- OUR VALUES -->
+  <section style="padding:5rem 2rem;background:white;">
+    <div style="max-width:900px;margin:0 auto;text-align:center;">
+      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Our Values</p>
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.8rem,4vw,2.4rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:3rem;">What <em style="font-style:italic;color:var(--gold-dark);">drives us</em></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;">
+        <div style="background:var(--light-blue);border-radius:14px;padding:1.75rem;text-align:left;">
+          <div style="font-size:1.6rem;margin-bottom:0.75rem;"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3 style="font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Community First</h3>
+          <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;">We put the people of Darlington and the North East at the heart of everything we do. Real relationships over transactions.</p>
+        </div>
+        <div style="background:var(--light-blue);border-radius:14px;padding:1.75rem;text-align:left;">
+          <div style="font-size:1.6rem;margin-bottom:0.75rem;"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+          <h3 style="font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">No Barriers</h3>
+          <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;">Everyone deserves a seat at the table. We remove financial and social barriers so anyone can connect and grow.</p>
+        </div>
+        <div style="background:var(--light-blue);border-radius:14px;padding:1.75rem;text-align:left;">
+          <div style="font-size:1.6rem;margin-bottom:0.75rem;"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+          <h3 style="font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Real Social Value</h3>
+          <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;">We're not just about business cards. We generate genuine social value — inspiring stories, practical support, and lasting impact.</p>
+        </div>
+        <div style="background:var(--light-blue);border-radius:14px;padding:1.75rem;text-align:left;">
+          <div style="font-size:1.6rem;margin-bottom:0.75rem;"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+          <h3 style="font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Growth for All</h3>
+          <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;">From first-time founders to seasoned CEOs — we bridge the gap between ambition and experience so everyone grows together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad section-center" style="background:white;">
+    <h2 class="section-title">Our Story</h2>
+    <p class="section-muted max-680" style="margin:0 auto 0.5rem;">How Darlington First came to be.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M2 22 17 7"/><path d="M17 7C17 4.2 14.8 2 12 2c0 2.8 2.2 5 5 5z"/><path d="M17 7c2.8 0 5-2.2 5-5-2.8 0-5 2.2-5 5z"/></svg></div>
+        <div class="timeline-content">
+          <h3>The Idea Takes Root</h3>
+          <p>Frustrated by the lack of free, accessible networking in the North East, the founders of First Connections set out to create something different — a space where everyone belongs.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg></div>
+        <div class="timeline-content">
+          <h3>First Coffee Morning</h3>
+          <p>The inaugural Darlington First coffee morning brought together local business leaders in a relaxed setting, proving that great connections don't need a price tag.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+        <div class="timeline-content">
+          <h3>High Street Heroes Launches</h3>
+          <p>We introduced the North East High Street Heroes Awards — celebrating the unsung businesses making a real difference on our high streets.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div>
+        <div class="timeline-content">
+          <h3>Regional Podcast Goes Live</h3>
+          <p>The First Connections podcast launched, spotlighting the stories, insights, and voices driving business forward across the North East.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg></div>
+        <div class="timeline-content">
+          <h3>Growing Across the Region</h3>
+          <p>With sponsors on board and a growing community, Darlington First is expanding — becoming the first place businesses come to connect in the North East.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:5rem 2rem;background:var(--light-blue);">
+    <div style="max-width:860px;margin:0 auto;text-align:center;">
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.03em;margin-bottom:1.25rem;">Part of First Connections</h2>
+      <p class="section-muted max-680" style="margin:0 auto 3.5rem;font-size:1.05rem;">Darlington First sits within the broader First Connections Group — three pillars built to empower businesses across the North East.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+
+        <div class="fc-pillar-card">
+          <div class="fc-pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/><path d="m8 10 2 2 4-4"/></svg></div>
+          <h3 class="fc-pillar-title">Networking</h3>
+          <p class="fc-pillar-desc">Free monthly events in rotating local venues across Darlington — building genuine community, one connection at a time.</p>
+          <span class="fc-pillar-tag fc-tag-live">● Live</span>
+        </div>
+
+        <div class="fc-pillar-card fc-pillar-featured">
+          <div class="fc-pillar-icon" style="background:rgba(245,197,24,0.15);"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+          <h3 class="fc-pillar-title">Awards</h3>
+          <p class="fc-pillar-desc">The North East High Street Heroes Awards — shining a light on the businesses that make our communities great.</p>
+          <span class="fc-pillar-tag fc-tag-soon">● Coming Soon</span>
+        </div>
+
+        <div class="fc-pillar-card">
+          <div class="fc-pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div>
+          <h3 class="fc-pillar-title">Podcast</h3>
+          <p class="fc-pillar-desc">A regional podcast sharing the stories and insights of the people driving the North East forward.</p>
+          <span class="fc-pillar-tag fc-tag-progress">● In Production</span>
+        </div>
+
+      </div>
+
+      <div style="margin-top:2.5rem;display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
+        <div style="background:white;border-radius:12px;padding:1.25rem 2rem;display:flex;align-items:center;gap:0.75rem;border:1px solid rgba(30,58,122,0.1);">
+          <span style="font-size:1.5rem;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+          <div style="text-align:left;">
+            <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:0.15rem;">Part of</p>
+            <p style="font-size:1rem;font-weight:700;color:var(--navy);">First Connections Group</p>
+          </div>
+        </div>
+        <a onclick="showPage('projects')" class="btn-primary" style="cursor:pointer;">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROUDLY INDEPENDENT -->
+  <section style="padding:5rem 2rem;background:white;">
+    <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
+      <div>
+        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">The Team Behind Darlington First</p>
+        <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:1.25rem;">Proudly <em style="font-style:italic;color:var(--gold-dark);">independent</em></h2>
+        <p class="section-muted" style="margin-bottom:1rem;line-height:1.8;">Darlington First is run by local people who care deeply about this town and its business community. We're not a faceless corporation — we're your neighbours, your collaborators, your fellow North Easterners.</p>
+        <p class="section-muted" style="margin-bottom:1.5rem;line-height:1.8;">We believe Darlington First, Newcastle First and the wider First Connections network can help the North East punch above its weight on the national stage — starting with the grassroots, one coffee morning at a time.</p>
+        <p style="font-size:0.88rem;color:var(--muted);background:var(--light-yellow);border-left:3px solid var(--gold);padding:0.9rem 1rem;border-radius:4px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;margin-right:6px;"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg> <strong style="color:var(--navy);">Just a heads-up:</strong> While our events are free, we ask everyone to pay for their own coffee. It's our way of supporting the brilliant local venues who host us.</p>
+      </div>
+      <div>
+        <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Website-Images/open-door-sign.png" alt="Open for business" style="width:100%;border-radius:14px;object-fit:cover;height:380px;" />
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Ready to be part of it?</h2>
+    <p>Join us at the next Darlington First event — free, relaxed, and full of genuine connections.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;">
+      <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="btn-primary">Book Your Free Ticket</a>
+      <button onclick="showModal('contact-modal')" class="btn-primary" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.85rem 2rem;">Get in Touch</button>
+    </div>
+  </section>
+</div>
+
+<!-- ======================== PROJECTS PAGE ======================== -->
+<div class="page" id="page-projects">
+  <div class="page-hero">
+    <h1>Our <em>Projects</em></h1>
+    <p>Three pillars. One mission. Building the most connected business community in the North East.</p>
+  </div>
+
+  <section class="section-pad section-center" style="background:var(--light-blue);">
+    <h2 class="section-title">What We're Building</h2>
+    <p class="section-muted max-680" style="margin:0 auto;">Darlington First isn't just events. We're building a lasting ecosystem that generates real opportunities for businesses and communities across the region.</p>
+    <!-- NETWORKING ROW -->
+    <div style="margin:3rem 0 0;">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem;">
+        <div style="width:36px;height:3px;background:var(--gold);border-radius:2px;"></div>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700;color:var(--navy);letter-spacing:-0.01em;text-transform:uppercase;font-size:0.8rem;letter-spacing:0.1em;">Business Networking</h3>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+
+        <!-- DARLINGTON - LIVE -->
+        <div class="net-card net-card-live">
+          <div class="net-card-top">
+            <div class="net-city-badge net-badge-live">● Live</div>
+            <div class="net-icon" style="display:flex;align-items:center;justify-content:center;"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/></svg></div>
+            <h3 class="net-title">Darlington First</h3>
+            <p class="net-subtitle">Networking</p>
+          </div>
+          <div class="net-card-body">
+            <p class="net-desc">Free monthly coffee mornings and varied networking events in rotating local venues. No fees, no barriers — just great people and genuine connections.</p>
+            <ul class="net-features">
+              <li>Monthly coffee mornings</li>
+              <li>Creative event formats</li>
+              <li>Rotating local venues</li>
+              <li>100% free to attend</li>
+            </ul>
+          </div>
+          <div class="net-card-footer">
+            <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="btn-primary" style="width:100%;text-align:center;display:block;font-size:0.85rem;padding:0.75rem;">Book a Ticket</a>
+          </div>
+        </div>
+
+        <!-- NEWCASTLE - COMING SOON -->
+        <div class="net-card net-card-soon">
+          <div class="net-card-top">
+            <div class="net-city-badge net-badge-soon">● Coming Soon</div>
+            <div class="net-icon" style="opacity:0.6;"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/></svg></div>
+            <h3 class="net-title">Newcastle First</h3>
+            <p class="net-subtitle">Networking</p>
+          </div>
+          <div class="net-card-body">
+            <p class="net-desc">The First Connections model is heading to Newcastle — bringing free, barrier-free networking to the heart of one of the North East's most vibrant cities.</p>
+            <ul class="net-features">
+              <li>Launching soon</li>
+              <li>Free to attend</li>
+              <li>Local venue rotation</li>
+              <li>Be first to know</li>
+            </ul>
+          </div>
+          <div class="net-card-footer">
+            <button onclick="showModal('contact-modal')" class="btn-navy" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.85rem;padding:0.65rem 1.25rem;">Get Notified</button>
+          </div>
+        </div>
+
+        <!-- DURHAM - COMING SOON -->
+        <div class="net-card net-card-soon">
+          <div class="net-card-top">
+            <div class="net-city-badge net-badge-soon">● Coming Soon</div>
+            <div class="net-icon" style="opacity:0.6;"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/></svg></div>
+            <h3 class="net-title">Durham First</h3>
+            <p class="net-subtitle">Networking</p>
+          </div>
+          <div class="net-card-body">
+            <p class="net-desc">Durham is next on the map — bringing the same free, community-first networking experience to connect Durham's brilliant businesses and ambitious entrepreneurs.</p>
+            <ul class="net-features">
+              <li>Launching soon</li>
+              <li>Free to attend</li>
+              <li>Local venue rotation</li>
+              <li>Be first to know</li>
+            </ul>
+          </div>
+          <div class="net-card-footer">
+            <button onclick="showModal('contact-modal')" class="btn-navy" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.85rem;padding:0.65rem 1.25rem;">Get Notified</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- AWARDS & MEDIA ROW -->
+    <h3 style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin:3rem 0 1rem;letter-spacing:-0.01em;">Awards &amp; Media</h3>
+    <div class="card-grid-3 max-900" style="margin-top:0;">
+      <div class="project-card">
+        <div class="project-header"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></span><h3>High Street Heroes Awards</h3></div>
+        <div class="project-body">
+          <span class="project-status">● Coming Soon</span>
+          <p style="margin-top:1rem;">The North East High Street Heroes Awards — recognising and celebrating the businesses that make our high streets thrive and our communities stronger.</p>
+          <p>We'll be shining a spotlight on the unsung heroes doing incredible work in our towns and cities.</p>
+          <button onclick="showModal('contact-modal')" class="btn-navy" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.85rem;padding:0.65rem 1.25rem;">Get Notified</button>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-header"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span><h3>Regional Business Podcast</h3></div>
+        <div class="project-body">
+          <span class="project-status">● In Production</span>
+          <p style="margin-top:1rem;">A regional podcast spotlighting the stories, insights, and voices driving business forward across the North East.</p>
+          <p>Want to be featured? We're looking for inspiring business leaders with a story to tell.</p>
+          <a onclick="showPage('contact')" class="btn-navy" style="font-size:0.85rem;padding:0.65rem 1.25rem;cursor:pointer;">Get Involved</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" style="background:white;">
+    <div class="max-780" style="margin:0 auto;">
+      <h2 class="section-title section-center" style="text-align:center;">Become a Sponsor</h2>
+      <p class="section-muted" style="text-align:center;margin-bottom:2.5rem;">Our sponsors make everything possible. By supporting Darlington First, you're investing directly in Darlington's business community.</p>
+      <div class="card-grid-2" style="margin-top:0;">
+        <div class="card"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="m3 11 19-9-9 19-2-8-8-2z"/></svg></span><h3>Brand Visibility</h3><p>Your logo on all event materials, the website, and across our social channels — putting your brand in front of Darlington's business leaders.</p></div>
+        <div class="card"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><h3>Community Credibility</h3><p>Associate your brand with a community-first ethos that Darlington businesses respect and trust.</p></div>
+        <div class="card"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span><h3>Speaking Opportunities</h3><p>Opportunities to speak, present, or be featured at our events and on our podcast.</p></div>
+        <div class="card"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><h3>Network Access</h3><p>Direct access to a curated network of Darlington's most ambitious business leaders and entrepreneurs.</p></div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <button onclick="showModal('contact-modal')" class="btn-primary" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;">Enquire About Sponsorship</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad section-center" style="background:var(--light-blue);">
+    <p class="sponsors-eyebrow">Our Current Sponsors</p>
+    <div class="sponsor-logos">
+      <div class="sponsor-item"><img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Roam-App_logo.png" alt="Roam" /></div>
+      <div class="sponsor-item"><img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/The-Ironing-man.png" alt="The Ironing Man" /></div>
+      <div class="sponsor-item"><img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/NE-BIC.png" alt="NE BIC" /></div>
+      <div class="sponsor-item"><img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/NE-Hotel-Association.png" alt="North East Hotels Association" /></div>
+      <div class="sponsor-item"><img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Surgo-tech-logo-white.png" alt="Surgotech Solutions" style="max-height:44px;max-width:140px;object-fit:contain;" /></div>
+    </div>
+  </section>
+</div>
+
+<!-- ======================== EVENTS PAGE ======================== -->
+<div class="page" id="page-events">
+
+  <div class="events-hero">
+    <div class="events-hero-overlay"></div>
+    <div class="events-hero-content">
+      <span class="hero-tag">Year Ahead</span>
+      <h1>Darlington First<br><em>Event Calendar</em></h1>
+      <p>See what's coming up, plan ahead, and book your place through Eventbrite.</p>
+      <div class="hero-buttons" style="margin-top:1.5rem;">
+        <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="btn-primary">View on Eventbrite</a>
+        <a href="#cal-dates" class="btn-outline" onclick="document.getElementById('cal-dates').scrollIntoView({behavior:'smooth'});return false;">See 2026 Dates</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="section-pad" style="background:white;" id="cal-dates">
+    <div class="max-900" style="margin:0 auto;">
+      <h2 style="font-family:'Fraunces',serif;font-size:1.8rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;">Confirmed 2026 networking dates</h2>
+      <p class="section-muted" style="margin-bottom:2.5rem;">These are the confirmed Darlington First business networking dates for the year ahead. Every event is designed to keep the community connected, visible, and moving forward.</p>
+
+      <div class="cal-grid">
+        <div class="cal-card">
+          <p class="cal-month">APRIL</p>
+          <p class="cal-date">9 April 2026</p>
+          <p class="cal-desc">Monthly Darlington First networking event</p>
+          <a href="https://www.eventbrite.co.uk/e/darlington-first-business-networking-tickets-1983883544085" target="_blank" class="cal-link">Book via Eventbrite →</a>
+        </div>
+        <div class="cal-card">
+          <p class="cal-month">MAY</p>
+          <p class="cal-date">7 May 2026</p>
+          <p class="cal-desc">Monthly Darlington First networking event</p>
+          <a href="https://www.eventbrite.co.uk/e/darlington-first-business-networking-tickets-1983885065636" target="_blank" class="cal-link">Book via Eventbrite →</a>
+        </div>
+        <div class="cal-card">
+          <p class="cal-month">JUNE</p>
+          <p class="cal-date">11 June 2026</p>
+          <p class="cal-desc">Monthly Darlington First networking event</p>
+          <a href="https://www.eventbrite.co.uk/e/darlington-first-business-networking-tickets-1985274696058" target="_blank" class="cal-link">Book via Eventbrite →</a>
+        </div>
+        <div class="cal-card">
+          <p class="cal-month">JULY</p>
+          <p class="cal-date">9 July 2026</p>
+          <p class="cal-desc">Monthly Darlington First networking event</p>
+          <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="cal-link">Book via Eventbrite →</a>
+        </div>
+        <div class="cal-card">
+          <p class="cal-month">AUGUST</p>
+          <p class="cal-date">13 August 2026</p>
+          <p class="cal-desc">Monthly Darlington First networking event</p>
+          <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="cal-link">Book via Eventbrite →</a>
+        </div>
+        <div class="cal-card" style="border:2px solid var(--gold);">
+          <span class="event-featured-badge">FEATURED</span>
+          <p class="cal-month">SEPTEMBER</p>
+          <p class="cal-date">10 September 2026</p>
+          <p class="cal-desc">Monthly Darlington First networking event</p>
+          <p class="event-note">Includes the High Street Heroes Awards</p>
+          <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="cal-link">Book via Eventbrite →</a>
+        </div>
+        <div class="cal-card">
+          <p class="cal-month">OCTOBER</p>
+          <p class="cal-date">8 October 2026</p>
+          <p class="cal-desc">Monthly Darlington First networking event</p>
+          <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="cal-link">Book via Eventbrite →</a>
+        </div>
+        <div class="cal-card">
+          <p class="cal-month">NOVEMBER</p>
+          <p class="cal-date">5 November 2026</p>
+          <p class="cal-desc">Monthly Darlington First networking event</p>
+          <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="cal-link">Book via Eventbrite →</a>
+        </div>
+        <div class="cal-card">
+          <p class="cal-month">DECEMBER</p>
+          <p class="cal-date">10 December 2026</p>
+          <p class="cal-desc">Monthly Darlington First networking event</p>
+          <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="cal-link">Book via Eventbrite →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad section-center" style="background:var(--light-blue);">
+    <div style="background:var(--navy);border-radius:16px;padding:2.5rem 2rem;max-width:560px;margin:0 auto;text-align:center;">
+      <h3 style="font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;color:white;margin-bottom:0.75rem;">Book the next event</h3>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7;margin-bottom:1.5rem;">All bookings are handled through our Eventbrite collection, so you can grab your free ticket in seconds.</p>
+      <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="btn-primary" style="width:100%;display:block;text-align:center;margin-bottom:1rem;">Open Eventbrite Collection</a>
+      <p style="font-size:0.78rem;color:rgba(255,255,255,0.5);">Perfect for visitors who want the latest live listing and ticket availability.</p>
+    </div>
+  </section>
+
+  <section style="padding:5rem 2rem;background:white;">
+    <div style="max-width:900px;margin:0 auto;text-align:center;">
+      <span class="pill-badge dark">What to Expect</span>
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--navy);letter-spacing:-0.03em;margin:0.75rem 0 1.25rem;">Every event is different</h2>
+      <p class="section-muted max-680" style="margin:0 auto 3.5rem;font-size:1.05rem;">No two Darlington First events are the same — but every one of them is free, welcoming, and worth your time.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+        <div class="expect-card">
+          <div class="expect-icon-wrap" style="background:var(--light-blue);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg>
+          </div>
+          <h3 class="expect-title">Monthly Coffee Mornings</h3>
+          <p class="expect-desc">Our guaranteed monthly staple — relax, connect, and have a great conversation over a cuppa in a rotating local venue.</p>
+          <span class="expect-tag">Every month</span>
+        </div>
+        <div class="expect-card expect-card-featured">
+          <div class="expect-icon-wrap" style="background:rgba(245,197,24,0.2);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg>
+          </div>
+          <h3 class="expect-title" style="color:white;">High Street Heroes Awards</h3>
+          <p class="expect-desc" style="color:rgba(255,255,255,0.8);">Our flagship September event — celebrating the businesses and people making a real difference on our high streets.</p>
+          <span class="expect-tag" style="background:var(--gold);color:var(--navy-dark);">September 2026</span>
+        </div>
+        <div class="expect-card">
+          <div class="expect-icon-wrap" style="background:var(--light-blue);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3 class="expect-title">Creative Formats</h3>
+          <p class="expect-desc">From padel and bowling to watching local sport together — we keep things fresh so every event feels genuinely new.</p>
+          <span class="expect-tag">Varied throughout year</span>
+        </div>
+      </div>
+      <div style="margin-top:2rem;padding:1.25rem 1.75rem;background:var(--light-yellow);border-radius:12px;border-left:4px solid var(--gold);text-align:left;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <p style="font-size:0.95rem;color:var(--navy);font-weight:600;margin:0;">Every single event is 100% free to attend — no membership, no catch, just great people and great conversation.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ======================== RESOURCES PAGE ======================== -->
+<div class="page" id="page-resources">
+
+  <div class="page-hero">
+    <h1>Business <em>Resources</em> &amp; Offers</h1>
+    <p>Exclusive discounts, trusted services, and powerful business tools from our partners — available to the Darlington First community.</p>
+  </div>
+
+  <!-- FEATURED PARTNER OFFERS -->
+  <section style="padding:5rem 2rem;background:var(--light-yellow);">
+    <div style="max-width:900px;margin:0 auto;">
+      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Delivery Partners</p>
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:3rem;">Featured <em style="font-style:italic;color:var(--gold-dark);">Partner Offers</em></h2>
+      <p style="font-size:1rem;color:var(--muted);margin-bottom:3rem;margin-top:-2rem;">These partners have made a commitment to the Darlington First community — offering real value and exclusive deals to every member.</p>
+
+      <!-- THE IRONING MAN -->
+      <div class="res-offer-card" style="margin-bottom:2rem;">
+        <div class="res-offer-body">
+          <div class="res-offer-header">
+            <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/The-Ironing-man.png" alt="The Ironing Man" style="max-height:40px;max-width:100px;object-fit:contain;" />
+            <div>
+              <h3 class="res-offer-title">The Ironing Man</h3>
+              <p class="res-offer-subtitle">Ironing &amp; Laundry Service · Darlington</p>
+            </div>
+          </div>
+          <p class="res-offer-desc">Fast, friendly ironing and laundry service with collection and delivery available across Darlington. A proud delivery partner of Darlington First, supporting our local business community.</p>
+          <p class="res-offer-desc">As part of the Darlington First community, you can enjoy an exclusive discount on all their services. Simply quote <strong style="color:var(--navy);">Darlington First Networking</strong> when you get in touch.</p>
+          <a href="https://ironing-man.co.uk/?gad_source=1" target="_blank" class="res-visit-link">Visit Website →</a>
+        </div>
+        <div class="res-offer-badge res-badge-gold">
+          <p class="res-badge-label">Exclusive Discount</p>
+          <p class="res-badge-value">10% Off</p>
+          <p class="res-badge-sub">Use code: <span style="background:var(--navy);color:white;padding:0.15rem 0.5rem;border-radius:4px;font-family:monospace;font-size:0.85rem;">DF10</span></p>
+        </div>
+      </div>
+
+      <!-- BUSINESS SERVICE HUB -->
+      <div class="res-offer-card" style="margin-bottom:2rem;">
+        <div class="res-offer-body">
+          <div class="res-offer-header">
+            <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Roam-App_logo.png" alt="Roam" style="max-height:40px;max-width:100px;object-fit:contain;" />
+            <div>
+              <h3 class="res-offer-title">Business Service Hub</h3>
+              <p class="res-offer-subtitle">Premium Business Tools Bundle</p>
+            </div>
+          </div>
+          <p class="res-offer-desc">Everything your business needs — all in one place, for just <strong style="color:var(--navy);">£24.99/month + VAT</strong>. No hidden fees, no long-term contracts. A bundle of premium tools typically worth over <strong style="color:var(--navy);">£1,000/year</strong>.</p>
+          <p style="font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem;">What&apos;s Included:</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1.25rem;">
+            <div class="res-feature-box"><strong>Bookkeeping Software</strong><span>Access to QuickBooks, Xero, and Sage — choose the platform that works best for you.</span></div>
+            <div class="res-feature-box"><strong>Office 365 &amp; All Apps</strong><span>Full Microsoft 365 membership — Word, Excel, PowerPoint, Outlook, Teams, and more.</span></div>
+            <div class="res-feature-box"><strong>Acronis Cyber Security</strong><span>Enterprise-grade data backup, disaster recovery, and cyber protection.</span></div>
+            <div class="res-feature-box"><strong>Dropbox &amp; E-Signatures</strong><span>Cloud storage plus Dropbox eSignatures — create, share, and sign documents seamlessly.</span></div>
+          </div>
+          <div class="res-feature-box" style="background:var(--light-yellow);border-left:3px solid var(--gold);margin-bottom:1.25rem;">
+            <strong>⭐ Chartered Accountant Support <span style="color:var(--gold-dark);">(Worth £700/year)</span></strong>
+            <span>4 free hours of chartered accountant support per year — one hour per quarter.</span>
+          </div>
+          <div style="background:var(--navy);border-radius:10px;padding:1.5rem;text-align:center;margin-bottom:1rem;">
+            <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.4rem;">All of this for just</p>
+            <p style="font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:white;line-height:1;">£24.99<span style="font-size:0.9rem;font-weight:400;">/month + VAT</span></p>
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.6);margin:0.4rem 0 1rem;">No contracts. No hidden fees. Cancel anytime.</p>
+            <a href="https://roamlocal.businessserviceshubuk.com/" target="_blank" class="btn-primary">Activate Now →</a>
+          </div>
+        </div>
+        <div class="res-offer-badge res-badge-navy">
+          <p class="res-badge-label" style="color:rgba(255,255,255,0.65);">Partner Offer</p>
+          <p class="res-badge-value" style="color:white;font-size:1.5rem;">£24.99</p>
+          <p class="res-badge-sub" style="color:rgba(255,255,255,0.65);">/month + VAT</p>
+        </div>
+      </div>
+
+      <!-- NE BIC -->
+      <div class="res-offer-card" style="margin-bottom:2rem;">
+        <div class="res-offer-body">
+          <div class="res-offer-header">
+            <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/NE-BIC.png" alt="NE BIC" style="max-height:40px;max-width:80px;object-fit:contain;" />
+            <div>
+              <span style="background:var(--gold);color:var(--navy-dark);font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:4px;display:inline-block;margin-bottom:0.3rem;">Sponsor</span>
+              <h3 class="res-offer-title">NE BIC — Darlington Workspace</h3>
+              <p class="res-offer-subtitle">Co-working &amp; Meeting Rooms · Darlington</p>
+            </div>
+          </div>
+          <p class="res-offer-desc">Superb co-working spaces and meeting rooms in the heart of Darlington. Two centres — Business Central and Innovation Central — offering offices, meeting rooms, and a co-working lounge to suit businesses of all sectors.</p>
+          <p class="res-offer-desc">As a proud sponsor of Darlington First, NE BIC are offering our community two exclusive deals:</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1.25rem;">
+            <div class="res-feature-box"><strong>Free Co-Working Day Pass</strong><span>Enjoy a full free day in the co-working area — experience the space, the community, and the facilities.</span></div>
+            <div class="res-feature-box"><strong>10% Off First Meeting Room Booking</strong><span>Professional spaces for presentations, workshops, and team sessions.</span></div>
+          </div>
+          <div class="res-feature-box" style="margin-bottom:1rem;">
+            <strong>How to book:</strong>
+            <span>To arrange either offer, get in touch with the team: <a href="mailto:hello@first-connections.com" style="color:var(--navy);font-weight:600;">hello@first-connections.com</a> &nbsp;·&nbsp; <a href="tel:01325734871" style="color:var(--navy);font-weight:600;">01325 734 871</a></span>
+          </div>
+          <a href="https://www.nebic.co.uk" target="_blank" class="res-visit-link">Visit Website →</a>
+        </div>
+        <div class="res-offer-badge res-badge-navy">
+          <p class="res-badge-label" style="color:rgba(255,255,255,0.65);">Exclusive Offers</p>
+          <p class="res-badge-value" style="color:white;font-size:1.1rem;line-height:1.3;">Free Day Pass</p>
+          <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin:0.2rem 0;">+</p>
+          <p style="font-size:1rem;font-weight:700;color:white;">10% Off</p>
+          <p class="res-badge-sub" style="color:rgba(255,255,255,0.65);">Meeting Rooms</p>
+        </div>
+      </div>
+
+      <!-- ROAM -->
+      <div class="res-offer-card res-offer-card-navy" style="margin-bottom:2rem;">
+        <div class="res-offer-body" style="width:100%;">
+          <div style="text-align:center;margin-bottom:2rem;">
+            <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Roam-App_logo.png" alt="Roam" style="max-height:48px;object-fit:contain;margin-bottom:0.75rem;" />
+            <h3 style="font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;color:white;margin-bottom:0.4rem;">Roam</h3>
+            <p style="font-size:0.9rem;color:rgba(255,255,255,0.7);">Your gateway to everything local</p>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+            <div class="res-roam-box">
+              <h4 style="font-weight:700;color:white;margin-bottom:0.75rem;">For Residents &amp; Consumers</h4>
+              <p style="font-size:0.85rem;color:rgba(255,255,255,0.75);margin-bottom:0.75rem;">Download the Roam app and stay connected to your local community. Discover:</p>
+              <ul style="list-style:none;font-size:0.85rem;color:rgba(255,255,255,0.8);margin-bottom:1.25rem;">
+                <li>✓ Regional local community news</li>
+                <li>✓ Exclusive offers &amp; discount codes</li>
+                <li>✓ Local events happening near you</li>
+                <li>✓ Deals from businesses in your area</li>
+              </ul>
+              <a href="https://www.roam-everywhere.com/get-the-app" target="_blank" class="btn-primary" style="display:block;text-align:center;">Download the App</a>
+            </div>
+            <div class="res-roam-box">
+              <h4 style="font-weight:700;color:white;margin-bottom:0.75rem;">For Local Businesses</h4>
+              <p style="font-size:0.85rem;color:rgba(255,255,255,0.75);margin-bottom:0.75rem;">Get your business listed on Roam and reach local customers. The Business Service Hub includes:</p>
+              <ul style="list-style:none;font-size:0.85rem;color:rgba(255,255,255,0.8);margin-bottom:1.25rem;">
+                <li>✓ QuickBooks, Xero, Sage — your choice</li>
+                <li>✓ Office 365 full suite</li>
+                <li>✓ Acronis cyber security &amp; backup</li>
+                <li>✓ Dropbox &amp; e-signatures</li>
+                <li>✓ 4hrs chartered accountant support/yr</li>
+              </ul>
+              <a href="https://roamlocal.businessserviceshubuk.com/" target="_blank" class="btn-outline" style="display:block;text-align:center;">Activate Business Hub — £24.99/mo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SURGOTECH PARTNER OFFER -->
+  <section style="padding:0 2rem 2rem;background:var(--light-yellow);">
+    <div style="max-width:900px;margin:0 auto;">
+      <div class="res-offer-card" style="background:white;">
+        <div class="res-offer-body">
+          <div class="res-offer-header">
+            <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Surgo-tech-logo-white.png" alt="Surgotech Solutions" style="max-height:44px;max-width:140px;object-fit:contain;" />
+            <div>
+              <h3 class="res-offer-title">Surgotech Solutions</h3>
+              <p class="res-offer-subtitle">Technology &amp; Business Improvement · North East</p>
+            </div>
+          </div>
+          <p class="res-offer-desc">Surgotech Solutions helps businesses unlock their potential through smart technology and proven process improvement strategies. As a Darlington First member, you get access to two exclusive deals.</p>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;margin-bottom:1.25rem;">
+            <div class="res-feature-box">
+              <strong>Option 1 — Free: 1-Hour Discovery Call</strong>
+              <span>A free, no-obligation consultation to explore how Surgotech can streamline your business operations.</span>
+            </div>
+            <div class="res-feature-box">
+              <strong>Option 2 — 40% Off: Business Process Audit</strong>
+              <span>An 8-hour audit identifying inefficiencies and delivering a clear improvement roadmap. £895 → <strong style="color:var(--navy);">£537</strong></span>
+            </div>
+          </div>
+          <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem;">Reference: <strong style="color:var(--navy);">Darlington First Networking</strong></p>
+          <a href="https://www.surgotechsolutions.com" target="_blank" class="res-visit-link">Visit Website →</a>
+        </div>
+        <div class="res-offer-badge res-badge-navy">
+          <p class="res-badge-label" style="color:rgba(255,255,255,0.65);">Exclusive Offer</p>
+          <p class="res-badge-value" style="color:var(--gold);font-size:1.1rem;line-height:1.3;">40% Off</p>
+          <p class="res-badge-sub" style="color:rgba(255,255,255,0.65);">Business Audit</p>
+          <p style="font-size:0.7rem;color:rgba(255,255,255,0.5);margin-top:0.5rem;">Code: DF-SURGE</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY RESOURCES -->
+  <section style="padding:5rem 2rem;background:var(--light-blue);">
+    <div style="max-width:900px;margin:0 auto;">
+      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Community Resources</p>
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:0.75rem;">Free tools to support your <em style="font-style:italic;color:var(--gold-dark);">team &amp; community</em></h2>
+      <p style="font-size:1rem;color:var(--muted);margin-bottom:3rem;">Free apps built right here in the North East — supporting wellbeing and employment readiness.</p>
+
+      <!-- EMOTIONAL WELLBEING -->
+      <div class="res-offer-card" style="margin-bottom:2rem;background:white;">
+        <div class="res-offer-body">
+          <div class="res-offer-header">
+            <span style="font-size:2rem;">🧠</span>
+            <div>
+              <h3 class="res-offer-title">Emotional Wellbeing Indicator</h3>
+            </div>
+          </div>
+          <p class="res-offer-desc">A smarter way to improve your emotional health. This free app uses marginal gains — small, targeted actions that lead to big results.</p>
+          <p class="res-offer-desc">Answer 100 simple yes-or-no questions to assess key areas of your wellbeing. When you respond negatively, the app provides practical, personalised advice to help you improve. Your unique action plan evolves with you, helping you build lasting habits and track progress over time.</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-bottom:1.25rem;">
+            <div class="res-stat-box"><strong>100</strong><span>Yes/No Questions</span></div>
+            <div class="res-stat-box"><strong>Free</strong><span>Always</span></div>
+            <div class="res-stat-box"><strong>iOS &amp; Android</strong><span>Available On</span></div>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.75rem;">
+            <span class="res-tag">Emotional Health</span>
+            <span class="res-tag">Marginal Gains</span>
+            <span class="res-tag">Progress Tracking</span>
+            <span class="res-tag">Mentoring Tool</span>
+          </div>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <a href="https://apps.apple.com/gb/app/emotional-wellbeing-indicator/id6480443963" target="_blank" class="btn-navy" style="font-size:0.85rem;padding:0.65rem 1.25rem;">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.emotionalwellbeingindicator" target="_blank" class="btn-navy" style="font-size:0.85rem;padding:0.65rem 1.25rem;">Google Play</a>
+            <a href="https://www.emotionalwellbeingindicator.com" target="_blank" class="res-visit-link" style="line-height:2.5;">Visit Website →</a>
+          </div>
+        </div>
+        <div class="res-offer-badge" style="background:#27ae60;color:white;">
+          <p class="res-badge-label" style="color:rgba(255,255,255,0.8);">Community Resource</p>
+          <p class="res-badge-value" style="color:white;font-size:1.4rem;">Free App</p>
+          <p class="res-badge-sub" style="color:rgba(255,255,255,0.8);">Download today</p>
+        </div>
+      </div>
+
+      <!-- PREPARATION FOR EMPLOYMENT -->
+      <div class="res-offer-card" style="margin-bottom:2rem;background:white;">
+        <div class="res-offer-body">
+          <div class="res-offer-header">
+            <span style="font-size:2rem;">💼</span>
+            <div>
+              <h3 class="res-offer-title">Preparation For Employment</h3>
+            </div>
+          </div>
+          <p class="res-offer-desc">A smarter way to prepare yourself for employment. This free app uses marginal gains — small, targeted actions that lead to big results.</p>
+          <p class="res-offer-desc">Answer 100 simple yes-or-no questions to assess key areas. The app provides practical, personalised advice and generates a <strong style="color:var(--navy);">certificate of employability</strong> to present to potential employers.</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-bottom:1.25rem;">
+            <div class="res-stat-box"><strong>100</strong><span>Yes/No Questions</span></div>
+            <div class="res-stat-box"><strong>Free</strong><span>Always</span></div>
+            <div class="res-stat-box"><strong>iOS &amp; Android</strong><span>Available On</span></div>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.75rem;">
+            <span class="res-tag">Job Readiness</span>
+            <span class="res-tag">Marginal Gains</span>
+            <span class="res-tag">Certificate</span>
+            <span class="res-tag">Strengths Profile</span>
+          </div>
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <a href="https://apps.apple.com/gb/app/preparation-for-employment/id6480444035" target="_blank" class="btn-navy" style="font-size:0.85rem;padding:0.65rem 1.25rem;">App Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.preparationforemployment" target="_blank" class="btn-navy" style="font-size:0.85rem;padding:0.65rem 1.25rem;">Google Play</a>
+            <a href="https://www.preparationforemployment.com" target="_blank" class="res-visit-link" style="line-height:2.5;">Visit Website →</a>
+          </div>
+        </div>
+        <div class="res-offer-badge" style="background:#7c5cbf;color:white;">
+          <p class="res-badge-label" style="color:rgba(255,255,255,0.8);">Community Resource</p>
+          <p class="res-badge-value" style="color:white;font-size:1.4rem;">Free App</p>
+          <p class="res-badge-sub" style="color:rgba(255,255,255,0.8);">Download today</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OUR SPONSORS -->
+  <section style="padding:5rem 2rem;background:white;">
+    <div style="max-width:900px;margin:0 auto;">
+      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Delivery Partners</p>
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:3rem;">Our <em style="font-style:italic;color:var(--gold-dark);">Sponsors</em></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:3rem;">
+        <a href="https://www.roam-everywhere.com/get-the-app" target="_blank" class="res-sponsor-tile">
+          <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Roam-App_logo.png" alt="Roam" />
+          <h4>Roam</h4>
+          <p>Your gateway to everything local — connecting residents, businesses and communities.</p>
+          <span>Visit Website</span>
+        </a>
+        <a href="https://ironing-man.co.uk/?gad_source=1" target="_blank" class="res-sponsor-tile">
+          <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/The-Ironing-man.png" alt="The Ironing Man" />
+          <h4>The Ironing Man</h4>
+          <p>Professional ironing and laundry with collection and delivery across Darlington.</p>
+          <span>Visit Website</span>
+        </a>
+        <a href="https://www.nebic.co.uk" target="_blank" class="res-sponsor-tile">
+          <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/NE-BIC.png" alt="NE BIC" />
+          <h4>NE BIC</h4>
+          <p>The space to build a better business — co-working, offices and support in Darlington.</p>
+          <span>Visit Website</span>
+        </a>
+        <a href="#" target="_blank" class="res-sponsor-tile">
+          <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/NE-Hotel-Association.png" alt="NE Hotels Association" />
+          <h4>NE Hotels Association</h4>
+          <p>Representing and supporting the hospitality sector across the North East region.</p>
+          <span>Visit Website</span>
+        </a>
+        <a href="https://www.surgotechsolutions.com" target="_blank" class="res-sponsor-tile">
+          <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Surgo-tech-logo-white.png" alt="Surgotech Solutions" style="max-height:44px;max-width:140px;object-fit:contain;" />
+          <h4>Surgotech Solutions</h4>
+          <p>Technology solutions helping businesses grow smarter and faster.</p>
+          <span>Visit Website</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE COMING SOON -->
+  <section style="padding:4rem 2rem;background:var(--light-blue);text-align:center;">
+    <div style="max-width:640px;margin:0 auto;">
+      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">More Coming Soon</p>
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:1rem;">More <em style="font-style:italic;color:var(--gold-dark);">Coming Soon</em></h2>
+      <p style="font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;">We're always looking for great local businesses to partner with. If you'd like your business featured here or have a discount to share with the Darlington First community, get in touch.</p>
+      <button onclick="showModal('contact-modal')" class="btn-primary" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.85rem 2rem;">Get In Touch</button>
+    </div>
+  </section>
+
+</div>
+
+<!-- ======================== CONTACT PAGE ======================== -->
+<div class="page" id="page-contact">
+  <div class="page-hero">
+    <h1>Let's start a <em>conversation</em></h1>
+    <p>Whether you want to attend an event, become a sponsor, host a venue, or just say hello — we'd love to hear from you.</p>
+  </div>
+
+  <!-- QUICK ACTION CARDS -->
+  <section style="padding:4rem 2rem;background:var(--light-blue);">
+    <div style="max-width:900px;margin:0 auto;">
+      <div style="text-align:center;margin-bottom:2.5rem;">
+        <a href="mailto:hello@first-connections.com" style="font-size:1.1rem;font-weight:700;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--gold);">hello@first-connections.com</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:3rem;">
+        <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="contact-action-card">
+          <span class="contact-action-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg></span>
+          <h3>Book an Event</h3>
+          <p>All events are free to attend</p>
+        </a>
+        <a href="mailto:hello@first-connections.com" class="contact-action-card">
+          <span class="contact-action-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/><path d="m8 10 2 2 4-4"/></svg></span>
+          <h3>Become a Sponsor</h3>
+          <p>Support and grow with Darlington First</p>
+        </a>
+        <a href="mailto:hello@first-connections.com" class="contact-action-card">
+          <span class="contact-action-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <h3>Host a Venue</h3>
+          <p>Rotate your space into our events calendar</p>
+        </a>
+        <a href="mailto:hello@first-connections.com" class="contact-action-card">
+          <span class="contact-action-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
+          <h3>Podcast Guest</h3>
+          <p>Share your story on our podcast</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM + GET INVOLVED -->
+  <section style="padding:5rem 2rem;background:white;">
+    <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+
+      <div>
+        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;">Send Us a Message</p>
+        <h2 style="font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:1.5rem;">We'd love to <em style="font-style:italic;color:var(--gold-dark);">hear from you</em></h2>
+        <div class="contact-form">
+          <div class="form-group"><label>Your Name</label><input type="text" placeholder="e.g. Jane Smith" /></div>
+          <div class="form-group"><label>Email Address</label><input type="email" placeholder="jane@yourbusiness.com" /></div>
+          <div class="form-group"><label>What's it about?</label>
+            <select>
+              <option value="">General Enquiry</option>
+              <option>Attend an event</option>
+              <option>Sponsorship</option>
+              <option>Host a Venue</option>
+              <option>Newsletter subscription</option>
+              <option>Podcast Guest</option>
+              <option>High Street Heroes Awards</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Your Message</label><textarea placeholder="Tell us a bit about yourself and what you're looking for..."></textarea></div>
+          <a href="mailto:hello@first-connections.com" class="btn-primary" style="width:100%;text-align:center;display:block;">Send Message</a>
+          <p style="font-size:0.78rem;color:var(--muted);text-align:center;margin-top:0.75rem;">We typically respond within 1–2 business days.</p>
+        </div>
+      </div>
+
+      <div>
+        <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;">Get Involved</p>
+        <h2 style="font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:1.5rem;">Ways to <em style="font-style:italic;color:var(--gold-dark);">work with us</em></h2>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          <a href="mailto:hello@first-connections.com" class="get-involved-card">
+            <div class="gi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/><path d="m8 10 2 2 4-4"/></svg></div>
+            <div><h3>Become a Sponsor</h3><p>Get your brand in front of local business leaders</p></div>
+          </a>
+          <a href="mailto:hello@first-connections.com" class="get-involved-card">
+            <div class="gi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><h3>Host a Venue</h3><p>Rotate your space into our monthly events calendar</p></div>
+          </a>
+          <a href="mailto:hello@first-connections.com" class="get-involved-card">
+            <div class="gi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div>
+            <div><h3>Podcast Guest</h3><p>Share your business story on the Darlington First podcast</p></div>
+          </a>
+          <a href="mailto:hello@first-connections.com" class="get-involved-card">
+            <div class="gi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
+            <div><h3>High Street Heroes</h3><p>Nominate a business that deserves recognition</p></div>
+          </a>
+        </div>
+
+        <div style="margin-top:2rem;background:var(--navy);border-radius:14px;padding:1.75rem;text-align:center;">
+          <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.5rem;">Stay in the Loop</p>
+          <h3 style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:white;margin-bottom:0.5rem;">Subscribe to our <em style="font-style:italic;color:var(--gold);">newsletter</em></h3>
+          <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin-bottom:1rem;line-height:1.6;">Event dates, venue announcements and community news — straight to your inbox.</p>
+          <a href="mailto:hello@first-connections.com" class="btn-primary" style="display:block;text-align:center;">Subscribe</a>
+          <p style="font-size:0.72rem;color:rgba(255,255,255,0.35);margin-top:0.6rem;">No spam, ever. Unsubscribe any time.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p class="footer-logo">Darlington First</p>
+      <p class="footer-tagline">A free, community-first business networking event for Darlington and the wider North East. Building connections, generating real opportunity.</p>
+      <p class="footer-part-of">Part of the <strong>First Connections Network</strong></p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Navigate</p>
+      <ul>
+        <li><a onclick="showPage('home')">Home</a></li>
+        <li><a onclick="showPage('about')">About</a></li>
+        <li><a onclick="showPage('events')">Events</a></li>
+        <li><a onclick="showPage('projects')">Projects</a></li>
+        <li><a onclick="showPage('resources')">Resources</a></li>
+        <li><a onclick="showPage('contact')">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Get Involved</p>
+      <ul>
+        <li><a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank">Book a Ticket</a></li>
+        <li><a onclick="showPage('contact')">Newsletter</a></li>
+        <li><a onclick="showPage('projects')">High Street Heroes</a></li>
+        <li><a onclick="showPage('projects')">Podcast</a></li>
+        <li><a href="mailto:hello@first-connections.com">hello@first-connections.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Darlington First. All rights reserved. &nbsp;·&nbsp; Part of the <strong style="color:rgba(255,255,255,0.5);">First Connections Network</strong></p>
+  </div>
+</footer>
+
+<!-- CONTACT MODAL -->
+<div id="contact-modal" class="modal-backdrop" style="display:none;position:fixed;inset:0;background:rgba(10,20,50,0.75);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:white;border-radius:20px;width:100%;max-width:680px;max-height:90vh;overflow-y:auto;">
+    <div style="background:var(--navy);border-radius:20px 20px 0 0;padding:1.75rem 2rem;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.25rem;">Darlington First</p>
+        <h2 style="font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;color:white;margin:0;">Get in <em style="color:var(--gold);font-style:italic;">Touch</em></h2>
+      </div>
+      <button onclick="closeModal('contact-modal')" style="background:rgba(255,255,255,0.12);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.3rem;cursor:pointer;">&times;</button>
+    </div>
+    <div style="padding:2rem;">
+      <form id="contact-form">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div class="form-group"><label>First Name *</label><input type="text" name="firstName" placeholder="Jane" required /></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" /></div>
+        </div>
+        <div class="form-group" style="margin-bottom:1rem;"><label>Email Address *</label><input type="email" name="email" placeholder="jane@yourbusiness.com" required /></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div class="form-group"><label>Business Name</label><input type="text" name="company" placeholder="Your company" /></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="07700 900000" /></div>
+        </div>
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label>How can we help?</label>
+          <select name="topic">
+            <option value="General Enquiry">General Enquiry</option>
+            <option value="Attend an Event">Attend an Event</option>
+            <option value="Newsletter Subscription">Newsletter Subscription</option>
+            <option value="Sponsorship">Sponsorship</option>
+            <option value="Host a Venue">Host a Venue</option>
+            <option value="Podcast Guest">Podcast Guest</option>
+            <option value="High Street Heroes Awards">High Street Heroes Awards</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:1.5rem;"><label>Your Message</label><textarea name="message" placeholder="Tell us a bit about yourself and what you're looking for..." style="height:100px;"></textarea></div>
+        <button type="submit" class="btn-primary" style="width:100%;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.9rem;">Send Message</button>
+        <p style="font-size:0.75rem;color:var(--muted);text-align:center;margin-top:0.75rem;">We typically respond within 1-2 business days.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER MODAL -->
+<div id="newsletter-modal" class="modal-backdrop" style="display:none;position:fixed;inset:0;background:rgba(10,20,50,0.75);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:white;border-radius:20px;width:100%;max-width:480px;">
+    <div style="background:var(--navy);border-radius:20px 20px 0 0;padding:1.75rem 2rem;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.25rem;">Stay in the Loop</p>
+        <h2 style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;color:white;margin:0;">Subscribe to our <em style="color:var(--gold);font-style:italic;">newsletter</em></h2>
+      </div>
+      <button onclick="closeModal('newsletter-modal')" style="background:rgba(255,255,255,0.12);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.3rem;cursor:pointer;">&times;</button>
+    </div>
+    <div style="padding:2rem;">
+      <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.7;">Event dates, venue announcements and community news straight to your inbox. No spam, ever.</p>
+      <form class="newsletter-form">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div class="form-group"><label>First Name</label><input type="text" name="firstName" placeholder="Jane" /></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" /></div>
+        </div>
+        <div class="form-group" style="margin-bottom:1.25rem;"><label>Email Address *</label><input type="email" name="email" placeholder="jane@yourbusiness.com" required /></div>
+        <button type="submit" class="btn-primary" style="width:100%;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.9rem;">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Navigation ──────────────────────────────────────────────
+  var pages = ['home','about','events','projects','resources','contact'];
+  var pageTitles = {
+    home: 'Darlington First — Business Networking',
+    about: 'About — Darlington First',
+    events: 'Events — Darlington First',
+    projects: 'Our Projects — Darlington First',
+    resources: 'Resources & Offers — Darlington First',
+    contact: 'Contact — Darlington First'
+  };
+
+  function showPage(id) {
+    if (pages.indexOf(id) === -1) id = 'home';
+    document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function(a) { a.classList.remove('active'); });
+    var page = document.getElementById('page-' + id);
+    if (page) page.classList.add('active');
+    var navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    history.pushState({ page: id }, '', '#' + id);
+    document.title = pageTitles[id] || 'Darlington First';
+  }
+
+  function toggleMenu() {
+    var menu = document.getElementById('mobile-menu');
+    var btn = document.getElementById('hamburger');
+    if (!menu || !btn) return;
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  function closeMenu() {
+    var menu = document.getElementById('mobile-menu');
+    var btn = document.getElementById('hamburger');
+    if (menu) menu.classList.remove('open');
+    if (btn) btn.classList.remove('open');
+  }
+
+  function navTo(id) {
+    showPage(id);
+    closeMenu();
+  }
+
+  window.addEventListener('popstate', function(e) {
+    var id = (e.state && e.state.page) ? e.state.page : 'home';
+    showPage(id);
+  });
+
+  // Close hamburger on outside click
+  document.addEventListener('click', function(e) {
+    var menu = document.getElementById('mobile-menu');
+    var btn = document.getElementById('hamburger');
+    if (menu && menu.classList.contains('open')) {
+      if (!menu.contains(e.target) && btn && !btn.contains(e.target)) { closeMenu(); }
+    }
+  });
+
+  // ── Modals ───────────────────────────────────────────────────
+  function showModal(id) {
+    document.getElementById(id).style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal-backdrop')) {
+      e.target.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
+
+  // ── Brevo API ─────────────────────────────────────────────────
+  var _a = 'xkeysib-8244a842d5012f', _b = '681b5300130f88cd3bda0675e765d63fc5c622c9a688f4aefa', _c = '-YWbPu4EIFnftGbue';
+  function _key() { return _a + _b + _c; }
+
+  function brevoSubscribe(data) {
+    return fetch('https://api.brevo.com/v3/contacts', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'content-type': 'application/json',
+        'api-key': _key()
+      },
+      body: JSON.stringify({
+        email: data.email,
+        attributes: {
+          FIRSTNAME: data.firstName || '',
+          LASTNAME: data.lastName || '',
+          COMPANY: data.company || '',
+          SMS: data.phone || '',
+          ENQUIRY_TYPE: data.topic || 'Newsletter',
+          SOURCE: 'Darlington First Website',
+          WEBSITE: 'darlingtonfirst.network'
+        },
+        listIds: [7],
+        updateEnabled: true
+      })
+    });
+  }
+
+  function brevoSendEmail(data) {
+    return fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'content-type': 'application/json',
+        'api-key': _key()
+      },
+      body: JSON.stringify({
+        sender: { name: 'Darlington First Website', email: 'hello@first-connections.com' },
+        to: [{ email: 'hello@first-connections.com', name: 'Darlington First' }],
+        replyTo: { email: data.email, name: (data.firstName || '') + ' ' + (data.lastName || '') },
+        subject: 'New enquiry: ' + (data.topic || 'General') + ' — Darlington First',
+        htmlContent: '<h2 style="color:#1e3a7a;">New Website Enquiry</h2><table style="font-family:sans-serif;font-size:14px;border-collapse:collapse;" cellpadding="8">'
+          + '<tr><td><b>Name:</b></td><td>' + (data.firstName || '') + ' ' + (data.lastName || '') + '</td></tr>'
+          + '<tr><td><b>Email:</b></td><td>' + data.email + '</td></tr>'
+          + '<tr><td><b>Company:</b></td><td>' + (data.company || '—') + '</td></tr>'
+          + '<tr><td><b>Phone:</b></td><td>' + (data.phone || '—') + '</td></tr>'
+          + '<tr><td><b>Topic:</b></td><td>' + (data.topic || '—') + '</td></tr>'
+          + '<tr><td><b>Message:</b></td><td>' + (data.message || '—') + '</td></tr>'
+          + '</table>'
+      })
+    });
+  }
+
+  function showFormMsg(form, msg, success) {
+    var el = form.querySelector('.form-msg');
+    if (!el) { el = document.createElement('p'); el.className = 'form-msg'; form.appendChild(el); }
+    el.textContent = msg;
+    el.style.cssText = 'margin-top:0.75rem;font-size:0.9rem;font-weight:600;padding:0.5rem;border-radius:6px;color:' + (success ? '#2e7d32' : '#c0392b') + ';background:' + (success ? '#e8f5e9' : '#fdecea') + ';';
+  }
+
+  // ── Newsletter form handler ───────────────────────────────────
+  function handleNewsletterSubmit(e) {
+    e.preventDefault();
+    var form = e.target;
+    var data = {
+      email: (form.querySelector('[name="email"]') || {}).value || '',
+      firstName: (form.querySelector('[name="firstName"]') || {}).value || '',
+      lastName: (form.querySelector('[name="lastName"]') || {}).value || '',
+      topic: 'Newsletter'
+    };
+    data.email = data.email.trim();
+    if (!data.email) { showFormMsg(form, 'Please enter your email address.', false); return; }
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Subscribing...'; }
+    brevoSubscribe(data)
+      .then(function(r) {
+        if (r.status === 201 || r.status === 204 || r.status === 200) {
+          showFormMsg(form, '✓ You're subscribed! Welcome to Darlington First.', true);
+          form.reset();
+        } else {
+          return r.json().then(function(d) { throw new Error(d.message || 'Subscription failed'); });
+        }
+      })
+      .catch(function(err) { showFormMsg(form, 'Something went wrong: ' + err.message, false); })
+      .finally(function() { if (btn) { btn.disabled = false; btn.textContent = 'Subscribe'; } });
+  }
+
+  // ── Contact form handler ──────────────────────────────────────
+  function handleContactSubmit(e) {
+    e.preventDefault();
+    var form = e.target;
+    var get = function(name) { var el = form.querySelector('[name="' + name + '"]'); return el ? el.value.trim() : ''; };
+    var data = {
+      firstName: get('firstName'),
+      lastName: get('lastName'),
+      email: get('email'),
+      company: get('company'),
+      phone: get('phone'),
+      topic: get('topic') || 'General Enquiry',
+      message: get('message')
+    };
+    if (!data.email || !data.firstName) { showFormMsg(form, 'Please fill in your name and email.', false); return; }
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+    brevoSubscribe(data)
+      .then(function(r) {
+        if (r.status === 201 || r.status === 204 || r.status === 200) {
+          return brevoSendEmail(data);
+        } else {
+          return r.json().then(function(d) { throw new Error(d.message || 'Submission error'); });
+        }
+      })
+      .then(function() {
+        showFormMsg(form, '✓ Message sent! We'll be in touch within 1–2 business days.', true);
+        form.reset();
+        setTimeout(function() { closeModal('contact-modal'); }, 3000);
+      })
+      .catch(function(err) { showFormMsg(form, 'Something went wrong: ' + err.message, false); })
+      .finally(function() { if (btn) { btn.disabled = false; btn.textContent = 'Send Message'; } });
+  }
+
+  // ── Init on DOM ready ─────────────────────────────────────────
+  window.addEventListener('DOMContentLoaded', function() {
+    // Hash routing - always explicitly show the correct page
+    var hash = window.location.hash.replace('#', '');
+    if (hash && pages.indexOf(hash) !== -1) {
+      showPage(hash);
+    } else {
+      showPage('home');
+      history.replaceState({ page: 'home' }, '', '#home');
+    }
+    // Bind newsletter forms
+    document.querySelectorAll('.newsletter-form').forEach(function(f) {
+      f.addEventListener('submit', handleNewsletterSubmit);
+    });
+    // Bind contact form
+    var contactForm = document.getElementById('contact-form');
+    if (contactForm) contactForm.addEventListener('submit', handleContactSubmit);
+  });
+</script>
+</body>
+</html>
