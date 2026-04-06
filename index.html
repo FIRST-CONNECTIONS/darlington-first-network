@@ -1999,7 +1999,7 @@
         </div>
         <div class="form-group" style="margin-bottom:1rem;"><label>Email Address</label><input type="email" name="email" placeholder="jane@yourbusiness.com" required /></div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
-          <div class="form-group"><label>Business Name</label><input type="text" name="company" placeholder="Your company" /></div>
+          <div class="form-group"><label>Company Name</label><input type="text" name="company" placeholder="Your business name" /></div>
           <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="07700 900000" /></div>
         </div>
         <div class="form-group" style="margin-bottom:1rem;">
@@ -2024,7 +2024,7 @@
 
 <!-- NEWSLETTER MODAL -->
 <div id="newsletter-modal" class="modal-backdrop" style="display:none;position:fixed;inset:0;background:rgba(10,20,50,0.75);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
-  <div style="background:white;border-radius:20px;width:100%;max-width:480px;">
+  <div style="background:white;border-radius:20px;width:100%;max-width:520px;">
     <div style="background:var(--navy);border-radius:20px 20px 0 0;padding:1.75rem 2rem;display:flex;justify-content:space-between;align-items:center;">
       <div>
         <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.25rem;">Stay in the Loop</p>
@@ -2039,7 +2039,8 @@
           <div class="form-group"><label>First Name</label><input type="text" name="firstName" placeholder="Jane" /></div>
           <div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" /></div>
         </div>
-        <div class="form-group" style="margin-bottom:1.25rem;"><label>Email Address</label><input type="email" name="email" placeholder="jane@yourbusiness.com" required /></div>
+        <div class="form-group" style="margin-bottom:1rem;"><label>Email Address</label><input type="email" name="email" placeholder="jane@yourbusiness.com" required /></div>
+        <div class="form-group" style="margin-bottom:1.25rem;"><label>Company Name</label><input type="text" name="company" placeholder="Your business name" /></div>
         <button type="submit" class="btn-primary" style="width:100%;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.9rem;">Subscribe</button>
       </form>
     </div>
@@ -2133,7 +2134,7 @@ function handleNL(e){
   if(!em){fMsg(f,'Please enter your email.',false);return;}
   var btn=f.querySelector('button[type="submit"]');
   if(btn){btn.disabled=true;btn.textContent='Subscribing...';}
-  bSub({email:em,fn:(f.querySelector('[name="firstName"]')||{}).value||'',ln:(f.querySelector('[name="lastName"]')||{}).value||'',tp:'Newsletter'})
+  bSub({email:em,fn:(f.querySelector('[name="firstName"]')||{}).value||'',ln:(f.querySelector('[name="lastName"]')||{}).value||'',co:(f.querySelector('[name="company"]')||{}).value||'',tp:'Newsletter'})
     .then(function(r){
       if(r.status===201||r.status===204||r.status===200){fMsg(f,'Subscribed! Welcome to Darlington First.',true);f.reset();}
       else return r.json().then(function(d){throw new Error(d.message||'Error');});
