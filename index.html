@@ -1852,26 +1852,21 @@
   </div>
 </footer>
 
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  var pages=['home','about','events','projects','resources','contact'];
-  var pageTitles={'home':'Darlington First — Business Networking','about':'About — Darlington First','events':'Events — Darlington First','projects':'Our Projects — Darlington First','resources':'Resources & Offers — Darlington First','contact':'Contact — Darlington First'};
-  function showPage(id){if(pages.indexOf(id)===-1)id='home';document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});document.querySelectorAll('.nav-links a,.mobile-menu a').forEach(function(a){a.classList.remove('active');});var page=document.getElementById('page-'+id);if(page)page.classList.add('active');var navEl=document.getElementById('nav-'+id);if(navEl)navEl.classList.add('active');window.s
 <!-- CONTACT MODAL -->
-<div id="contact-modal" class="modal-backdrop" style="display:none;position:fixed;inset:0;background:rgba(10,20,50,0.7);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
-  <div style="background:white;border-radius:20px;width:100%;max-width:680px;max-height:90vh;overflow-y:auto;position:relative;">
-    <div style="background:var(--navy);border-radius:20px 20px 0 0;padding:2rem 2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">
+<div id="contact-modal" class="modal-backdrop" style="display:none;position:fixed;inset:0;background:rgba(10,20,50,0.75);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:white;border-radius:20px;width:100%;max-width:680px;max-height:90vh;overflow-y:auto;">
+    <div style="background:var(--navy);border-radius:20px 20px 0 0;padding:1.75rem 2rem;display:flex;justify-content:space-between;align-items:center;">
       <div>
-        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.3rem;">Darlington First</p>
+        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.25rem;">Darlington First</p>
         <h2 style="font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;color:white;margin:0;">Get in <em style="color:var(--gold);font-style:italic;">Touch</em></h2>
       </div>
-      <button onclick="closeModal('contact-modal')" style="background:rgba(255,255,255,0.1);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">&times;</button>
+      <button onclick="closeModal('contact-modal')" style="background:rgba(255,255,255,0.12);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.3rem;cursor:pointer;">&times;</button>
     </div>
     <div style="padding:2rem;">
       <form id="contact-form">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
           <div class="form-group"><label>First Name *</label><input type="text" name="firstName" placeholder="Jane" required /></div>
-          <div class="form-group"><label>Last Name *</label><input type="text" name="lastName" placeholder="Smith" required /></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" /></div>
         </div>
         <div class="form-group" style="margin-bottom:1rem;"><label>Email Address *</label><input type="email" name="email" placeholder="jane@yourbusiness.com" required /></div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
@@ -1892,24 +1887,24 @@
         </div>
         <div class="form-group" style="margin-bottom:1.5rem;"><label>Your Message</label><textarea name="message" placeholder="Tell us a bit about yourself and what you're looking for..." style="height:100px;"></textarea></div>
         <button type="submit" class="btn-primary" style="width:100%;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.9rem;">Send Message</button>
-        <p style="font-size:0.75rem;color:var(--muted);text-align:center;margin-top:0.75rem;">We typically respond within 1–2 business days.</p>
+        <p style="font-size:0.75rem;color:var(--muted);text-align:center;margin-top:0.75rem;">We typically respond within 1-2 business days.</p>
       </form>
     </div>
   </div>
 </div>
 
 <!-- NEWSLETTER MODAL -->
-<div id="newsletter-modal" class="modal-backdrop" style="display:none;position:fixed;inset:0;background:rgba(10,20,50,0.7);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
-  <div style="background:white;border-radius:20px;width:100%;max-width:480px;position:relative;">
-    <div style="background:var(--navy);border-radius:20px 20px 0 0;padding:2rem 2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">
+<div id="newsletter-modal" class="modal-backdrop" style="display:none;position:fixed;inset:0;background:rgba(10,20,50,0.75);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:white;border-radius:20px;width:100%;max-width:480px;">
+    <div style="background:var(--navy);border-radius:20px 20px 0 0;padding:1.75rem 2rem;display:flex;justify-content:space-between;align-items:center;">
       <div>
-        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.3rem;">Stay in the Loop</p>
+        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.25rem;">Stay in the Loop</p>
         <h2 style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;color:white;margin:0;">Subscribe to our <em style="color:var(--gold);font-style:italic;">newsletter</em></h2>
       </div>
-      <button onclick="closeModal('newsletter-modal')" style="background:rgba(255,255,255,0.1);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">&times;</button>
+      <button onclick="closeModal('newsletter-modal')" style="background:rgba(255,255,255,0.12);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.3rem;cursor:pointer;">&times;</button>
     </div>
     <div style="padding:2rem;">
-      <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.7;">Event dates, venue announcements and community news — straight to your inbox. No spam, ever.</p>
+      <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.7;">Event dates, venue announcements and community news straight to your inbox. No spam, ever.</p>
       <form class="newsletter-form">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
           <div class="form-group"><label>First Name</label><input type="text" name="firstName" placeholder="Jane" /></div>
@@ -1923,38 +1918,102 @@
 </div>
 
 <script>
-  // Navigation
-  var pages=['home','about','events','projects','resources','contact'];
-  var pageTitles={'home':'Darlington First — Business Networking','about':'About — Darlington First','events':'Events — Darlington First','projects':'Our Projects — Darlington First','resources':'Resources & Offers — Darlington First','contact':'Contact — Darlington First'};
-  function showPage(id){if(pages.indexOf(id)===-1)id='home';document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});document.querySelectorAll('.nav-links a,.mobile-menu a').forEach(function(a){a.classList.remove('active');});var page=document.getElementById('page-'+id);if(page)page.classList.add('active');var navEl=document.getElementById('nav-'+id);if(navEl)navEl.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});history.pushState({page:id},'','#'+id);document.title=pageTitles[id]||'Darlington First';}
-  function toggleMenu(){var menu=document.getElementById('mobile-menu');var btn=document.getElementById('hamburger');if(!menu||!btn)return;menu.classList.toggle('open');btn.classList.toggle('open');}
-  function closeMenu(){var menu=document.getElementById('mobile-menu');var btn=document.getElementById('hamburger');if(menu)menu.classList.remove('open');if(btn)btn.classList.remove('open');}
-  function navTo(id){showPage(id);closeMenu();}
-  window.addEventListener('popstate',function(e){var id=(e.state&&e.state.page)?e.state.page:'home';showPage(id);});
-  window.addEventListener('DOMContentLoaded',function(){var hash=window.location.hash.replace('#','');if(hash&&pages.indexOf(hash)!==-1){showPage(hash);}else{history.replaceState({page:'home'},'','#home');}});
-  document.addEventListener('click',function(e){var menu=document.getElementById('mobile-menu');var btn=document.getElementById('hamburger');if(menu&&menu.classList.contains('open')){if(!menu.contains(e.target)&&btn&&!btn.contains(e.target)){closeMenu();}}});
+// ── Navigation ──────────────────────────────────────────────
+  var pages = ['home','about','events','projects','resources','contact'];
+  var pageTitles = {
+    home: 'Darlington First — Business Networking',
+    about: 'About — Darlington First',
+    events: 'Events — Darlington First',
+    projects: 'Our Projects — Darlington First',
+    resources: 'Resources & Offers — Darlington First',
+    contact: 'Contact — Darlington First'
+  };
 
-  // Brevo API integration
-  var _k1="xkeysib-8244a842d5012f",_k2="681b5300130f88cd3bda0675e765d63fc5c622c9a688f4aefa",_k3="-YWbPu4EIFnftGbue";
-  function _bk(){return _k1+_k2+_k3;}
+  function showPage(id) {
+    if (pages.indexOf(id) === -1) id = 'home';
+    document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function(a) { a.classList.remove('active'); });
+    var page = document.getElementById('page-' + id);
+    if (page) page.classList.add('active');
+    var navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    history.pushState({ page: id }, '', '#' + id);
+    document.title = pageTitles[id] || 'Darlington First';
+  }
 
-  // Subscribe to newsletter via Brevo
-  function brevoSubscribe(email, firstName, lastName, company, phone, topic) {
+  function toggleMenu() {
+    var menu = document.getElementById('mobile-menu');
+    var btn = document.getElementById('hamburger');
+    if (!menu || !btn) return;
+    menu.classList.toggle('open');
+    btn.classList.toggle('open');
+  }
+
+  function closeMenu() {
+    var menu = document.getElementById('mobile-menu');
+    var btn = document.getElementById('hamburger');
+    if (menu) menu.classList.remove('open');
+    if (btn) btn.classList.remove('open');
+  }
+
+  function navTo(id) {
+    showPage(id);
+    closeMenu();
+  }
+
+  window.addEventListener('popstate', function(e) {
+    var id = (e.state && e.state.page) ? e.state.page : 'home';
+    showPage(id);
+  });
+
+  // Close hamburger on outside click
+  document.addEventListener('click', function(e) {
+    var menu = document.getElementById('mobile-menu');
+    var btn = document.getElementById('hamburger');
+    if (menu && menu.classList.contains('open')) {
+      if (!menu.contains(e.target) && btn && !btn.contains(e.target)) { closeMenu(); }
+    }
+  });
+
+  // ── Modals ───────────────────────────────────────────────────
+  function showModal(id) {
+    document.getElementById(id).style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal-backdrop')) {
+      e.target.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
+
+  // ── Brevo API ─────────────────────────────────────────────────
+  var _a = 'xkeysib-8244a842d5012f', _b = '681b5300130f88cd3bda0675e765d63fc5c622c9a688f4aefa', _c = '-YWbPu4EIFnftGbue';
+  function _key() { return _a + _b + _c; }
+
+  function brevoSubscribe(data) {
     return fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
       headers: {
         'accept': 'application/json',
         'content-type': 'application/json',
-        'api-key': _bk()
+        'api-key': _key()
       },
       body: JSON.stringify({
-        email: email,
+        email: data.email,
         attributes: {
-          FIRSTNAME: firstName || '',
-          LASTNAME: lastName || '',
-          COMPANY: company || '',
-          SMS: phone || '',
-          ENQUIRY_TYPE: topic || 'Newsletter',
+          FIRSTNAME: data.firstName || '',
+          LASTNAME: data.lastName || '',
+          COMPANY: data.company || '',
+          SMS: data.phone || '',
+          ENQUIRY_TYPE: data.topic || 'Newsletter',
           SOURCE: 'Darlington First Website',
           WEBSITE: 'darlingtonfirst.network'
         },
@@ -1964,104 +2023,113 @@
     });
   }
 
-  // Show modal
-  function showModal(id) {
-    document.getElementById(id).style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-  }
-  function closeModal(id) {
-    document.getElementById(id).style.display = 'none';
-    document.body.style.overflow = '';
-  }
-  // Close modal on backdrop click
-  document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('modal-backdrop')) {
-      e.target.style.display = 'none';
-      document.body.style.overflow = '';
-    }
-  });
-
-  // Newsletter subscribe handler
-  function handleNewsletterSubmit(e) {
-    e.preventDefault();
-    var form = e.target;
-    var email = form.querySelector('[name="email"]').value.trim();
-    var firstName = form.querySelector('[name="firstName"]') ? form.querySelector('[name="firstName"]').value.trim() : '';
-    var lastName = form.querySelector('[name="lastName"]') ? form.querySelector('[name="lastName"]').value.trim() : '';
-    if (!email) { showFormMsg(form, 'Please enter your email address.', false); return; }
-    var btn = form.querySelector('button[type="submit"]');
-    btn.disabled = true; btn.textContent = 'Subscribing...';
-    brevoSubscribe(email, firstName, lastName, '', '', 'Newsletter')
-      .then(function(r) {
-        if (r.status === 201 || r.status === 204) {
-          showFormMsg(form, '✓ You’re subscribed! Welcome to Darlington First.', true);
-          form.reset();
-        } else {
-          return r.json().then(function(d) { throw new Error(d.message || 'Error'); });
-        }
+  function brevoSendEmail(data) {
+    return fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'content-type': 'application/json',
+        'api-key': _key()
+      },
+      body: JSON.stringify({
+        sender: { name: 'Darlington First Website', email: 'hello@first-connections.com' },
+        to: [{ email: 'hello@first-connections.com', name: 'Darlington First' }],
+        replyTo: { email: data.email, name: (data.firstName || '') + ' ' + (data.lastName || '') },
+        subject: 'New enquiry: ' + (data.topic || 'General') + ' — Darlington First',
+        htmlContent: '<h2 style="color:#1e3a7a;">New Website Enquiry</h2><table style="font-family:sans-serif;font-size:14px;border-collapse:collapse;" cellpadding="8">'
+          + '<tr><td><b>Name:</b></td><td>' + (data.firstName || '') + ' ' + (data.lastName || '') + '</td></tr>'
+          + '<tr><td><b>Email:</b></td><td>' + data.email + '</td></tr>'
+          + '<tr><td><b>Company:</b></td><td>' + (data.company || '—') + '</td></tr>'
+          + '<tr><td><b>Phone:</b></td><td>' + (data.phone || '—') + '</td></tr>'
+          + '<tr><td><b>Topic:</b></td><td>' + (data.topic || '—') + '</td></tr>'
+          + '<tr><td><b>Message:</b></td><td>' + (data.message || '—') + '</td></tr>'
+          + '</table>'
       })
-      .catch(function(err) {
-        showFormMsg(form, 'Something went wrong: ' + err.message, false);
-      })
-      .finally(function() { btn.disabled = false; btn.textContent = 'Subscribe'; });
-  }
-
-  // Contact form handler
-  function handleContactSubmit(e) {
-    e.preventDefault();
-    var form = e.target;
-    var firstName = (form.querySelector('[name="firstName"]').value || '').trim();
-    var lastName = (form.querySelector('[name="lastName"]').value || '').trim();
-    var email = form.querySelector('[name="email"]').value.trim();
-    var company = (form.querySelector('[name="company"]').value || '').trim();
-    var phone = form.querySelector('[name="phone"]') ? form.querySelector('[name="phone"]').value.trim() : '';
-    var topic = form.querySelector('[name="topic"]').value;
-    var message = form.querySelector('[name="message"]').value.trim();
-    if (!email || !firstName) { showFormMsg(form, 'Please fill in your name and email.', false); return; }
-    var btn = form.querySelector('button[type="submit"]');
-    btn.disabled = true; btn.textContent = 'Sending...';
-    brevoSubscribe(email, firstName, lastName, company, phone, topic)
-      .then(function(r) {
-        if (r.status === 201 || r.status === 204) {
-          // Also send transactional notification email
-          return fetch('https://api.brevo.com/v3/smtp/email', {
-            method: 'POST',
-            headers: { 'accept': 'application/json', 'content-type': 'application/json', 'api-key': _bk() },
-            body: JSON.stringify({
-              sender: { name: 'Darlington First Website', email: 'hello@first-connections.com' },
-              to: [{ email: 'hello@first-connections.com', name: 'Darlington First' }],
-              replyTo: { email: email, name: firstName + ' ' + lastName },
-              subject: 'New enquiry: ' + topic + ' — Darlington First',
-              htmlContent: '<h2>New Website Enquiry</h2><table style="font-family:sans-serif;font-size:14px;"><tr><td><b>Name:</b></td><td>' + firstName + ' ' + lastName + '</td></tr><tr><td><b>Email:</b></td><td>' + email + '</td></tr><tr><td><b>Company:</b></td><td>' + (company||'—') + '</td></tr><tr><td><b>Phone:</b></td><td>' + (phone||'—') + '</td></tr><tr><td><b>Topic:</b></td><td>' + topic + '</td></tr><tr><td><b>Message:</b></td><td>' + message + '</td></tr></table>'
-            })
-          });
-        } else {
-          return r.json().then(function(d) { throw new Error(d.message || 'Submission error'); });
-        }
-      })
-      .then(function() {
-        showFormMsg(form, '✓ Message sent! We’ll be in touch within 1–2 business days.', true);
-        form.reset();
-        setTimeout(function() { closeModal('contact-modal'); }, 2500);
-      })
-      .catch(function(err) {
-        showFormMsg(form, 'Something went wrong: ' + err.message, false);
-      })
-      .finally(function() { btn.disabled = false; btn.textContent = 'Send Message'; });
+    });
   }
 
   function showFormMsg(form, msg, success) {
     var el = form.querySelector('.form-msg');
     if (!el) { el = document.createElement('p'); el.className = 'form-msg'; form.appendChild(el); }
     el.textContent = msg;
-    el.style.cssText = 'margin-top:0.75rem;font-size:0.9rem;font-weight:600;color:' + (success ? '#2e7d32' : '#c0392b') + ';';
+    el.style.cssText = 'margin-top:0.75rem;font-size:0.9rem;font-weight:600;padding:0.5rem;border-radius:6px;color:' + (success ? '#2e7d32' : '#c0392b') + ';background:' + (success ? '#e8f5e9' : '#fdecea') + ';';
   }
 
-  // Bind forms on load
+  // ── Newsletter form handler ───────────────────────────────────
+  function handleNewsletterSubmit(e) {
+    e.preventDefault();
+    var form = e.target;
+    var data = {
+      email: (form.querySelector('[name="email"]') || {}).value || '',
+      firstName: (form.querySelector('[name="firstName"]') || {}).value || '',
+      lastName: (form.querySelector('[name="lastName"]') || {}).value || '',
+      topic: 'Newsletter'
+    };
+    data.email = data.email.trim();
+    if (!data.email) { showFormMsg(form, 'Please enter your email address.', false); return; }
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Subscribing...'; }
+    brevoSubscribe(data)
+      .then(function(r) {
+        if (r.status === 201 || r.status === 204 || r.status === 200) {
+          showFormMsg(form, '✓ You're subscribed! Welcome to Darlington First.', true);
+          form.reset();
+        } else {
+          return r.json().then(function(d) { throw new Error(d.message || 'Subscription failed'); });
+        }
+      })
+      .catch(function(err) { showFormMsg(form, 'Something went wrong: ' + err.message, false); })
+      .finally(function() { if (btn) { btn.disabled = false; btn.textContent = 'Subscribe'; } });
+  }
+
+  // ── Contact form handler ──────────────────────────────────────
+  function handleContactSubmit(e) {
+    e.preventDefault();
+    var form = e.target;
+    var get = function(name) { var el = form.querySelector('[name="' + name + '"]'); return el ? el.value.trim() : ''; };
+    var data = {
+      firstName: get('firstName'),
+      lastName: get('lastName'),
+      email: get('email'),
+      company: get('company'),
+      phone: get('phone'),
+      topic: get('topic') || 'General Enquiry',
+      message: get('message')
+    };
+    if (!data.email || !data.firstName) { showFormMsg(form, 'Please fill in your name and email.', false); return; }
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+    brevoSubscribe(data)
+      .then(function(r) {
+        if (r.status === 201 || r.status === 204 || r.status === 200) {
+          return brevoSendEmail(data);
+        } else {
+          return r.json().then(function(d) { throw new Error(d.message || 'Submission error'); });
+        }
+      })
+      .then(function() {
+        showFormMsg(form, '✓ Message sent! We'll be in touch within 1–2 business days.', true);
+        form.reset();
+        setTimeout(function() { closeModal('contact-modal'); }, 3000);
+      })
+      .catch(function(err) { showFormMsg(form, 'Something went wrong: ' + err.message, false); })
+      .finally(function() { if (btn) { btn.disabled = false; btn.textContent = 'Send Message'; } });
+  }
+
+  // ── Init on DOM ready ─────────────────────────────────────────
   window.addEventListener('DOMContentLoaded', function() {
+    // Hash routing
+    var hash = window.location.hash.replace('#', '');
+    if (hash && pages.indexOf(hash) !== -1) {
+      showPage(hash);
+    } else {
+      history.replaceState({ page: 'home' }, '', '#home');
+    }
+    // Bind newsletter forms
     document.querySelectorAll('.newsletter-form').forEach(function(f) {
       f.addEventListener('submit', handleNewsletterSubmit);
     });
+    // Bind contact form
     var contactForm = document.getElementById('contact-form');
     if (contactForm) contactForm.addEventListener('submit', handleContactSubmit);
   });
