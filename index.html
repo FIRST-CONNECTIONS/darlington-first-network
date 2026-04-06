@@ -1938,7 +1938,7 @@
           <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.5rem;">Stay in the Loop</p>
           <h3 style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:white;margin-bottom:0.5rem;">Subscribe to our <em style="font-style:italic;color:var(--gold);">newsletter</em></h3>
           <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin-bottom:1rem;line-height:1.6;">Event dates, venue announcements and community news — straight to your inbox.</p>
-          <a href="mailto:hello@first-connections.com" class="btn-primary" style="display:block;text-align:center;">Subscribe</a>
+          <button onclick="showModal('newsletter-modal')" class="btn-primary" style="width:100%;display:block;text-align:center;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.9rem;cursor:pointer;">Subscribe</button>
           <p style="font-size:0.72rem;color:rgba(255,255,255,0.35);margin-top:0.6rem;">No spam, ever. Unsubscribe any time.</p>
         </div>
       </div>
@@ -1981,71 +1981,6 @@
     <p>© 2026 Darlington First. All rights reserved. &nbsp;·&nbsp; Part of the <strong style="color:rgba(255,255,255,0.5);">First Connections Network</strong></p>
   </div>
 </footer>
-
-<!-- CONTACT MODAL -->
-<div id="contact-modal" class="modal-backdrop" style="display:none;position:fixed;inset:0;background:rgba(10,20,50,0.75);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
-  <div style="background:white;border-radius:20px;width:100%;max-width:680px;max-height:90vh;overflow-y:auto;">
-    <div style="background:var(--navy);border-radius:20px 20px 0 0;padding:1.75rem 2rem;display:flex;justify-content:space-between;align-items:center;">
-      <div>
-        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.25rem;">Darlington First</p>
-        <h2 style="font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;color:white;margin:0;">Get in <em style="color:var(--gold);font-style:italic;">Touch</em></h2>
-      </div>
-      <button onclick="closeModal('contact-modal')" style="background:rgba(255,255,255,0.12);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.3rem;cursor:pointer;">&times;</button>
-    </div>
-    <div style="padding:2rem;">
-      <form id="contact-form">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
-          <div class="form-group"><label>First Name *</label><input type="text" name="firstName" placeholder="Jane" required /></div>
-          <div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" /></div>
-        </div>
-        <div class="form-group" style="margin-bottom:1rem;"><label>Email Address *</label><input type="email" name="email" placeholder="jane@yourbusiness.com" required /></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
-          <div class="form-group"><label>Business Name</label><input type="text" name="company" placeholder="Your company" /></div>
-          <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="07700 900000" /></div>
-        </div>
-        <div class="form-group" style="margin-bottom:1rem;">
-          <label>How can we help?</label>
-          <select name="topic">
-            <option value="General Enquiry">General Enquiry</option>
-            <option value="Attend an Event">Attend an Event</option>
-            <option value="Newsletter Subscription">Newsletter Subscription</option>
-            <option value="Sponsorship">Sponsorship</option>
-            <option value="Host a Venue">Host a Venue</option>
-            <option value="Podcast Guest">Podcast Guest</option>
-            <option value="High Street Heroes Awards">High Street Heroes Awards</option>
-          </select>
-        </div>
-        <div class="form-group" style="margin-bottom:1.5rem;"><label>Your Message</label><textarea name="message" placeholder="Tell us a bit about yourself and what you are looking for..." style="height:100px;"></textarea></div>
-        <button type="submit" class="btn-primary" style="width:100%;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.9rem;">Send Message</button>
-        <p style="font-size:0.75rem;color:var(--muted);text-align:center;margin-top:0.75rem;">We typically respond within 1-2 business days.</p>
-      </form>
-    </div>
-  </div>
-</div>
-
-<!-- NEWSLETTER MODAL -->
-<div id="newsletter-modal" class="modal-backdrop" style="display:none;position:fixed;inset:0;background:rgba(10,20,50,0.75);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
-  <div style="background:white;border-radius:20px;width:100%;max-width:480px;">
-    <div style="background:var(--navy);border-radius:20px 20px 0 0;padding:1.75rem 2rem;display:flex;justify-content:space-between;align-items:center;">
-      <div>
-        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.25rem;">Stay in the Loop</p>
-        <h2 style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;color:white;margin:0;">Subscribe to our <em style="color:var(--gold);font-style:italic;">newsletter</em></h2>
-      </div>
-      <button onclick="closeModal('newsletter-modal')" style="background:rgba(255,255,255,0.12);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.3rem;cursor:pointer;">&times;</button>
-    </div>
-    <div style="padding:2rem;">
-      <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.7;">Event dates, venue announcements and community news straight to your inbox. No spam, ever.</p>
-      <form class="newsletter-form">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
-          <div class="form-group"><label>First Name</label><input type="text" name="firstName" placeholder="Jane" /></div>
-          <div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" /></div>
-        </div>
-        <div class="form-group" style="margin-bottom:1.25rem;"><label>Email Address *</label><input type="email" name="email" placeholder="jane@yourbusiness.com" required /></div>
-        <button type="submit" class="btn-primary" style="width:100%;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.9rem;">Subscribe</button>
-      </form>
-    </div>
-  </div>
-</div>
 <!-- CONTACT MODAL -->
 <div id="contact-modal" class="modal-backdrop" style="display:none;position:fixed;inset:0;background:rgba(10,20,50,0.75);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
   <div style="background:white;border-radius:20px;width:100%;max-width:680px;max-height:90vh;overflow-y:auto;">
