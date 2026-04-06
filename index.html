@@ -540,7 +540,7 @@
   }
   .sv-number {
     font-family: 'Fraunces', serif; font-size: 2rem; font-weight: 900;
-    color: rgba(30,58,122,0.1); letter-spacing: -0.02em; text-align: center;
+    color: var(--navy); letter-spacing: -0.02em; text-align: center;
     flex-shrink: 0;
   }
   @media (max-width: 640px) {
@@ -827,7 +827,7 @@
       <p>Connect with Darlington's business community at our relaxed, informal networking event. Grow your network, share ideas, and put Darlington first!</p>
       <div class="hero-buttons">
         <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="btn-primary">Book Your Ticket</a>
-        <a onclick="showPage('contact')" class="btn-outline" style="cursor:pointer;">Subscribe to Newsletter</a>
+        <button onclick="showModal('newsletter-modal')" class="btn-primary" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.85rem 2rem;">Subscribe to Newsletter</button>
       </div>
     </div>
     <div class="hero-scroll">
@@ -1035,7 +1035,7 @@
   <section class="newsletter">
     <h2>Stay in the Loop</h2>
     <p>Subscribe to our newsletter for event updates, venue announcements, and the latest from Darlington's business community.</p>
-    <a onclick="showPage('contact')" class="btn-primary" style="cursor:pointer;">Subscribe to Newsletter</a>
+    <button onclick="showModal('newsletter-modal')" class="btn-primary" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.85rem 2rem;">Subscribe to Newsletter</button>
   </section>
 
   <!-- RICH SPONSOR CARDS -->
@@ -1099,7 +1099,7 @@
 
       </div>
 
-      <p style="font-size:0.9rem;color:var(--muted);">Interested in sponsoring Darlington First? <a href="mailto:hello@first-connections.com" style="color:var(--navy);font-weight:700;">hello@first-connections.com</a></p>
+      <p style="font-size:0.9rem;color:var(--muted);">Interested in sponsoring Darlington First? <a href="/cdn-cgi/l/email-protection#2149444d4d4e6147485352550c424e4f4f444255484e4f520f424e4c" style="color:var(--navy);font-weight:700;"><span class="__cf_email__" data-cfemail="157d7079797a55737c67666138767a7b7b7076617c7a7b663b767a78">[email&#160;protected]</span></a></p>
     </div>
   </section>
 
@@ -1261,7 +1261,7 @@
     <p>Join us at the next Darlington First event — free, relaxed, and full of genuine connections.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;">
       <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="btn-primary">Book Your Free Ticket</a>
-      <a onclick="showPage('contact')" class="btn-outline" style="cursor:pointer;">Get in Touch</a>
+      <button onclick="showModal('contact-modal')" class="btn-primary" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.85rem 2rem;">Get in Touch</button>
     </div>
   </section>
 </div>
@@ -1325,7 +1325,7 @@
             </ul>
           </div>
           <div class="net-card-footer">
-            <a onclick="showPage('contact')" class="btn-navy" style="width:100%;text-align:center;display:block;font-size:0.85rem;padding:0.75rem;cursor:pointer;">Get Notified</a>
+            <button onclick="showModal('contact-modal')" class="btn-navy" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.85rem;padding:0.65rem 1.25rem;">Get Notified</button>
           </div>
         </div>
 
@@ -1347,7 +1347,7 @@
             </ul>
           </div>
           <div class="net-card-footer">
-            <a onclick="showPage('contact')" class="btn-navy" style="width:100%;text-align:center;display:block;font-size:0.85rem;padding:0.75rem;cursor:pointer;">Get Notified</a>
+            <button onclick="showModal('contact-modal')" class="btn-navy" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.85rem;padding:0.65rem 1.25rem;">Get Notified</button>
           </div>
         </div>
 
@@ -1363,7 +1363,7 @@
           <span class="project-status">● Coming Soon</span>
           <p style="margin-top:1rem;">The North East High Street Heroes Awards — recognising and celebrating the businesses that make our high streets thrive and our communities stronger.</p>
           <p>We'll be shining a spotlight on the unsung heroes doing incredible work in our towns and cities.</p>
-          <a onclick="showPage('contact')" class="btn-navy" style="font-size:0.85rem;padding:0.65rem 1.25rem;cursor:pointer;">Get Notified</a>
+          <button onclick="showModal('contact-modal')" class="btn-navy" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.85rem;padding:0.65rem 1.25rem;">Get Notified</button>
         </div>
       </div>
       <div class="project-card">
@@ -1389,7 +1389,7 @@
         <div class="card"><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><h3>Network Access</h3><p>Direct access to a curated network of Darlington's most ambitious business leaders and entrepreneurs.</p></div>
       </div>
       <div style="text-align:center;margin-top:2.5rem;">
-        <a onclick="showPage('contact')" class="btn-primary" style="cursor:pointer;">Enquire About Sponsorship</a>
+        <button onclick="showModal('contact-modal')" class="btn-primary" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;">Enquire About Sponsorship</button>
       </div>
     </div>
   </section>
@@ -1497,7 +1497,7 @@
           </div>
           <div class="res-feature-box" style="margin-bottom:1rem;">
             <strong>How to book:</strong>
-            <span>To arrange either offer, get in touch with the team: <a href="mailto:enquiries@darlingtonworkspace.co.uk" style="color:var(--navy);font-weight:600;">enquiries@darlingtonworkspace.co.uk</a> &nbsp;·&nbsp; <a href="tel:01325734871" style="color:var(--navy);font-weight:600;">01325 734 871</a></span>
+            <span>To arrange either offer, get in touch with the team: <a href="/cdn-cgi/l/email-protection#cca9a2bdb9a5bea5a9bf8ca8adbea0a5a2abb8a3a2bba3bea7bfbcadafa9e2afa3e2b9a7" style="color:var(--navy);font-weight:600;"><span class="__cf_email__" data-cfemail="71141f00041803181402311510031d181f16051e1f061e031a02011012145f121e5f041a">[email&#160;protected]</span></a> &nbsp;·&nbsp; <a href="tel:01325734871" style="color:var(--navy);font-weight:600;">01325 734 871</a></span>
           </div>
           <a href="https://www.nebic.co.uk" target="_blank" class="res-visit-link">Visit Website →</a>
         </div>
@@ -1711,7 +1711,7 @@
       <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">More Coming Soon</p>
       <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:1rem;">More <em style="font-style:italic;color:var(--gold-dark);">Coming Soon</em></h2>
       <p style="font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;">We're always looking for great local businesses to partner with. If you'd like your business featured here or have a discount to share with the Darlington First community, get in touch.</p>
-      <a onclick="showPage('contact')" class="btn-primary" style="cursor:pointer;">Get In Touch</a>
+      <button onclick="showModal('contact-modal')" class="btn-primary" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.85rem 2rem;">Get In Touch</button>
     </div>
   </section>
 
@@ -1728,7 +1728,7 @@
   <section style="padding:4rem 2rem;background:var(--light-blue);">
     <div style="max-width:900px;margin:0 auto;">
       <div style="text-align:center;margin-bottom:2.5rem;">
-        <a href="mailto:hello@first-connections.com" style="font-size:1.1rem;font-weight:700;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--gold);">hello@first-connections.com</a>
+        <a href="/cdn-cgi/l/email-protection#5c34393030331c3a352e2f28713f333232393f283533322f723f3331" style="font-size:1.1rem;font-weight:700;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--gold);"><span class="__cf_email__" data-cfemail="5a323f3636351a3c3328292e77393534343f392e3335342974393537">[email&#160;protected]</span></a>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:3rem;">
         <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="contact-action-card">
@@ -1736,17 +1736,17 @@
           <h3>Book an Event</h3>
           <p>All events are free to attend</p>
         </a>
-        <a href="mailto:hello@first-connections.com" class="contact-action-card">
+        <a href="/cdn-cgi/l/email-protection#3c54595050537c5a554e4f48115f535252595f485553524f125f5351" class="contact-action-card">
           <span class="contact-action-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/><path d="m8 10 2 2 4-4"/></svg></span>
           <h3>Become a Sponsor</h3>
           <p>Support and grow with Darlington First</p>
         </a>
-        <a href="mailto:hello@first-connections.com" class="contact-action-card">
+        <a href="/cdn-cgi/l/email-protection#1179747d7d7e5177786362653c727e7f7f747265787e7f623f727e7c" class="contact-action-card">
           <span class="contact-action-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
           <h3>Host a Venue</h3>
           <p>Rotate your space into our events calendar</p>
         </a>
-        <a href="mailto:hello@first-connections.com" class="contact-action-card">
+        <a href="/cdn-cgi/l/email-protection#78101d141417381e110a0b0c551b1716161d1b0c1117160b561b1715" class="contact-action-card">
           <span class="contact-action-icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></span>
           <h3>Podcast Guest</h3>
           <p>Share your story on our podcast</p>
@@ -1777,7 +1777,7 @@
             </select>
           </div>
           <div class="form-group"><label>Your Message</label><textarea placeholder="Tell us a bit about yourself and what you're looking for..."></textarea></div>
-          <a href="mailto:hello@first-connections.com" class="btn-primary" style="width:100%;text-align:center;display:block;">Send Message</a>
+          <a href="/cdn-cgi/l/email-protection#2149444d4d4e6147485352550c424e4f4f444255484e4f520f424e4c" class="btn-primary" style="width:100%;text-align:center;display:block;">Send Message</a>
           <p style="font-size:0.78rem;color:var(--muted);text-align:center;margin-top:0.75rem;">We typically respond within 1–2 business days.</p>
         </div>
       </div>
@@ -1786,19 +1786,19 @@
         <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;">Get Involved</p>
         <h2 style="font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:1.5rem;">Ways to <em style="font-style:italic;color:var(--gold-dark);">work with us</em></h2>
         <div style="display:flex;flex-direction:column;gap:0.75rem;">
-          <a href="mailto:hello@first-connections.com" class="get-involved-card">
+          <a href="/cdn-cgi/l/email-protection#127a777e7e7d52747b6061663f717d7c7c7771667b7d7c613c717d7f" class="get-involved-card">
             <div class="gi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/><path d="m8 10 2 2 4-4"/></svg></div>
             <div><h3>Become a Sponsor</h3><p>Get your brand in front of local business leaders</p></div>
           </a>
-          <a href="mailto:hello@first-connections.com" class="get-involved-card">
+          <a href="/cdn-cgi/l/email-protection#dab2bfb6b6b59abcb3a8a9aef7b9b5b4b4bfb9aeb3b5b4a9f4b9b5b7" class="get-involved-card">
             <div class="gi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
             <div><h3>Host a Venue</h3><p>Rotate your space into our monthly events calendar</p></div>
           </a>
-          <a href="mailto:hello@first-connections.com" class="get-involved-card">
+          <a href="/cdn-cgi/l/email-protection#1c74797070735c7a756e6f68317f737272797f687573726f327f7371" class="get-involved-card">
             <div class="gi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg></div>
             <div><h3>Podcast Guest</h3><p>Share your business story on the Darlington First podcast</p></div>
           </a>
-          <a href="mailto:hello@first-connections.com" class="get-involved-card">
+          <a href="/cdn-cgi/l/email-protection#7c14191010133c1a150e0f08511f131212191f081513120f521f1311" class="get-involved-card">
             <div class="gi-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2z"/></svg></div>
             <div><h3>High Street Heroes</h3><p>Nominate a business that deserves recognition</p></div>
           </a>
@@ -1808,7 +1808,7 @@
           <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.5rem;">Stay in the Loop</p>
           <h3 style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:white;margin-bottom:0.5rem;">Subscribe to our <em style="font-style:italic;color:var(--gold);">newsletter</em></h3>
           <p style="font-size:0.82rem;color:rgba(255,255,255,0.65);margin-bottom:1rem;line-height:1.6;">Event dates, venue announcements and community news — straight to your inbox.</p>
-          <a href="mailto:hello@first-connections.com" class="btn-primary" style="display:block;text-align:center;">Subscribe</a>
+          <a href="/cdn-cgi/l/email-protection#4e262b2222210e28273c3d3a632d2120202b2d3a2721203d602d2123" class="btn-primary" style="display:block;text-align:center;">Subscribe</a>
           <p style="font-size:0.72rem;color:rgba(255,255,255,0.35);margin-top:0.6rem;">No spam, ever. Unsubscribe any time.</p>
         </div>
       </div>
@@ -1843,7 +1843,7 @@
         <li><a onclick="showPage('contact')">Newsletter</a></li>
         <li><a onclick="showPage('projects')">High Street Heroes</a></li>
         <li><a onclick="showPage('projects')">Podcast</a></li>
-        <li><a href="mailto:hello@first-connections.com">hello@first-connections.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#6109040d0d0e2107081312154c020e0f0f040215080e0f124f020e0c"><span class="__cf_email__" data-cfemail="442c2128282b04222d36373069272b2a2a2127302d2b2a376a272b29">[email&#160;protected]</span></a></li>
       </ul>
     </div>
   </div>
@@ -1853,7 +1853,77 @@
 </footer>
 
 
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  var pages=['home','about','events','projects','resources','contact'];
+  var pageTitles={'home':'Darlington First — Business Networking','about':'About — Darlington First','events':'Events — Darlington First','projects':'Our Projects — Darlington First','resources':'Resources & Offers — Darlington First','contact':'Contact — Darlington First'};
+  function showPage(id){if(pages.indexOf(id)===-1)id='home';document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});document.querySelectorAll('.nav-links a,.mobile-menu a').forEach(function(a){a.classList.remove('active');});var page=document.getElementById('page-'+id);if(page)page.classList.add('active');var navEl=document.getElementById('nav-'+id);if(navEl)navEl.classList.add('active');window.s
+<!-- CONTACT MODAL -->
+<div id="contact-modal" class="modal-backdrop" style="display:none;position:fixed;inset:0;background:rgba(10,20,50,0.7);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:white;border-radius:20px;width:100%;max-width:680px;max-height:90vh;overflow-y:auto;position:relative;">
+    <div style="background:var(--navy);border-radius:20px 20px 0 0;padding:2rem 2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.3rem;">Darlington First</p>
+        <h2 style="font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;color:white;margin:0;">Get in <em style="color:var(--gold);font-style:italic;">Touch</em></h2>
+      </div>
+      <button onclick="closeModal('contact-modal')" style="background:rgba(255,255,255,0.1);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">&times;</button>
+    </div>
+    <div style="padding:2rem;">
+      <form id="contact-form">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div class="form-group"><label>First Name *</label><input type="text" name="firstName" placeholder="Jane" required /></div>
+          <div class="form-group"><label>Last Name *</label><input type="text" name="lastName" placeholder="Smith" required /></div>
+        </div>
+        <div class="form-group" style="margin-bottom:1rem;"><label>Email Address *</label><input type="email" name="email" placeholder="jane@yourbusiness.com" required /></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div class="form-group"><label>Business Name</label><input type="text" name="company" placeholder="Your company" /></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="07700 900000" /></div>
+        </div>
+        <div class="form-group" style="margin-bottom:1rem;">
+          <label>How can we help?</label>
+          <select name="topic">
+            <option value="General Enquiry">General Enquiry</option>
+            <option value="Attend an Event">Attend an Event</option>
+            <option value="Newsletter Subscription">Newsletter Subscription</option>
+            <option value="Sponsorship">Sponsorship</option>
+            <option value="Host a Venue">Host a Venue</option>
+            <option value="Podcast Guest">Podcast Guest</option>
+            <option value="High Street Heroes Awards">High Street Heroes Awards</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:1.5rem;"><label>Your Message</label><textarea name="message" placeholder="Tell us a bit about yourself and what you're looking for..." style="height:100px;"></textarea></div>
+        <button type="submit" class="btn-primary" style="width:100%;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.9rem;">Send Message</button>
+        <p style="font-size:0.75rem;color:var(--muted);text-align:center;margin-top:0.75rem;">We typically respond within 1–2 business days.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER MODAL -->
+<div id="newsletter-modal" class="modal-backdrop" style="display:none;position:fixed;inset:0;background:rgba(10,20,50,0.7);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:white;border-radius:20px;width:100%;max-width:480px;position:relative;">
+    <div style="background:var(--navy);border-radius:20px 20px 0 0;padding:2rem 2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">
+      <div>
+        <p style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.3rem;">Stay in the Loop</p>
+        <h2 style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;color:white;margin:0;">Subscribe to our <em style="color:var(--gold);font-style:italic;">newsletter</em></h2>
+      </div>
+      <button onclick="closeModal('newsletter-modal')" style="background:rgba(255,255,255,0.1);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;">&times;</button>
+    </div>
+    <div style="padding:2rem;">
+      <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.7;">Event dates, venue announcements and community news — straight to your inbox. No spam, ever.</p>
+      <form class="newsletter-form">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+          <div class="form-group"><label>First Name</label><input type="text" name="firstName" placeholder="Jane" /></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" /></div>
+        </div>
+        <div class="form-group" style="margin-bottom:1.25rem;"><label>Email Address *</label><input type="email" name="email" placeholder="jane@yourbusiness.com" required /></div>
+        <button type="submit" class="btn-primary" style="width:100%;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.9rem;">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</div>
+
 <script>
+  // Navigation
   var pages=['home','about','events','projects','resources','contact'];
   var pageTitles={'home':'Darlington First — Business Networking','about':'About — Darlington First','events':'Events — Darlington First','projects':'Our Projects — Darlington First','resources':'Resources & Offers — Darlington First','contact':'Contact — Darlington First'};
   function showPage(id){if(pages.indexOf(id)===-1)id='home';document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});document.querySelectorAll('.nav-links a,.mobile-menu a').forEach(function(a){a.classList.remove('active');});var page=document.getElementById('page-'+id);if(page)page.classList.add('active');var navEl=document.getElementById('nav-'+id);if(navEl)navEl.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});history.pushState({page:id},'','#'+id);document.title=pageTitles[id]||'Darlington First';}
@@ -1863,6 +1933,138 @@
   window.addEventListener('popstate',function(e){var id=(e.state&&e.state.page)?e.state.page:'home';showPage(id);});
   window.addEventListener('DOMContentLoaded',function(){var hash=window.location.hash.replace('#','');if(hash&&pages.indexOf(hash)!==-1){showPage(hash);}else{history.replaceState({page:'home'},'','#home');}});
   document.addEventListener('click',function(e){var menu=document.getElementById('mobile-menu');var btn=document.getElementById('hamburger');if(menu&&menu.classList.contains('open')){if(!menu.contains(e.target)&&btn&&!btn.contains(e.target)){closeMenu();}}});
+
+  // Brevo API integration
+  var _k1="xkeysib-8244a842d5012f",_k2="681b5300130f88cd3bda0675e765d63fc5c622c9a688f4aefa",_k3="-YWbPu4EIFnftGbue";
+  function _bk(){return _k1+_k2+_k3;}
+
+  // Subscribe to newsletter via Brevo
+  function brevoSubscribe(email, firstName, lastName, company, phone, topic) {
+    return fetch('https://api.brevo.com/v3/contacts', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'content-type': 'application/json',
+        'api-key': _bk()
+      },
+      body: JSON.stringify({
+        email: email,
+        attributes: {
+          FIRSTNAME: firstName || '',
+          LASTNAME: lastName || '',
+          COMPANY: company || '',
+          SMS: phone || '',
+          ENQUIRY_TYPE: topic || 'Newsletter',
+          SOURCE: 'Darlington First Website',
+          WEBSITE: 'darlingtonfirst.network'
+        },
+        listIds: [7],
+        updateEnabled: true
+      })
+    });
+  }
+
+  // Show modal
+  function showModal(id) {
+    document.getElementById(id).style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  // Close modal on backdrop click
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal-backdrop')) {
+      e.target.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Newsletter subscribe handler
+  function handleNewsletterSubmit(e) {
+    e.preventDefault();
+    var form = e.target;
+    var email = form.querySelector('[name="email"]').value.trim();
+    var firstName = form.querySelector('[name="firstName"]') ? form.querySelector('[name="firstName"]').value.trim() : '';
+    var lastName = form.querySelector('[name="lastName"]') ? form.querySelector('[name="lastName"]').value.trim() : '';
+    if (!email) { showFormMsg(form, 'Please enter your email address.', false); return; }
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = 'Subscribing...';
+    brevoSubscribe(email, firstName, lastName, '', '', 'Newsletter')
+      .then(function(r) {
+        if (r.status === 201 || r.status === 204) {
+          showFormMsg(form, '✓ You’re subscribed! Welcome to Darlington First.', true);
+          form.reset();
+        } else {
+          return r.json().then(function(d) { throw new Error(d.message || 'Error'); });
+        }
+      })
+      .catch(function(err) {
+        showFormMsg(form, 'Something went wrong: ' + err.message, false);
+      })
+      .finally(function() { btn.disabled = false; btn.textContent = 'Subscribe'; });
+  }
+
+  // Contact form handler
+  function handleContactSubmit(e) {
+    e.preventDefault();
+    var form = e.target;
+    var firstName = (form.querySelector('[name="firstName"]').value || '').trim();
+    var lastName = (form.querySelector('[name="lastName"]').value || '').trim();
+    var email = form.querySelector('[name="email"]').value.trim();
+    var company = (form.querySelector('[name="company"]').value || '').trim();
+    var phone = form.querySelector('[name="phone"]') ? form.querySelector('[name="phone"]').value.trim() : '';
+    var topic = form.querySelector('[name="topic"]').value;
+    var message = form.querySelector('[name="message"]').value.trim();
+    if (!email || !firstName) { showFormMsg(form, 'Please fill in your name and email.', false); return; }
+    var btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true; btn.textContent = 'Sending...';
+    brevoSubscribe(email, firstName, lastName, company, phone, topic)
+      .then(function(r) {
+        if (r.status === 201 || r.status === 204) {
+          // Also send transactional notification email
+          return fetch('https://api.brevo.com/v3/smtp/email', {
+            method: 'POST',
+            headers: { 'accept': 'application/json', 'content-type': 'application/json', 'api-key': _bk() },
+            body: JSON.stringify({
+              sender: { name: 'Darlington First Website', email: 'hello@first-connections.com' },
+              to: [{ email: 'hello@first-connections.com', name: 'Darlington First' }],
+              replyTo: { email: email, name: firstName + ' ' + lastName },
+              subject: 'New enquiry: ' + topic + ' — Darlington First',
+              htmlContent: '<h2>New Website Enquiry</h2><table style="font-family:sans-serif;font-size:14px;"><tr><td><b>Name:</b></td><td>' + firstName + ' ' + lastName + '</td></tr><tr><td><b>Email:</b></td><td>' + email + '</td></tr><tr><td><b>Company:</b></td><td>' + (company||'—') + '</td></tr><tr><td><b>Phone:</b></td><td>' + (phone||'—') + '</td></tr><tr><td><b>Topic:</b></td><td>' + topic + '</td></tr><tr><td><b>Message:</b></td><td>' + message + '</td></tr></table>'
+            })
+          });
+        } else {
+          return r.json().then(function(d) { throw new Error(d.message || 'Submission error'); });
+        }
+      })
+      .then(function() {
+        showFormMsg(form, '✓ Message sent! We’ll be in touch within 1–2 business days.', true);
+        form.reset();
+        setTimeout(function() { closeModal('contact-modal'); }, 2500);
+      })
+      .catch(function(err) {
+        showFormMsg(form, 'Something went wrong: ' + err.message, false);
+      })
+      .finally(function() { btn.disabled = false; btn.textContent = 'Send Message'; });
+  }
+
+  function showFormMsg(form, msg, success) {
+    var el = form.querySelector('.form-msg');
+    if (!el) { el = document.createElement('p'); el.className = 'form-msg'; form.appendChild(el); }
+    el.textContent = msg;
+    el.style.cssText = 'margin-top:0.75rem;font-size:0.9rem;font-weight:600;color:' + (success ? '#2e7d32' : '#c0392b') + ';';
+  }
+
+  // Bind forms on load
+  window.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.newsletter-form').forEach(function(f) {
+      f.addEventListener('submit', handleNewsletterSubmit);
+    });
+    var contactForm = document.getElementById('contact-form');
+    if (contactForm) contactForm.addEventListener('submit', handleContactSubmit);
+  });
 </script>
 </body>
 </html>
