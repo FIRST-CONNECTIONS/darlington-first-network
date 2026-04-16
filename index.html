@@ -650,12 +650,12 @@
   .sv-row {
     display: grid;
     grid-template-columns: 80px 1fr 60px;
-    gap: 1.75rem;
+    gap: 1.5rem;
     align-items: center;
     background: white;
     border: 1px solid rgba(30,58,122,0.08);
     border-radius: 16px;
-    padding: 2rem;
+    padding: 1.75rem;
     transition: transform 0.2s, box-shadow 0.2s;
   }
   .sv-row:hover {
@@ -664,6 +664,23 @@
   }
   .sv-row-alt {
     grid-template-columns: 60px 1fr 80px;
+  }
+  /* Mobile: all sv-rows collapse to icon + text, number hidden */
+  @media (max-width: 768px) {
+    .sv-row {
+      grid-template-columns: 64px 1fr !important;
+      padding: 1.25rem !important;
+      gap: 1rem !important;
+    }
+    .sv-row-alt {
+      grid-template-columns: 64px 1fr !important;
+    }
+    .sv-number { display: none !important; }
+    .sv-text-col { text-align: left !important; }
+    /* For alt rows, move icon to front on mobile */
+    .sv-row-alt .sv-number { display: none !important; }
+    .sv-row-alt .sv-icon-col { order: -1; }
+    .sv-row-alt .sv-text-col { text-align: left !important; }
   }
   .sv-icon-col {
     width: 80px; height: 80px; border-radius: 16px;
@@ -684,10 +701,8 @@
     flex-shrink: 0;
   }
   @media (max-width: 640px) {
-    .sv-row, .sv-row-alt {
-      grid-template-columns: 1fr !important;
-    }
-    .sv-number { display: none; }
+  
+    
     .sv-text-col { text-align: left !important; }
     .sv-icon-col { width: 60px; height: 60px; }
   }
@@ -983,8 +998,8 @@
     .events-hero-content h1 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
 
     /* Social value rows */
-    .sv-row, .sv-row-alt { grid-template-columns: 60px 1fr !important; padding: 1.25rem; }
-    .sv-number { display: none; }
+    
+    
 
     /* Pillar cards */
     div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
@@ -1056,6 +1071,171 @@
     .hamburger { display: flex; }
     .contact-grid { grid-template-columns: 1fr; }
   }
+
+  /* ── RESPONSIVE GRID CLASSES ─────────────────────────────────── */
+  .rg-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .rg-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .rg-auto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+
+  /* Tablet */
+  @media (max-width: 900px) {
+    .rg-3col { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .rg-2col { grid-template-columns: 1fr; gap: 1.25rem; }
+    .rg-3col { grid-template-columns: 1fr; gap: 1rem; }
+    .rg-auto { grid-template-columns: 1fr; }
+  }
+
+  /* ── GLOBAL RESPONSIVE CLEANUP ───────────────────────────────── */
+
+  /* All images responsive by default */
+  img { max-width: 100%; height: auto; display: block; }
+
+  /* Touch targets */
+  a, button { min-height: 44px; }
+  .nav-links a { min-height: unset; }
+
+  /* Prevent horizontal overflow */
+  * { box-sizing: border-box; }
+  body { overflow-x: hidden; }
+
+  /* ── BREAKPOINT: TABLET (641px - 1024px) ────────────────────── */
+  @media (min-width: 641px) and (max-width: 1024px) {
+    .hero { height: 480px; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
+    .section-pad { padding: 4rem 1.75rem; }
+    .nav-links { gap: 1.2rem; }
+    .nav-links a { font-size: 0.85rem; }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .cal-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .res-offer-card { flex-direction: column; }
+    .res-offer-badge { width: 100%; min-width: unset; flex-direction: row; justify-content: space-between; align-items: center; }
+    div[style*="max-width:1000px"][style*="grid"] { grid-template-columns: 1fr !important; }
+  }
+
+  /* ── BREAKPOINT: MOBILE (max 640px) ─────────────────────────── */
+  @media (max-width: 640px) {
+    /* Nav */
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+
+    /* Hero */
+    .hero { height: auto; min-height: 480px; padding: 6rem 1.25rem 3.5rem; align-items: flex-end; }
+    .hero-content { padding: 0; }
+    .hero h1 { font-size: clamp(1.9rem, 7.5vw, 2.8rem); }
+    .hero p { font-size: 0.95rem; }
+    .hero-buttons { flex-direction: column; align-items: stretch; gap: 0.75rem; }
+    .hero-buttons > * { width: 100%; text-align: center; }
+    .hero-scroll { display: none; }
+
+    /* Section padding */
+    .section-pad { padding: 3rem 1.25rem; }
+    .page-hero { padding: 2.5rem 1.25rem; margin-top: 64px; }
+    .page-hero h1 { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+
+    /* Typography scale */
+    .section-title { font-size: 1.6rem; }
+    h2 { font-size: clamp(1.4rem, 5.5vw, 2rem); }
+
+    /* Footer */
+    .footer-inner { grid-template-columns: 1fr !important; gap: 2rem; padding: 2.5rem 1.25rem 2rem; }
+    footer { padding: 1.25rem; flex-direction: column; align-items: flex-start; }
+
+    /* Sponsor strip */
+    .sponsor-logos { border-radius: 8px; }
+    .sponsor-item { flex: 1 1 50%; border-right: none; }
+
+    /* Timeline */
+    .timeline { padding-left: 0.5rem; }
+    .timeline::before { left: 18px; }
+    .timeline-dot { width: 36px; height: 36px; min-width: 36px; }
+
+    /* Calendar */
+    .cal-grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .cal-card { padding: 1rem; }
+    .cal-date { font-size: 1.1rem; }
+
+    /* Events hero */
+    .events-hero { height: 240px; }
+    .events-hero-content h1 { font-size: clamp(1.5rem, 6vw, 2rem); }
+    .events-hero-content p { font-size: 0.9rem; }
+
+    /* Social value rows */
+    
+    
+
+    /* Resource offer cards */
+    .res-offer-card { flex-direction: column; padding: 1.25rem; gap: 1rem; }
+    .res-offer-badge { width: 100%; min-width: unset; padding: 0.9rem 1rem; border-radius: 8px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; }
+    .res-badge-value { font-size: 1.4rem; }
+    .res-roam-box { padding: 1rem; }
+
+    /* Modals */
+    .modal-backdrop { padding: 0.5rem; align-items: flex-end; }
+    .modal-backdrop > div { border-radius: 16px 16px 16px 16px; width: 100%; max-width: 100% !important; max-height: 92vh; }
+    div[id="contact-modal"] > div { border-radius: 16px; }
+
+    /* Form layout in modals */
+    .form-group { margin-bottom: 0.85rem; }
+    .form-group input, .form-group textarea, .form-group select { font-size: 16px; } /* prevent iOS zoom */
+
+    /* Buttons */
+    .btn-primary, .btn-outline, .btn-navy { padding: 0.9rem 1.5rem; font-size: 0.9rem; }
+
+    /* CTA band */
+    .cta-band { padding: 3rem 1.25rem; }
+    .cta-band h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
+
+    /* Contact grid */
+    .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+
+    /* Home sponsor cards */
+    div[style*="grid-template-columns:repeat(auto-fit,minmax(170px"] { grid-template-columns: 1fr 1fr !important; gap: 0.75rem !important; }
+
+    /* FC Pillar cards - show as 1 col */
+    div[style*="display:grid"][style*="gap:1.5rem"] { gap: 1rem !important; }
+  }
+
+  /* ── BREAKPOINT: SMALL PHONE (max 420px) ─────────────────────── */
+  @media (max-width: 420px) {
+    nav { padding: 0 1rem; }
+    .nav-logo { font-size: 1.1rem; }
+    .hero { min-height: 440px; }
+    .cal-grid { grid-template-columns: 1fr; }
+    div[style*="grid-template-columns:repeat(auto-fit,minmax(170px"] { grid-template-columns: 1fr !important; }
+    .section-pad { padding: 2.5rem 1rem; }
+    .modal-backdrop { padding: 0; }
+    .modal-backdrop > div { border-radius: 12px 12px 0 0; max-height: 95vh; }
+    .res-offer-badge { flex-direction: column; text-align: center; }
+    .hero-buttons > * { font-size: 0.9rem; padding: 0.85rem 1rem; }
+    .sponsor-item { flex: 1 1 100%; }
+  }
+
+  /* ── DESKTOP POLISH (min 1025px) ─────────────────────────────── */
+  @media (min-width: 1025px) {
+    .hero { height: 600px; }
+    .section-pad { padding: 5.5rem 2rem; }
+    .nav-links { gap: 2.25rem; }
+    .footer-inner { max-width: 1100px; }
+    .max-900 { max-width: 960px; }
+  }
+
 </style>
 </head>
 <body>
@@ -1108,7 +1288,7 @@
   </section>
 
   <section class="section-pad" style="background: var(--light-blue);" id="welcome">
-    <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+    <div class="rg-2col" style="max-width:1000px;margin:0 auto;align-items:center">
       <div>
         <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Welcome</p>
         <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;line-height:1.1;margin-bottom:1.25rem;">Welcome to <em style="font-style:italic;color:var(--gold-dark);">Darlington First</em></h2>
@@ -1180,7 +1360,7 @@
 
         <div class="sv-row sv-row-alt">
           <div class="sv-number" style="color:var(--navy);">02</div>
-          <div class="sv-text-col" style="text-align:right;">
+          <div class="sv-text-col">
             <h3 class="sv-title">Great Ideas Deserve Support</h3>
             <p class="sv-desc">You don't need a business degree to have a brilliant idea. We're here to help those with passion and vision prosper — even if they're just getting started and learning as they go.</p>
           </div>
@@ -1202,7 +1382,7 @@
 
         <div class="sv-row sv-row-alt">
           <div class="sv-number" style="color:var(--navy);">04</div>
-          <div class="sv-text-col" style="text-align:right;">
+          <div class="sv-text-col">
             <h3 class="sv-title">Coaches &amp; Connections</h3>
             <p class="sv-desc">We'll be making introductions to business coaches and likeminded individuals — connecting you with the right people who can help take your ideas to the next level.</p>
           </div>
@@ -1227,12 +1407,12 @@
       <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:1.25rem;">The gateway to <em style="font-style:italic;color:var(--gold-dark);">the North East</em></h2>
       <p class="section-muted" style="margin-bottom:2.5rem;max-width:680px;">Darlington is the gateway to the North East — connecting Durham, Newcastle, and every town in between. With major government investment in the train station, Teesside International Airport, and the relocation of HM Treasury, Darlington has never been better positioned for business.</p>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2.5rem;">
+      <div class="rg-2col" style="margin-bottom:2.5rem">
         <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Website-Images/img-teesside-steel.jpg.png" alt="Teesside Steel Works" style="width:100%;border-radius:14px;object-fit:cover;height:220px;" />
         <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Website-Images/Happy-shop-owner.png" alt="Local business owner, Darlington" style="width:100%;border-radius:14px;object-fit:cover;height:220px;" />
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+      <div class="rg-3col" style=>
         <div style="background:white;border-radius:12px;padding:1.5rem;">
           <div style="font-size:1.4rem;margin-bottom:0.5rem;"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><rect width="16" height="16" x="4" y="3" rx="2"/><path d="M4 11h16"/><path d="M12 3v8"/><path d="m8 19-2 3"/><path d="m18 22-2-3"/><path d="M8 15h.01"/><path d="M16 15h.01"/></svg></div>
           <h3 style="font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0.4rem;">Major Transport Hub</h3>
@@ -1261,7 +1441,7 @@
     </div>
 
     <!-- TWO COLUMN SPLIT -->
-    <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-bottom:4rem;">
+    <div class="rg-2col" style="max-width:900px;margin:0 auto;align-items:start;margin-bottom:4rem">
       <div>
         <div style="width:40px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:1.25rem;"></div>
         <h3 style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem;">Bridging ambition &amp; experience</h3>
@@ -1275,7 +1455,7 @@
     </div>
 
     <!-- THREE PILLARS -->
-    <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+    <div class="rg-3col" style="max-width:900px;margin:0 auto">
       <div style="background:var(--light-blue);border-radius:16px;padding:2rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:0.75rem;border:1px solid rgba(30,58,122,0.08);transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
         <div style="width:56px;height:56px;background:var(--light-blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/><path d="m8 10 2 2 4-4"/></svg></div>
         <h3 style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:var(--navy);">Networking</h3>
@@ -1473,7 +1653,7 @@
       <h2 style="font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.03em;margin-bottom:1.25rem;">Part of First Connections</h2>
       <p class="section-muted max-680" style="margin:0 auto 3.5rem;font-size:1.05rem;">Darlington First sits within the broader First Connections Group — three pillars built to empower businesses across the North East.</p>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      <div class="rg-3col" style=>
 
         <div class="fc-pillar-card">
           <div class="fc-pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;flex-shrink:0;"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"/><path d="m8 10 2 2 4-4"/></svg></div>
@@ -1513,7 +1693,7 @@
 
   <!-- PROUDLY INDEPENDENT -->
   <section style="padding:5rem 2rem;background:white;">
-    <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
+    <div class="rg-2col" style="max-width:900px;margin:0 auto;align-items:center">
       <div>
         <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">The Team Behind Darlington First</p>
         <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:1.25rem;">Proudly <em style="font-style:italic;color:var(--gold-dark);">independent</em></h2>
@@ -1554,7 +1734,7 @@
         <h3 style="font-family:'Fraunces',serif;font-size:1.1rem;font-weight:700;color:var(--navy);letter-spacing:-0.01em;text-transform:uppercase;font-size:0.8rem;letter-spacing:0.1em;">Business Networking</h3>
       </div>
 
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;">
+      <div class="rg-3col" style=>
 
         <!-- DARLINGTON - LIVE -->
         <div class="net-card net-card-live">
@@ -1773,7 +1953,7 @@
       <span class="pill-badge dark">What to Expect</span>
       <h2 style="font-family:'Fraunces',serif;font-size:clamp(2rem,5vw,3rem);font-weight:900;color:var(--navy);letter-spacing:-0.03em;margin:0.75rem 0 1.25rem;">Every event is different</h2>
       <p class="section-muted max-680" style="margin:0 auto 3.5rem;font-size:1.05rem;">No two Darlington First events are the same — but every one of them is free, welcoming, and worth your time.</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;">
+      <div class="rg-3col" style=>
         <div class="expect-card">
           <div class="expect-icon-wrap" style="background:var(--light-blue);">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" x2="6" y1="2" y2="4"/><line x1="10" x2="10" y1="2" y2="4"/><line x1="14" x2="14" y1="2" y2="4"/></svg>
@@ -1856,7 +2036,7 @@
           </div>
           <p class="res-offer-desc">Everything your business needs — all in one place, for just <strong style="color:var(--navy);">£24.99/month + VAT</strong>. No hidden fees, no long-term contracts. A bundle of premium tools typically worth over <strong style="color:var(--navy);">£1,000/year</strong>.</p>
           <p style="font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.75rem;">What&apos;s Included:</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1.25rem;">
+          <div class="rg-2col" style="margin-bottom:1.25rem">
             <div class="res-feature-box"><strong>Bookkeeping Software</strong><span>Access to QuickBooks, Xero, and Sage — choose the platform that works best for you.</span></div>
             <div class="res-feature-box"><strong>Office 365 &amp; All Apps</strong><span>Full Microsoft 365 membership — Word, Excel, PowerPoint, Outlook, Teams, and more.</span></div>
             <div class="res-feature-box"><strong>Acronis Cyber Security</strong><span>Enterprise-grade data backup, disaster recovery, and cyber protection.</span></div>
@@ -1893,7 +2073,7 @@
           </div>
           <p class="res-offer-desc">Superb co-working spaces and meeting rooms in the heart of Darlington. Two centres — Business Central and Innovation Central — offering offices, meeting rooms, and a co-working lounge to suit businesses of all sectors.</p>
           <p class="res-offer-desc">As a proud sponsor of Darlington First, NE BIC are offering our community two exclusive deals:</p>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1.25rem;">
+          <div class="rg-2col" style="margin-bottom:1.25rem">
             <div class="res-feature-box"><strong>Free Co-Working Day Pass</strong><span>Enjoy a full free day in the co-working area — experience the space, the community, and the facilities.</span></div>
             <div class="res-feature-box"><strong>10% Off First Meeting Room Booking</strong><span>Professional spaces for presentations, workshops, and team sessions.</span></div>
           </div>
@@ -1920,7 +2100,7 @@
             <h3 style="font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;color:white;margin-bottom:0.4rem;">Roam</h3>
             <p style="font-size:0.9rem;color:rgba(255,255,255,0.7);">Your gateway to everything local</p>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+          <div class="rg-2col" style=>
             <div class="res-roam-box">
               <h4 style="font-weight:700;color:white;margin-bottom:0.75rem;">For Residents &amp; Consumers</h4>
               <p style="font-size:0.85rem;color:rgba(255,255,255,0.75);margin-bottom:0.75rem;">Download the Roam app and stay connected to your local community. Discover:</p>
@@ -2005,7 +2185,7 @@
           </div>
           <p class="res-offer-desc">A smarter way to improve your emotional health. This free app uses marginal gains — small, targeted actions that lead to big results.</p>
           <p class="res-offer-desc">Answer 100 simple yes-or-no questions to assess key areas of your wellbeing. When you respond negatively, the app provides practical, personalised advice to help you improve. Your unique action plan evolves with you, helping you build lasting habits and track progress over time.</p>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-bottom:1.25rem;">
+          <div class="rg-3col" style="margin-bottom:1.25rem">
             <div class="res-stat-box"><strong>100</strong><span>Yes/No Questions</span></div>
             <div class="res-stat-box"><strong>Free</strong><span>Always</span></div>
             <div class="res-stat-box"><strong>iOS &amp; Android</strong><span>Available On</span></div>
@@ -2040,7 +2220,7 @@
           </div>
           <p class="res-offer-desc">A smarter way to prepare yourself for employment. This free app uses marginal gains — small, targeted actions that lead to big results.</p>
           <p class="res-offer-desc">Answer 100 simple yes-or-no questions to assess key areas. The app provides practical, personalised advice and generates a <strong style="color:var(--navy);">certificate of employability</strong> to present to potential employers.</p>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.6rem;margin-bottom:1.25rem;">
+          <div class="rg-3col" style="margin-bottom:1.25rem">
             <div class="res-stat-box"><strong>100</strong><span>Yes/No Questions</span></div>
             <div class="res-stat-box"><strong>Free</strong><span>Always</span></div>
             <div class="res-stat-box"><strong>iOS &amp; Android</strong><span>Available On</span></div>
@@ -2159,7 +2339,7 @@
 
   <!-- CONTACT FORM + GET INVOLVED -->
   <section style="padding:5rem 2rem;background:white;">
-    <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+    <div class="rg-2col" style="max-width:900px;margin:0 auto;align-items:start">
 
       <div>
         <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;">Send Us a Message</p>
@@ -2265,12 +2445,12 @@
     </div>
     <div style="padding:2rem;">
       <form id="contact-form">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div class="rg-2col" style="margin-bottom:1rem">
           <div class="form-group"><label>First Name</label><input type="text" name="firstName" placeholder="Jane" required /></div>
           <div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" /></div>
         </div>
         <div class="form-group" style="margin-bottom:1rem;"><label>Email Address</label><input type="email" name="email" placeholder="jane@yourbusiness.com" required /></div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div class="rg-2col" style="margin-bottom:1rem">
           <div class="form-group"><label>Company Name</label><input type="text" name="company" placeholder="Your business name" /></div>
           <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="07700 900000" /></div>
         </div>
@@ -2307,7 +2487,7 @@
     <div style="padding:2rem;">
       <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.7;">Event dates, venue announcements and community news. No spam, ever.</p>
       <form class="newsletter-form">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div class="rg-2col" style="margin-bottom:1rem">
           <div class="form-group"><label>First Name</label><input type="text" name="firstName" placeholder="Jane" /></div>
           <div class="form-group"><label>Last Name</label><input type="text" name="lastName" placeholder="Smith" /></div>
         </div>
