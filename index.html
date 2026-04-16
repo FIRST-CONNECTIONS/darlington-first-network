@@ -3071,22 +3071,23 @@ document.addEventListener('click',function(e){
   if(m&&m.classList.contains('open')&&!m.contains(e.target)&&b&&!b.contains(e.target))closeMenu();
 });
 
-var _a='xkeysib-8244a842d5012f',_b='681b5300130f88cd3bda0675e765d63fc5c622c9a688f4aefa',_c='-YWbPu4EIFnftGbue';
-function _k(){return _a+_b+_c;}
+/* ── Contact + newsletter API proxy (Netlify Functions) ─────
+   API keys live server-side as env vars; see netlify/functions/
+──────────────────────────────────────────────────────────── */
 
 function bSub(d){
-  return fetch('https://api.brevo.com/v3/contacts',{
+  return fetch('/api/subscribe',{
     method:'POST',
-    headers:{'accept':'application/json','content-type':'application/json','api-key':_k()},
-    body:JSON.stringify({email:d.email,attributes:{FIRSTNAME:d.fn||'',LASTNAME:d.ln||'',COMPANY:d.co||'',SMS:d.ph||'',ENQUIRY_TYPE:d.tp||'Newsletter',SOURCE:'Darlington First Website'},listIds:[7],updateEnabled:true})
+    headers:{'content-type':'application/json'},
+    body:JSON.stringify({email:d.email,fn:d.fn||'',ln:d.ln||'',co:d.co||'',ph:d.ph||'',tp:d.tp||'Newsletter'})
   });
 }
 
 function bMail(d){
-  return fetch('https://api.brevo.com/v3/smtp/email',{
+  return fetch('/api/contact-email',{
     method:'POST',
-    headers:{'accept':'application/json','content-type':'application/json','api-key':_k()},
-    body:JSON.stringify({sender:{name:'Darlington First',email:'hello@first-connections.com'},to:[{email:'hello@first-connections.com'}],replyTo:{email:d.email},subject:'Enquiry: '+d.tp+' - Darlington First',htmlContent:'<h3>New Enquiry</h3><p>Name: '+d.fn+' '+d.ln+'</p><p>Email: '+d.email+'</p><p>Company: '+(d.co||'-')+'</p><p>Phone: '+(d.ph||'-')+'</p><p>Topic: '+d.tp+'</p><p>Message: '+(d.msg||'-')+'</p>'})
+    headers:{'content-type':'application/json'},
+    body:JSON.stringify({email:d.email,fn:d.fn,ln:d.ln||'',co:d.co||'',ph:d.ph||'',tp:d.tp||'General Enquiry',msg:d.msg||''})
   });
 }
 
@@ -3142,14 +3143,11 @@ window.addEventListener('DOMContentLoaded',function(){
 });
 
 /* ═════════════════════════════════════════════════════════════
-   DF OFFERS — Airtable config + page logic (Darlington First)
+   DF OFFERS — proxied via Netlify Functions (Darlington First)
+   Airtable token lives server-side as env var; see netlify/functions/offers.js
    ═════════════════════════════════════════════════════════════ */
-var _ot1='patGMsRmnhKEdu3i9.6c',_ot2='c95e575e7bc045354ad23d46104665',_ot3='03d56e649b2aa3c5fb93738445e1314b';
-var OF_TOKEN=_ot1+_ot2+_ot3;
-var OF_BASE='appzNaWxLuQstEUSX';
-var OF_TABLE='tblrQUho0RGnhh03V';
-var OF_SITE='Darlington First';
-var OF_API='https://api.airtable.com/v0/';
+var OF_SITE='Darlington First';  // kept for display purposes only
+var OF_API_PROXY='/api/offers';
 
 var OF_DATA = [];
 var OF_LOADED = false;
@@ -3162,15 +3160,7 @@ function loadDFOffers(){
   if(OF_LOADED) return;
   var grid = document.getElementById('offers-community-grid');
   if(!grid) return;
-  var filter = 'AND({Approved}=1,OR({Site}="'+OF_SITE+'",{Site}="All Sites"))';
-  var url = OF_API+OF_BASE+'/'+OF_TABLE
-    +'?filterByFormula='+encodeURIComponent(filter)
-    +'&fields[]=Business+Name&fields[]=Sector&fields[]=Description'
-    +'&fields[]=Offer+Headline&fields[]=Offer+Detail&fields[]=Discount+Code'
-    +'&fields[]=Website+URL&fields[]=Logo+URL&fields[]=Town+%2F+City'
-    +'&fields[]=Featured&fields[]=Terms&fields[]=How+to+Claim'
-    +'&sort[0][field]=Business+Name&sort[0][direction]=asc';
-  fetch(url,{headers:{'Authorization':'Bearer '+OF_TOKEN,'Content-Type':'application/json'}})
+  fetch(OF_API_PROXY,{headers:{'Content-Type':'application/json'}})
   .then(function(r){return r.json();})
   .then(function(data){
     OF_LOADED = true;
@@ -3390,24 +3380,24 @@ function submitOfferForm(){
   if(btn) btn.disabled = true;
   if(txt) txt.textContent = 'Submitting...';
 
-  var fields = {
+  var payload = {
     'Business Name':biz,'Sector':sector,'Description':desc,'Offer Headline':headline,
-    'Site':OF_SITE,'Town / City':town,'Contact Name':cname,'Contact Email':cemail
+    'Town / City':town,'Contact Name':cname,'Contact Email':cemail
   };
-  if(detail)   fields['Offer Detail']=detail;
-  if(code)     fields['Discount Code']=code;
-  if(url)      fields['Website URL']=url;
-  if(logo)     fields['Logo URL']=logo;
-  if(terms)    fields['Terms']=terms;
-  if(claim)    fields['How to Claim']=claim;
+  if(detail) payload['Offer Detail']=detail;
+  if(code)   payload['Discount Code']=code;
+  if(url)    payload['Website URL']=url;
+  if(logo)   payload['Logo URL']=logo;
+  if(terms)  payload['Terms']=terms;
+  if(claim)  payload['How to Claim']=claim;
 
-  fetch(OF_API+OF_BASE+'/'+OF_TABLE,{
+  fetch(OF_API_PROXY,{
     method:'POST',
-    headers:{'Authorization':'Bearer '+OF_TOKEN,'Content-Type':'application/json'},
-    body:JSON.stringify({fields:fields})
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(payload)
   })
   .then(function(r){
-    if(r.ok || r.status===200 || r.status===201){
+    if(r.ok){
       document.getElementById('of-form-wrap').style.display='none';
       document.getElementById('of-success').style.display='block';
       OF_LOADED = false;
@@ -3422,7 +3412,7 @@ function submitOfferForm(){
         });
       },4000);
     } else {
-      r.json().then(function(e){console.error('Airtable error:',e);}).catch(function(){});
+      r.json().then(function(e){console.error('Submit error:',e);}).catch(function(){});
       if(btn) btn.disabled=false;
       if(txt) txt.textContent='Submit for review';
       alert('Something went wrong. Please try again.');
