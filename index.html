@@ -1236,69 +1236,379 @@
     .max-900 { max-width: 960px; }
   }
 
-  /* ── COMMUNITY OFFER CARDS ──────────────────────────────── */
-  .community-offers-section { padding: 5rem 2rem; background: var(--light-blue); }
-  .community-offers-section .co-header-wrap { max-width: 900px; margin: 0 auto 2.5rem; text-align: center; }
-  .community-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; max-width: 1100px; margin: 0 auto 2rem; }
-  .community-offer-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid rgba(30,58,122,0.12); transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column; }
-  .community-offer-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(30,58,122,0.12); }
-  .coc-header { background: var(--navy); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 10px; }
-  .coc-logo { width: 38px; height: 38px; border-radius: 8px; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--gold); flex-shrink: 0; overflow: hidden; }
-  .coc-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
-  .coc-name { color: #fff; font-size: 0.88rem; font-weight: 600; margin: 0; font-family: 'DM Sans', sans-serif; }
-  .coc-sector { color: rgba(255,255,255,0.55); font-size: 0.75rem; margin: 0; }
-  .coc-badge { margin-left: auto; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); font-size: 0.68rem; font-weight: 600; padding: 3px 8px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; letter-spacing: 0.04em; }
-  .coc-body { padding: 1rem 1.25rem; flex: 1; display: flex; flex-direction: column; }
-  .coc-offer-badge { background: #eaf3de; border: 1px solid #c0dd97; border-radius: 6px; padding: 8px 10px; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px; }
-  .coc-offer-value { font-size: 1.1rem; font-weight: 700; color: #3b6d11; margin: 0; }
-  .coc-offer-detail { font-size: 0.75rem; color: #639922; margin: 0; }
-  .coc-offer-code { font-size: 0.72rem; color: #3b6d11; font-weight: 600; margin-top: 2px; margin-bottom: 0; }
-  .coc-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; flex: 1; margin-bottom: 0.75rem; }
-  .coc-link { font-size: 0.78rem; color: var(--navy); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
-  .coc-link:hover { color: var(--gold-dark); }
-  .coc-submit-card { background: #fff; border: 2px dashed rgba(30,58,122,0.25); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1.5rem; text-align: center; min-height: 200px; cursor: pointer; transition: border-color 0.2s ease; }
-  .coc-submit-card:hover { border-color: var(--gold); }
-  .coc-submit-icon { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(30,58,122,0.25); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem; font-size: 1.4rem; color: var(--muted); transition: border-color 0.2s ease, color 0.2s ease; }
-  .coc-submit-card:hover .coc-submit-icon { border-color: var(--gold); color: var(--gold-dark); }
-  .coc-submit-title { font-size: 0.92rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
-  .coc-submit-desc { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
-  .coc-submit-btn { background: var(--gold); color: var(--navy-dark); border: none; border-radius: 6px; font-size: 0.82rem; font-weight: 700; padding: 0.5rem 1.2rem; cursor: pointer; font-family: 'DM Sans', sans-serif; }
-  .coc-submit-btn:hover { background: var(--gold-dark); }
-  .coc-loading, .coc-empty { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.88rem; grid-column: 1/-1; }
-  .coc-spinner { width: 28px; height: 28px; border: 3px solid rgba(30,58,122,0.15); border-top-color: var(--gold); border-radius: 50%; animation: cocSpin 0.8s linear infinite; margin: 0 auto 0.75rem; }
-  @keyframes cocSpin { to { transform: rotate(360deg); } }
+  /* ═══════════════════════════════════════════════════════════
+     DF OFFERS PAGE
+     ═══════════════════════════════════════════════════════════ */
 
-  /* ── OFFER SUBMISSION MODAL ──────────────────────────────── */
-  .offer-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(10,20,50,0.75); z-index: 1000; align-items: center; justify-content: center; padding: 1rem; }
-  .offer-modal-overlay.open { display: flex; }
-  .offer-modal { background: #fff; border-radius: 20px; width: 100%; max-width: 580px; max-height: 90vh; overflow-y: auto; position: relative; }
-  .offer-modal-head { background: var(--navy); border-radius: 20px 20px 0 0; padding: 1.75rem 2rem; display: flex; justify-content: space-between; align-items: center; }
-  .offer-modal-head p.kicker { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem; }
-  .offer-modal-head h2 { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900; color: white; margin: 0; }
-  .offer-modal-head h2 em { color: var(--gold); font-style: italic; }
-  .offer-modal-close { background: rgba(255,255,255,0.12); border: none; color: white; width: 36px; height: 36px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; flex-shrink: 0; }
-  .offer-modal-body { padding: 2rem; }
-  .offer-modal-body p.sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.7; }
-  .offer-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
-  .offer-field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 0.75rem; }
-  .offer-field label { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
-  .offer-field input, .offer-field textarea { padding: 0.55rem 0.75rem; border: 1.5px solid rgba(30,58,122,0.18); border-radius: 8px; font-size: 0.88rem; color: var(--text); background: #fff; font-family: 'DM Sans', sans-serif; transition: border-color 0.2s; }
-  .offer-field input:focus, .offer-field textarea:focus { outline: none; border-color: var(--navy); }
-  .offer-field textarea { resize: vertical; min-height: 72px; }
-  .offer-req { color: #e24b4a; }
-  .offer-submit-btn { width: 100%; padding: 0.9rem; background: var(--gold); color: var(--navy-dark); border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 0.5rem; font-family: 'DM Sans', sans-serif; }
-  .offer-submit-btn:hover { background: var(--gold-dark); }
-  .offer-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-  .offer-form-note { font-size: 0.75rem; color: var(--muted); text-align: center; margin-top: 0.6rem; }
-  .offer-success { display: none; text-align: center; padding: 2rem 1rem; }
-  .offer-success-icon { width: 56px; height: 56px; border-radius: 50%; background: #eaf3de; color: #3b6d11; font-size: 1.6rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
-  .offer-success h3 { color: var(--navy); margin-bottom: 0.5rem; font-family: 'Fraunces', serif; }
-  .offer-success p { color: var(--muted); font-size: 0.88rem; }
+  /* Gold star on nav item */
+  .nav-offers-link { color: var(--navy) !important; font-weight: 700 !important; display: inline-flex; align-items: center; gap: 4px; }
+  .nav-offers-link::before { content: '★'; color: var(--gold); font-size: 0.75rem; }
+
+  /* HERO */
+  .offers-hero {
+    position: relative;
+    padding: clamp(2.5rem,6vw,4.5rem) clamp(1rem,4vw,2rem) clamp(2rem,5vw,3.5rem);
+    background: linear-gradient(180deg,var(--light-yellow) 0%,var(--cream) 100%);
+    border-bottom: 1px solid rgba(30,58,122,0.08);
+    overflow: hidden;
+  }
+  .offers-hero::before {
+    content: ''; position: absolute; inset: 0; opacity: 0.5; pointer-events: none;
+    background-image: radial-gradient(circle,rgba(30,58,122,0.06) 1px,transparent 1px);
+    background-size: 24px 24px;
+  }
+  .offers-hero-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; gap: clamp(1.5rem,4vw,3rem); align-items: center; position: relative;
+    grid-template-columns: 1.5fr 1fr;
+  }
+  .offers-hero-kicker {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #fff; border: 1px solid rgba(30,58,122,0.12);
+    padding: .4rem .9rem; border-radius: 100px;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted);
+    margin-bottom: 1rem; white-space: nowrap;
+  }
+  .offers-hero-kicker::before {
+    content: ''; width: 6px; height: 6px; background: #22c55e; border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(34,197,94,0.18); flex-shrink: 0;
+  }
+  .offers-hero h1 {
+    font-family: 'Fraunces',serif; font-size: clamp(1.65rem,5.5vw,3.2rem);
+    font-weight: 900; color: var(--navy); letter-spacing: -0.03em;
+    line-height: 1.05; margin-bottom: 1rem; hyphens: auto;
+  }
+  .offers-hero h1 em { font-style: italic; color: var(--gold-dark); }
+  .offers-hero p.offers-lead {
+    font-size: clamp(0.95rem,2.5vw,1.05rem); color: var(--muted);
+    line-height: 1.65; max-width: 480px; margin-bottom: 1.5rem;
+  }
+  .offers-hero-actions { display: flex; gap: .75rem; flex-wrap: wrap; }
+  .btn-offers-gold {
+    background: var(--gold); color: var(--navy-dark); border: none;
+    padding: .85rem 1.5rem; font-family: 'DM Sans',sans-serif;
+    font-size: 0.9rem; font-weight: 700; border-radius: 8px; cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    transition: background .2s,transform .15s; min-height: 48px; text-decoration: none;
+  }
+  @media (hover:hover) { .btn-offers-gold:hover { background: var(--gold-dark); transform: translateY(-1px); } }
+  .btn-offers-ghost {
+    background: transparent; color: var(--navy);
+    border: 1.5px solid rgba(30,58,122,0.2);
+    padding: .85rem 1.3rem; font-size: 0.9rem; font-weight: 700;
+    border-radius: 8px; cursor: pointer; font-family: 'DM Sans',sans-serif; min-height: 48px;
+  }
+  @media (hover:hover) { .btn-offers-ghost:hover { background: #fff; border-color: var(--navy); } }
+
+  /* Hero preview tiles */
+  .offers-hero-preview { position: relative; height: 240px; }
+  .offers-hero-preview .tile {
+    position: absolute; background: #fff;
+    border: 1px solid rgba(30,58,122,0.12); border-radius: 10px;
+    padding: .85rem 1rem;
+    box-shadow: 0 6px 20px rgba(30,58,122,0.08);
+    transition: transform .4s;
+  }
+  @media (hover:hover) { .offers-hero-preview .tile:hover { transform: translateY(-3px) rotate(0deg) !important; } }
+  .offers-hero-preview .tile-1 { top: 10px; left: 0; width: 180px; transform: rotate(-4deg); }
+  .offers-hero-preview .tile-2 { top: 70px; left: 140px; width: 190px; transform: rotate(3deg); z-index: 2; }
+  .offers-hero-preview .tile-3 { top: 140px; left: 40px; width: 175px; transform: rotate(-2deg); }
+  .tile .tile-h { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; margin-bottom: 2px; }
+  .tile .tile-v { font-size: 1.1rem; font-weight: 700; color: #3b6d11; font-family: 'Fraunces',serif; }
+  .tile .tile-b { font-size: 0.7rem; color: var(--muted); margin-top: 2px; }
+
+  @media (max-width: 899px) {
+    .offers-hero-inner { grid-template-columns: 1fr; }
+    .offers-hero-preview { height: 120px; margin-top: .5rem; }
+    .offers-hero-preview .tile { transform: rotate(0deg) !important; position: absolute; }
+    .offers-hero-preview .tile-1 { top: 0; left: 0; width: calc(33% - 8px); }
+    .offers-hero-preview .tile-2 { top: 0; left: calc(33% + 4px); width: calc(34% - 8px); }
+    .offers-hero-preview .tile-3 { top: 0; left: calc(67% + 4px); width: calc(33% - 8px); }
+  }
+  @media (max-width: 599px) {
+    .offers-hero-preview { display: none; }
+    .offers-hero-actions { flex-direction: column; align-items: stretch; }
+    .offers-hero-actions .btn-offers-gold,
+    .offers-hero-actions .btn-offers-ghost { width: 100%; }
+  }
+
+  /* FILTER BAR */
+  .offers-filter-bar {
+    position: sticky; top: 64px; z-index: 50; background: #fff;
+    border-bottom: 1px solid rgba(30,58,122,0.12);
+    padding: .85rem clamp(1rem,3vw,2rem);
+  }
+  .offers-filter-inner {
+    max-width: 1300px; margin: 0 auto;
+    display: flex; gap: .75rem; align-items: center; flex-wrap: wrap;
+  }
+  .offers-search-wrap { position: relative; flex: 0 0 280px; max-width: 100%; }
+  .offers-search-wrap svg {
+    position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+    width: 16px; height: 16px; color: var(--muted); pointer-events: none;
+  }
+  .offers-search-input {
+    width: 100%; padding: .7rem .75rem .7rem 2.2rem;
+    border: 1.5px solid rgba(30,58,122,0.15); border-radius: 8px;
+    font-size: 0.92rem; font-family: 'DM Sans',sans-serif;
+    color: var(--text); background: #fff; transition: border-color .2s;
+    min-height: 44px; -webkit-appearance: none; appearance: none;
+  }
+  .offers-search-input:focus {
+    outline: none; border-color: var(--navy);
+    box-shadow: 0 0 0 3px rgba(30,58,122,0.12);
+  }
+
+  .offers-chip-row { display: flex; gap: .4rem; flex-wrap: wrap; flex: 1; min-width: 0; align-items: center; }
+  .offers-chip {
+    background: #fff; border: 1.5px solid rgba(30,58,122,0.15); color: var(--text);
+    padding: .5rem 1rem; border-radius: 100px;
+    font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    transition: all .15s; font-family: 'DM Sans',sans-serif;
+    white-space: nowrap; min-height: 40px;
+    display: inline-flex; align-items: center; gap: 4px;
+  }
+  @media (hover:hover) { .offers-chip:hover { border-color: var(--navy); color: var(--navy); } }
+  .offers-chip:active { transform: scale(0.97); }
+  .offers-chip.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .offers-chip-count { font-size: 0.72rem; color: var(--muted); font-weight: 500; }
+  .offers-chip.active .offers-chip-count { color: rgba(255,255,255,0.7); }
+  .offers-result-count { font-size: 0.82rem; color: var(--muted); font-weight: 500; white-space: nowrap; margin-left: auto; }
+
+  @media (max-width: 899px) {
+    .offers-filter-inner { flex-direction: column; align-items: stretch; gap: .6rem; }
+    .offers-search-wrap { flex: 1 1 auto; }
+    .offers-chip-row {
+      flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+      scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch;
+      padding: .2rem .1rem; margin: -0.2rem -0.1rem;
+      mask-image: linear-gradient(to right,transparent,#000 16px,#000 calc(100% - 16px),transparent);
+      -webkit-mask-image: linear-gradient(to right,transparent,#000 16px,#000 calc(100% - 16px),transparent);
+      scrollbar-width: none;
+    }
+    .offers-chip-row::-webkit-scrollbar { display: none; }
+    .offers-chip { scroll-snap-align: start; flex-shrink: 0; }
+    .offers-result-count { align-self: flex-end; margin-left: 0; }
+  }
+
+  /* GRID */
+  .offers-page-body { background: var(--light-blue); min-height: 60vh; padding: 2rem clamp(1rem,3vw,2rem) 4rem; }
+  .offers-grid-wrap { max-width: 1300px; margin: 0 auto; }
+  .offers-section-divider { display: flex; align-items: center; gap: 12px; margin: 1rem 0 1rem; padding-top: .5rem; }
+  .offers-section-divider .label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); }
+  .offers-section-divider .divider-star { color: var(--gold); font-size: 0.85rem; }
+  .offers-section-divider hr { flex: 1; border: none; border-top: 1px solid rgba(30,58,122,0.15); }
+
+  .offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(clamp(220px,28vw,260px), 1fr));
+    gap: clamp(.75rem,2vw,1rem);
+  }
+
+  /* CARD */
+  .offer-card {
+    background: #fff; border-radius: 12px; overflow: hidden;
+    border: 1px solid rgba(30,58,122,0.1);
+    cursor: pointer; transition: transform .2s,box-shadow .2s;
+    display: flex; flex-direction: column; position: relative;
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (hover:hover) { .offer-card:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(30,58,122,0.13); } }
+  .offer-card:active { transform: scale(0.985); }
+  .offer-card:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .offer-card.featured { border: 1.5px solid var(--gold); }
+  .offer-card.featured::before {
+    content: '★ Featured'; position: absolute; top: -1px; right: -1px;
+    background: var(--gold); color: var(--navy-dark);
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: .3rem .6rem;
+    border-radius: 0 12px 0 10px; z-index: 2;
+  }
+  .card-value {
+    background: var(--navy); padding: 1.1rem 1rem .85rem;
+    color: #fff; display: flex; flex-direction: column; gap: 2px; position: relative;
+  }
+  .card-value .headline {
+    font-family: 'Fraunces',serif; font-weight: 900;
+    font-size: clamp(1.2rem,3vw,1.35rem); letter-spacing: -0.01em;
+    line-height: 1.15; color: var(--gold); word-break: break-word;
+  }
+  .card-value .detail { font-size: 0.72rem; color: rgba(255,255,255,0.65); font-weight: 500; }
+  .card-body { padding: .85rem 1rem 1rem; flex: 1; display: flex; flex-direction: column; }
+  .card-biz { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: .1rem; line-height: 1.25; }
+  .card-subline { display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: var(--muted); margin-bottom: .6rem; flex-wrap: wrap; }
+  .card-subline .dot { width: 3px; height: 3px; background: var(--muted); border-radius: 50%; opacity: 0.5; flex-shrink: 0; }
+  .card-desc {
+    font-size: 0.78rem; color: var(--muted); line-height: 1.55;
+    flex: 1; margin-bottom: .7rem;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .card-foot { display: flex; align-items: center; justify-content: space-between; padding-top: .5rem; border-top: 1px dashed rgba(30,58,122,0.12); gap: .5rem; }
+  .card-code {
+    font-size: 0.66rem; font-family: 'DM Sans',monospace; font-weight: 700;
+    color: #3b6d11; background: #eaf3de; padding: 3px 7px; border-radius: 4px;
+    letter-spacing: 0.04em; white-space: nowrap; overflow: hidden;
+    text-overflow: ellipsis; max-width: 70%;
+  }
+  .card-nocode { font-size: 0.68rem; color: var(--muted); }
+  .card-view { font-size: 0.72rem; color: var(--navy); font-weight: 700; display: inline-flex; align-items: center; gap: 3px; white-space: nowrap; }
+
+  /* SUBMIT TILE */
+  .offers-submit-tile {
+    background: linear-gradient(135deg,#fff 0%,#fffbea 100%);
+    border: 2px dashed rgba(245,197,24,0.5); border-radius: 12px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 1.5rem 1rem; text-align: center; cursor: pointer; min-height: 240px;
+    -webkit-tap-highlight-color: transparent; transition: background .2s,border-color .2s;
+  }
+  @media (hover:hover) { .offers-submit-tile:hover { border-color: var(--gold); background: #fffbea; } }
+  .offers-submit-tile:active { transform: scale(0.985); }
+  .offers-submit-icon {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--gold); color: var(--navy-dark);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; font-weight: 700; margin-bottom: .75rem;
+  }
+  .offers-submit-title { font-family: 'Fraunces',serif; font-weight: 900; font-size: 1rem; color: var(--navy); margin-bottom: .3rem; }
+  .offers-submit-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; max-width: 200px; }
+
+  /* DETAIL MODAL */
+  .offers-detail-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(10,20,50,0.78); z-index: 1000;
+    overflow-y: auto; -webkit-overflow-scrolling: touch;
+  }
+  .offers-detail-overlay.open { display: flex; }
+  .offers-detail-modal {
+    background: #fff; border-radius: 16px; width: 100%;
+    max-width: 640px; overflow: hidden; position: relative;
+    animation: dFadeIn .25s ease; margin: auto;
+  }
+  @keyframes dFadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  .offers-detail-head { background: var(--navy); color: #fff; padding: clamp(1.5rem,4vw,2rem); position: relative; }
+  .offers-detail-close {
+    position: absolute; top: .75rem; right: .75rem;
+    background: rgba(255,255,255,0.15); border: none; color: #fff;
+    width: 44px; height: 44px; border-radius: 50%; font-size: 1.4rem;
+    cursor: pointer; line-height: 1; display: flex; align-items: center; justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (hover:hover) { .offers-detail-close:hover { background: rgba(255,255,255,0.25); } }
+  .offers-detail-biz { font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.7); margin-bottom: .3rem; letter-spacing: 0.02em; padding-right: 3rem; }
+  .offers-detail-headline {
+    font-family: 'Fraunces',serif; font-weight: 900;
+    font-size: clamp(1.6rem,5vw,2rem); color: var(--gold);
+    letter-spacing: -0.02em; line-height: 1.1; margin-bottom: .5rem; word-break: break-word;
+  }
+  .offers-detail-sub { font-size: clamp(0.88rem,2vw,0.92rem); color: rgba(255,255,255,0.8); }
+
+  .offers-detail-body { padding: clamp(1.25rem,4vw,1.75rem) clamp(1.25rem,4vw,2rem); }
+
+  .offers-detail-meta-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem;
+    padding: 1rem; background: var(--light-blue); border-radius: 10px; margin-bottom: 1.25rem;
+  }
+  .offers-meta-item .meta-label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: .2rem; }
+  .offers-meta-item .meta-value { font-size: 0.88rem; font-weight: 700; color: var(--navy); }
+
+  .offers-detail-code-box {
+    background: #eaf3de; border: 1.5px dashed #c0dd97; border-radius: 10px;
+    padding: .9rem 1.1rem; display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 1.25rem; gap: .75rem; flex-wrap: wrap;
+  }
+  .offers-detail-code-box .code-label { font-size: 0.66rem; color: #3b6d11; text-transform: uppercase; font-weight: 700; letter-spacing: 0.08em; margin-bottom: .2rem; }
+  .offers-detail-code-box .code-value { font-family: 'DM Sans',monospace; font-size: clamp(1.1rem,3vw,1.2rem); font-weight: 700; color: #3b6d11; letter-spacing: 0.08em; word-break: break-all; }
+  .offers-copy-btn {
+    background: #fff; color: #3b6d11; border: 1px solid #c0dd97;
+    padding: .6rem 1rem; font-size: 0.82rem; font-weight: 700; border-radius: 6px;
+    cursor: pointer; font-family: 'DM Sans',sans-serif; min-height: 44px; white-space: nowrap;
+  }
+  @media (hover:hover) { .offers-copy-btn:hover { background: #3b6d11; color: #fff; border-color: #3b6d11; } }
+
+  .offers-detail-section { margin-bottom: 1.25rem; }
+  .offers-detail-section h4 { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: .4rem; }
+  .offers-detail-section p { font-size: 0.92rem; color: var(--text); line-height: 1.7; }
+
+  .offers-detail-foot {
+    padding: 1rem clamp(1.25rem,4vw,2rem) calc(1.5rem + env(safe-area-inset-bottom,0px));
+    display: flex; gap: .75rem;
+    border-top: 1px solid rgba(30,58,122,0.12); align-items: stretch;
+  }
+  .offers-detail-foot .btn-offers-gold { flex: 1; min-height: 48px; }
+  .offers-detail-foot .btn-offers-ghost { min-height: 48px; flex: 0 0 auto; }
+
+  @media (min-width: 701px) {
+    .offers-detail-overlay { align-items: center; justify-content: center; padding: 2rem 1rem; }
+  }
+  @media (max-width: 700px) {
+    .offers-detail-overlay { align-items: flex-end; justify-content: stretch; padding: 0; }
+    .offers-detail-modal {
+      border-radius: 20px 20px 0 0; max-width: 100%; max-height: 92vh;
+      overflow-y: auto; -webkit-overflow-scrolling: touch; margin: 0;
+      animation: dSlideUp .3s cubic-bezier(0.22,1,0.36,1);
+    }
+    @keyframes dSlideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+    .offers-detail-modal::before {
+      content: ''; position: sticky; top: 0; z-index: 3;
+      display: block; width: 40px; height: 4px;
+      background: rgba(255,255,255,0.35); border-radius: 2px;
+      margin: .65rem auto -0.65rem;
+    }
+    .offers-detail-foot {
+      position: sticky; bottom: 0; background: #fff;
+      flex-direction: column-reverse;
+      box-shadow: 0 -8px 20px rgba(0,0,0,0.06);
+    }
+    .offers-detail-foot .btn-offers-ghost { width: 100%; }
+    .offers-detail-meta-grid { grid-template-columns: repeat(3,1fr); gap: .5rem; padding: .75rem; }
+    .offers-meta-item .meta-value { font-size: 0.82rem; }
+    .offers-detail-code-box { flex-direction: column; align-items: stretch; text-align: center; }
+    .offers-detail-code-box .offers-copy-btn { width: 100%; }
+  }
+
+  .offers-empty-state { grid-column: 1/-1; text-align: center; padding: 3rem 1rem; color: var(--muted); font-size: 0.92rem; }
+  .offers-empty-state .empty-icon { font-size: 2rem; margin-bottom: .5rem; opacity: 0.5; }
+
+  .offers-loading { grid-column: 1/-1; text-align: center; padding: 3rem 1rem; color: var(--muted); font-size: 0.92rem; }
+  .offers-spinner {
+    width: 32px; height: 32px; border: 3px solid rgba(30,58,122,0.15);
+    border-top-color: var(--gold); border-radius: 50%;
+    animation: offersSpin 0.8s linear infinite; margin: 0 auto 0.75rem;
+  }
+  @keyframes offersSpin { to { transform: rotate(360deg); } }
+
+  /* OFFER SUBMISSION MODAL */
+  .offer-submit-overlay { display: none; position: fixed; inset: 0; background: rgba(10,20,50,0.78); z-index: 1001; align-items: center; justify-content: center; padding: 1rem; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .offer-submit-overlay.open { display: flex; }
+  .offer-submit-modal { background: #fff; border-radius: 20px; width: 100%; max-width: 580px; max-height: 92vh; overflow-y: auto; position: relative; margin: auto; }
+  .offer-submit-head { background: var(--navy); border-radius: 20px 20px 0 0; padding: 1.75rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+  .offer-submit-head .kicker { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-bottom: 0.25rem; }
+  .offer-submit-head h2 { font-family: 'Fraunces',serif; font-size: 1.4rem; font-weight: 900; color: white; margin: 0; }
+  .offer-submit-head h2 em { color: var(--gold); font-style: italic; }
+  .offer-submit-close { background: rgba(255,255,255,0.15); border: none; color: white; width: 44px; height: 44px; border-radius: 50%; font-size: 1.4rem; cursor: pointer; flex-shrink: 0; }
+  .offer-submit-body { padding: 2rem; }
+  .offer-submit-body p.sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.7; }
+  .of-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+  .of-field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 0.75rem; }
+  .of-field label { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+  .of-field input, .of-field textarea { padding: 0.65rem 0.75rem; border: 1.5px solid rgba(30,58,122,0.18); border-radius: 8px; font-size: 0.9rem; color: var(--text); background: #fff; font-family: 'DM Sans',sans-serif; transition: border-color 0.2s; min-height: 44px; -webkit-appearance: none; appearance: none; }
+  .of-field input:focus, .of-field textarea:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(30,58,122,0.12); }
+  .of-field textarea { resize: vertical; min-height: 80px; }
+  .of-req { color: #e24b4a; }
+  .of-btn { width: 100%; padding: 0.95rem; background: var(--gold); color: var(--navy-dark); border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 0.5rem; font-family: 'DM Sans',sans-serif; min-height: 48px; }
+  @media (hover:hover) { .of-btn:hover { background: var(--gold-dark); } }
+  .of-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .of-note { font-size: 0.75rem; color: var(--muted); text-align: center; margin-top: 0.6rem; }
+  .of-success { display: none; text-align: center; padding: 2rem 1rem; }
+  .of-success-icon { width: 56px; height: 56px; border-radius: 50%; background: #eaf3de; color: #3b6d11; font-size: 1.6rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+  .of-success h3 { color: var(--navy); margin-bottom: 0.5rem; font-family: 'Fraunces',serif; }
+  .of-success p { color: var(--muted); font-size: 0.88rem; }
   @media (max-width: 600px) {
-    .offer-form-row { grid-template-columns: 1fr; }
-    .offer-modal-head { padding: 1.5rem 1.2rem; }
-    .offer-modal-body { padding: 1.5rem 1.2rem; }
-    .community-grid { grid-template-columns: 1fr; }
+    .of-row { grid-template-columns: 1fr; }
+    .offer-submit-head { padding: 1.5rem 1.2rem; border-radius: 20px 20px 0 0; }
+    .offer-submit-body { padding: 1.5rem 1.2rem; }
   }
 
 </style>
@@ -1312,6 +1622,7 @@
     <li><a href="javascript:void(0)" onclick="showPage('about')"  id="nav-about">About</a></li>
     <li><a href="javascript:void(0)" onclick="showPage('events')"  id="nav-events">Events</a></li>
     <li><a href="javascript:void(0)" onclick="showPage('projects')"  id="nav-projects">Projects</a></li>
+    <li><a href="javascript:void(0)" onclick="showPage('offers')"  id="nav-offers" class="nav-offers-link">DF Offers</a></li>
     <li><a href="javascript:void(0)" onclick="showPage('resources')"  id="nav-resources">Resources</a></li>
     <li><a href="javascript:void(0)" onclick="showPage('contact')"  id="nav-contact">Contact</a></li>
     <li><a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="nav-cta">Book Free Ticket</a></li>
@@ -1326,6 +1637,7 @@
   <a href="javascript:void(0)" onclick="navTo('about')" >About</a>
   <a href="javascript:void(0)" onclick="navTo('events')" >Events</a>
   <a href="javascript:void(0)" onclick="navTo('projects')" >Projects</a>
+  <a href="javascript:void(0)" onclick="navTo('offers')" class="nav-offers-link">DF Offers</a>
   <a href="javascript:void(0)" onclick="navTo('resources')" >Resources</a>
   <a href="javascript:void(0)" onclick="navTo('contact')" >Contact</a>
   <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" onclick="closeMenu()" class="nav-cta">Book Free Ticket</a>
@@ -2056,6 +2368,80 @@
 
 </div>
 
+<!-- ======================== DF OFFERS PAGE ======================== -->
+<div class="page" id="page-offers">
+
+  <section class="offers-hero">
+    <div class="offers-hero-inner">
+      <div>
+        <span class="offers-hero-kicker">Community Marketplace · Live</span>
+        <h1>Deals from the <em>DF community</em>, for the DF community.</h1>
+        <p class="offers-lead">Exclusive discounts and offers submitted by local Darlington businesses. Free to browse. Free to list. Reviewed and approved before going live.</p>
+        <div class="offers-hero-actions">
+          <button class="btn-offers-gold" onclick="openOfferModal()">+ &nbsp;Submit your offer</button>
+          <button class="btn-offers-ghost" onclick="focusOffersSearch()">Browse offers</button>
+        </div>
+      </div>
+      <div class="offers-hero-preview" aria-hidden="true">
+        <div class="tile tile-1">
+          <div class="tile-h">Free</div>
+          <div class="tile-v">Strategy Call</div>
+          <div class="tile-b">Local consultancy</div>
+        </div>
+        <div class="tile tile-2">
+          <div class="tile-h">25% Off</div>
+          <div class="tile-v">Brand Photos</div>
+          <div class="tile-b">Darlington studio</div>
+        </div>
+        <div class="tile tile-3">
+          <div class="tile-h">Buy One</div>
+          <div class="tile-v">Get One Free</div>
+          <div class="tile-b">Local café, High Row</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="offers-filter-bar">
+    <div class="offers-filter-inner">
+      <div class="offers-search-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="search" class="offers-search-input" id="offers-search" placeholder="Search offers, businesses…" oninput="applyOffersFilters()" aria-label="Search offers">
+      </div>
+      <div class="offers-chip-row" id="offers-chips" role="tablist" aria-label="Filter by sector"></div>
+      <div class="offers-result-count" id="offers-result-count" aria-live="polite">Loading…</div>
+    </div>
+  </div>
+
+  <section class="offers-page-body">
+    <div class="offers-grid-wrap">
+      <div class="offers-section-divider" id="offers-featured-divider" style="display:none">
+        <span class="divider-star">★</span>
+        <span class="label">Featured This Month</span>
+        <hr>
+      </div>
+      <div class="offers-grid" id="offers-featured-grid"></div>
+
+      <div class="offers-section-divider" id="offers-community-divider" style="margin-top:2rem">
+        <span class="label">All Community Offers</span>
+        <hr>
+      </div>
+      <div class="offers-grid" id="offers-community-grid">
+        <div class="offers-loading">
+          <div class="offers-spinner"></div>
+          Loading community offers…
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Offer detail modal -->
+<div class="offers-detail-overlay" id="offers-detail-overlay" role="dialog" aria-modal="true" onclick="if(event.target===this)closeOfferDetail()">
+  <div class="offers-detail-modal" id="offers-detail-modal"></div>
+</div>
+
 <!-- ======================== RESOURCES PAGE ======================== -->
 <div class="page" id="page-resources">
 
@@ -2355,22 +2741,14 @@
     </div>
   </section>
 
-  <!-- COMMUNITY OFFERS SECTION -->
-  <section class="community-offers-section">
-    <div class="co-header-wrap">
-      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Community Offers</p>
-      <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:1rem;">Deals from the <em style="font-style:italic;color:var(--gold-dark);">Darlington First Community</em></h2>
-      <p style="font-size:1rem;color:var(--muted);line-height:1.8;max-width:580px;margin:0 auto;">Exclusive offers submitted by local businesses for the Darlington First community. All offers are reviewed before going live.</p>
+  <!-- MORE COMING SOON -->
+  <section style="padding:4rem 2rem;background:var(--light-blue);text-align:center;">
+    <div style="max-width:640px;margin:0 auto;">
+      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">More Coming Soon</p>
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:1rem;">More <em style="font-style:italic;color:var(--gold-dark);">Coming Soon</em></h2>
+      <p style="font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;">We're always looking for great local businesses to partner with. If you'd like your business featured here or have a discount to share with the Darlington First community, get in touch.</p>
+      <button onclick="showModal('contact-modal')" class="btn-primary" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.85rem 2rem;">Get In Touch</button>
     </div>
-    <div class="community-grid" id="community-offers-grid">
-      <div class="coc-loading">
-        <div class="coc-spinner"></div>
-        Loading community offers...
-      </div>
-    </div>
-    <p style="text-align:center;font-size:0.85rem;color:var(--muted);max-width:560px;margin:1.5rem auto 0;">
-      Got a deal to share with the community? <a href="javascript:void(0)" onclick="openOfferModal()" style="color:var(--navy);font-weight:600;text-decoration:underline;">Submit your offer</a> — we review every submission within 2 business days.
-    </p>
   </section>
 
 </div>
@@ -2490,6 +2868,7 @@
         <li><a href="javascript:void(0)" onclick="showPage('about')" >About</a></li>
         <li><a href="javascript:void(0)" onclick="showPage('events')" >Events</a></li>
         <li><a href="javascript:void(0)" onclick="showPage('projects')" >Projects</a></li>
+        <li><a href="javascript:void(0)" onclick="showPage('offers')" >DF Offers</a></li>
         <li><a href="javascript:void(0)" onclick="showPage('resources')" >Resources</a></li>
         <li><a href="javascript:void(0)" onclick="showPage('contact')" >Contact</a></li>
       </ul>
@@ -2576,54 +2955,58 @@
 </div>
 
 <!-- OFFER SUBMISSION MODAL -->
-<div id="offer-modal-overlay" class="offer-modal-overlay" onclick="closeOfferModal(event)">
-  <div class="offer-modal" role="dialog" aria-modal="true" onclick="event.stopPropagation()">
-    <div class="offer-modal-head">
+<div id="offer-submit-overlay" class="offer-submit-overlay" onclick="closeOfferModal(event)">
+  <div class="offer-submit-modal" role="dialog" aria-modal="true" onclick="event.stopPropagation()">
+    <div class="offer-submit-head">
       <div>
-        <p class="kicker">Community Offers</p>
+        <p class="kicker">DF Offers</p>
         <h2>Submit your <em>business offer</em></h2>
       </div>
-      <button class="offer-modal-close" onclick="closeOfferModal()" aria-label="Close">&times;</button>
+      <button class="offer-submit-close" onclick="closeOfferModal()" aria-label="Close">&times;</button>
     </div>
-    <div class="offer-modal-body">
-      <div id="offer-form-wrap">
+    <div class="offer-submit-body">
+      <div id="of-form-wrap">
         <p class="sub">Approved offers are shown free to the Darlington First community. We review all submissions within 2 business days.</p>
 
-        <div class="offer-form-row">
-          <div class="offer-field"><label>Business name <span class="offer-req">*</span></label><input type="text" id="of-bizname" placeholder="Acme Ltd" /></div>
-          <div class="offer-field"><label>Industry / sector <span class="offer-req">*</span></label><input type="text" id="of-sector" placeholder="Accountancy" /></div>
+        <div class="of-row">
+          <div class="of-field"><label>Business name <span class="of-req">*</span></label><input type="text" id="of-bizname" placeholder="Acme Ltd" /></div>
+          <div class="of-field"><label>Industry / sector <span class="of-req">*</span></label><input type="text" id="of-sector" placeholder="Accountancy" /></div>
         </div>
 
-        <div class="offer-field"><label>Short description <span class="offer-req">*</span></label><textarea id="of-desc" placeholder="One or two sentences about your business..."></textarea></div>
+        <div class="of-field"><label>Short description <span class="of-req">*</span></label><textarea id="of-desc" placeholder="One or two sentences about your business..."></textarea></div>
 
-        <div class="offer-form-row">
-          <div class="offer-field"><label>Offer headline <span class="offer-req">*</span></label><input type="text" id="of-headline" placeholder="Free consultation" /></div>
-          <div class="offer-field"><label>Offer detail</label><input type="text" id="of-detail" placeholder="60 mins, no obligation" /></div>
+        <div class="of-row">
+          <div class="of-field"><label>Offer headline <span class="of-req">*</span></label><input type="text" id="of-headline" placeholder="Free consultation" /></div>
+          <div class="of-field"><label>Offer detail</label><input type="text" id="of-detail" placeholder="60 mins, no obligation" /></div>
         </div>
 
-        <div class="offer-form-row">
-          <div class="offer-field"><label>Discount code</label><input type="text" id="of-code" placeholder="DF10" /></div>
-          <div class="offer-field"><label>Website URL <span class="offer-req">*</span></label><input type="url" id="of-url" placeholder="https://yourbusiness.co.uk" /></div>
+        <div class="of-row">
+          <div class="of-field"><label>Discount code</label><input type="text" id="of-code" placeholder="DF10" /></div>
+          <div class="of-field"><label>Website URL <span class="of-req">*</span></label><input type="url" id="of-url" placeholder="https://yourbusiness.co.uk" /></div>
         </div>
 
-        <div class="offer-form-row">
-          <div class="offer-field"><label>Logo URL <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input type="url" id="of-logo" placeholder="https://yourbusiness.co.uk/logo.png" /></div>
-          <div class="offer-field"><label>Town / City <span class="offer-req">*</span></label><input type="text" id="of-town" placeholder="e.g. Darlington, Durham, Bishop Auckland..." /></div>
+        <div class="of-row">
+          <div class="of-field"><label>Logo URL <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input type="url" id="of-logo" placeholder="https://yourbusiness.co.uk/logo.png" /></div>
+          <div class="of-field"><label>Town / City <span class="of-req">*</span></label><input type="text" id="of-town" placeholder="e.g. Darlington, Durham..." /></div>
         </div>
 
-        <div class="offer-form-row">
-          <div class="offer-field"><label>Your name <span class="offer-req">*</span></label><input type="text" id="of-cname" placeholder="Jane Smith" /></div>
-          <div class="offer-field"><label>Your email <span class="offer-req">*</span></label><input type="email" id="of-cemail" placeholder="jane@yourbusiness.co.uk" /></div>
+        <div class="of-field"><label>Terms &amp; conditions <span style="font-weight:400;color:var(--muted)">(shown on the card detail)</span></label><textarea id="of-terms" placeholder="e.g. New customers only. Valid until 31 Dec 2026."></textarea></div>
+
+        <div class="of-field"><label>How to claim <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input type="text" id="of-claim" placeholder="Enter code at checkout / Quote DF when calling" /></div>
+
+        <div class="of-row">
+          <div class="of-field"><label>Your name <span class="of-req">*</span></label><input type="text" id="of-cname" placeholder="Jane Smith" /></div>
+          <div class="of-field"><label>Your email <span class="of-req">*</span></label><input type="email" id="of-cemail" placeholder="jane@yourbusiness.co.uk" /></div>
         </div>
 
-        <button class="offer-submit-btn" id="of-submit-btn" onclick="submitOfferForm()">
+        <button class="of-btn" id="of-submit-btn" onclick="submitOfferForm()">
           <span id="of-submit-txt">Submit for review</span>
         </button>
-        <p class="offer-form-note">Required fields <span class="offer-req">*</span> &nbsp;&middot;&nbsp; We never share your contact details</p>
+        <p class="of-note">Required fields <span class="of-req">*</span> &nbsp;&middot;&nbsp; We never share your contact details</p>
       </div>
 
-      <div class="offer-success" id="offer-success">
-        <div class="offer-success-icon">&#10003;</div>
+      <div class="of-success" id="of-success">
+        <div class="of-success-icon">&#10003;</div>
         <h3>Submission received!</h3>
         <p>Thank you. We'll review it within 2 business days and be in touch at the email you provided.</p>
       </div>
@@ -2632,8 +3015,8 @@
 </div>
 
 <script>
-var pages=['home','about','events','projects','resources','contact'];
-var pageTitles={home:'Darlington First - Business Networking',about:'About - Darlington First',events:'Events - Darlington First',projects:'Projects - Darlington First',resources:'Resources - Darlington First',contact:'Contact - Darlington First'};
+var pages=['home','about','events','projects','offers','resources','contact'];
+var pageTitles={home:'Darlington First - Business Networking',about:'About - Darlington First',events:'Events - Darlington First',projects:'Projects - Darlington First',offers:'DF Offers - Darlington First',resources:'Resources - Darlington First',contact:'Contact - Darlington First'};
 
 function showPage(id){
   if(pages.indexOf(id)===-1)id='home';
@@ -2648,7 +3031,7 @@ function showPage(id){
   window.scrollTo(0,0);
   try{history.pushState({page:id},'','#'+id);}catch(e){}
   document.title=pageTitles[id]||'Darlington First';
-  if(id==='resources') loadCommunityOffers();
+  if(id==='offers') loadDFOffers();
 }
 
 function toggleMenu(){
@@ -2756,140 +3139,285 @@ window.addEventListener('DOMContentLoaded',function(){
   if(cf)cf.addEventListener('submit',handleCF);
 });
 
-/* ── COMMUNITY OFFERS — AIRTABLE CONFIG (Darlington First) ── */
-var _t1='patGMsRmnhKEdu3i9.6c',_t2='c95e575e7bc045354ad23d46104665',_t3='03d56e649b2aa3c5fb93738445e1314b';
-var AT_TOKEN=_t1+_t2+_t3;
-var AT_BASE='appzNaWxLuQstEUSX';
-var AT_TABLE='tblrQUho0RGnhh03V';
-var AT_SITE='Darlington First';
-var AT_API='https://api.airtable.com/v0/';
+/* ═════════════════════════════════════════════════════════════
+   DF OFFERS — Airtable config + page logic (Darlington First)
+   ═════════════════════════════════════════════════════════════ */
+var _ot1='patGMsRmnhKEdu3i9.6c',_ot2='c95e575e7bc045354ad23d46104665',_ot3='03d56e649b2aa3c5fb93738445e1314b';
+var OF_TOKEN=_ot1+_ot2+_ot3;
+var OF_BASE='appzNaWxLuQstEUSX';
+var OF_TABLE='tblrQUho0RGnhh03V';
+var OF_SITE='Darlington First';
+var OF_API='https://api.airtable.com/v0/';
 
-var offersLoaded=false;
-function loadCommunityOffers(){
-  if(offersLoaded) return;
-  var grid=document.getElementById('community-offers-grid');
+var OF_DATA = [];
+var OF_LOADED = false;
+var OF_ACTIVE_CHIPS = new Set();
+var OF_LAST_FOCUSED = null;
+
+function escOf(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
+
+function loadDFOffers(){
+  if(OF_LOADED) return;
+  var grid = document.getElementById('offers-community-grid');
   if(!grid) return;
-  var filter='AND({Approved}=1,OR({Site}="'+AT_SITE+'",{Site}="All Sites"))';
-  var url=AT_API+AT_BASE+'/'+AT_TABLE
+  var filter = 'AND({Approved}=1,OR({Site}="'+OF_SITE+'",{Site}="All Sites"))';
+  var url = OF_API+OF_BASE+'/'+OF_TABLE
     +'?filterByFormula='+encodeURIComponent(filter)
     +'&fields[]=Business+Name&fields[]=Sector&fields[]=Description'
     +'&fields[]=Offer+Headline&fields[]=Offer+Detail&fields[]=Discount+Code'
     +'&fields[]=Website+URL&fields[]=Logo+URL&fields[]=Town+%2F+City'
+    +'&fields[]=Featured&fields[]=Terms&fields[]=How+to+Claim'
     +'&sort[0][field]=Business+Name&sort[0][direction]=asc';
-  fetch(url,{headers:{'Authorization':'Bearer '+AT_TOKEN,'Content-Type':'application/json'}})
+  fetch(url,{headers:{'Authorization':'Bearer '+OF_TOKEN,'Content-Type':'application/json'}})
   .then(function(r){return r.json();})
   .then(function(data){
-    offersLoaded=true;
-    renderOfferCards(data.records||[],grid);
+    OF_LOADED = true;
+    OF_DATA = (data.records||[]).map(function(rec,i){
+      var f = rec.fields || {};
+      return {
+        id: rec.id || ('r'+i),
+        featured: !!f['Featured'],
+        biz: f['Business Name']||'',
+        sector: f['Sector']||'',
+        town: f['Town / City']||'',
+        headline: f['Offer Headline']||'',
+        detail: f['Offer Detail']||'',
+        code: f['Discount Code']||'',
+        desc: f['Description']||'',
+        terms: f['Terms']||'',
+        claim: f['How to Claim']||'',
+        url: f['Website URL']||'#',
+        logo: f['Logo URL']||'',
+        created: rec.createdTime || ''
+      };
+    });
+    renderOffersChips();
+    applyOffersFilters();
   })
-  .catch(function(){
-    grid.innerHTML='<div class="coc-empty">Could not load offers. Please try again later.</div>';
-    appendSubmitCard(grid);
+  .catch(function(err){
+    console.error('DF Offers load error:',err);
+    grid.innerHTML = '<div class="offers-empty-state"><div class="empty-icon">!</div>Could not load offers. Please try again later.</div>';
+    document.getElementById('offers-result-count').textContent = '';
+    renderOffersSubmitTile(grid);
   });
 }
 
-function escHtml(s){
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+function renderOffersChips(){
+  var sectors = {};
+  OF_DATA.forEach(function(o){ if(o.sector) sectors[o.sector] = (sectors[o.sector]||0)+1; });
+  var html = '<button class="offers-chip active" data-sector="__all__" onclick="toggleOffersChip(this)" role="tab" aria-selected="true">All<span class="offers-chip-count">'+OF_DATA.length+'</span></button>';
+  Object.keys(sectors).sort().forEach(function(s){
+    html += '<button class="offers-chip" data-sector="'+escOf(s)+'" onclick="toggleOffersChip(this)" role="tab" aria-selected="false">'+escOf(s)+'<span class="offers-chip-count">'+sectors[s]+'</span></button>';
+  });
+  document.getElementById('offers-chips').innerHTML = html;
 }
 
-function renderOfferCards(records,grid){
-  grid.innerHTML='';
-  records.forEach(function(rec){
-    var f=rec.fields||{};
-    var biz=f['Business Name']||'';
-    var initials=biz.split(' ').map(function(w){return w[0]||'';}).join('').substring(0,2).toUpperCase();
-    var logo=f['Logo URL']||'';
-    var logoHtml=logo?'<img src="'+escHtml(logo)+'" alt="'+escHtml(biz)+'" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">':escHtml(initials);
-    var code=f['Discount Code']||'';
-    var detail=f['Offer Detail']||'';
-    var town=f['Town / City']||'';
-    var sector=f['Sector']||'';
-    var href=f['Website URL']||'#';
-    grid.insertAdjacentHTML('beforeend',
-      '<div class="community-offer-card">'
-      +'<div class="coc-header"><div class="coc-logo">'+logoHtml+'</div>'
-      +'<div><p class="coc-name">'+escHtml(biz)+'</p>'
-      +'<p class="coc-sector">'+escHtml(sector)+(town?' &middot; '+escHtml(town):'')+'</p></div>'
-      +'<span class="coc-badge">Community</span></div>'
-      +'<div class="coc-body">'
-      +'<div class="coc-offer-badge"><div>'
-      +'<p class="coc-offer-value">'+escHtml(f['Offer Headline']||'')+'</p>'
-      +(detail?'<p class="coc-offer-detail">'+escHtml(detail)+'</p>':'')
-      +(code?'<p class="coc-offer-code">Code: '+escHtml(code)+'</p>':'')
-      +'</div></div>'
-      +'<p class="coc-desc">'+escHtml(f['Description']||'')+'</p>'
-      +'<a href="'+escHtml(href)+'" target="_blank" rel="noopener" class="coc-link">Visit website &rarr;</a>'
-      +'</div></div>');
-  });
-  if(!records.length){
-    grid.insertAdjacentHTML('beforeend','<div class="coc-empty">No community offers yet — be the first to submit one!</div>');
+function toggleOffersChip(btn){
+  var sector = btn.dataset.sector;
+  var all = document.querySelector('.offers-chip[data-sector="__all__"]');
+  if(sector === '__all__'){
+    OF_ACTIVE_CHIPS.clear();
+    document.querySelectorAll('.offers-chip').forEach(function(c){c.classList.remove('active');c.setAttribute('aria-selected','false');});
+    btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+  } else {
+    if(all){ all.classList.remove('active'); all.setAttribute('aria-selected','false'); }
+    if(OF_ACTIVE_CHIPS.has(sector)){
+      OF_ACTIVE_CHIPS.delete(sector);
+      btn.classList.remove('active'); btn.setAttribute('aria-selected','false');
+      if(OF_ACTIVE_CHIPS.size === 0 && all){ all.classList.add('active'); all.setAttribute('aria-selected','true'); }
+    } else {
+      OF_ACTIVE_CHIPS.add(sector);
+      btn.classList.add('active'); btn.setAttribute('aria-selected','true');
+    }
   }
-  appendSubmitCard(grid);
+  applyOffersFilters();
 }
 
-function appendSubmitCard(grid){
+function applyOffersFilters(){
+  var qEl = document.getElementById('offers-search');
+  var q = qEl ? qEl.value.trim().toLowerCase() : '';
+  var filtered = OF_DATA.filter(function(o){
+    if(OF_ACTIVE_CHIPS.size > 0 && !OF_ACTIVE_CHIPS.has(o.sector)) return false;
+    if(q){
+      var hay = (o.biz+' '+o.headline+' '+o.detail+' '+o.desc+' '+o.sector+' '+o.town+' '+o.code).toLowerCase();
+      if(hay.indexOf(q) === -1) return false;
+    }
+    return true;
+  });
+  var featured = filtered.filter(function(o){return o.featured;});
+  var community = filtered.filter(function(o){return !o.featured;})
+                         .sort(function(a,b){return (b.created||'').localeCompare(a.created||'');});
+  renderOffersGrid('offers-featured-grid', featured, false);
+  renderOffersGrid('offers-community-grid', community, true);
+  var fDiv = document.getElementById('offers-featured-divider');
+  if(fDiv) fDiv.style.display = featured.length ? 'flex' : 'none';
+  var rc = document.getElementById('offers-result-count');
+  if(rc) rc.textContent = filtered.length + (filtered.length === 1 ? ' offer' : ' offers');
+}
+
+function renderOffersGrid(id, offers, withSubmitTile){
+  var grid = document.getElementById(id);
+  if(!grid) return;
+  var html = offers.map(offerCardHtml).join('');
+  if(offers.length === 0 && withSubmitTile){
+    html = '<div class="offers-empty-state"><div class="empty-icon">🔍</div>No offers match your filters. Try broadening your search.</div>';
+  }
+  if(withSubmitTile){
+    html += '<div class="offers-submit-tile" onclick="openOfferModal()" role="button" tabindex="0" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openOfferModal();}">'
+      + '<div class="offers-submit-icon" aria-hidden="true">+</div>'
+      + '<div class="offers-submit-title">Your offer here</div>'
+      + '<p class="offers-submit-desc">Share a deal with the Darlington First community — free, reviewed within 2 business days.</p>'
+    + '</div>';
+  }
+  grid.innerHTML = html;
+}
+
+function renderOffersSubmitTile(grid){
   grid.insertAdjacentHTML('beforeend',
-    '<div class="coc-submit-card" onclick="openOfferModal()">'
-    +'<div class="coc-submit-icon">+</div>'
-    +'<p class="coc-submit-title">Submit your offer</p>'
-    +'<p class="coc-submit-desc">Share a deal with the community</p>'
-    +'<button class="coc-submit-btn" onclick="openOfferModal();event.stopPropagation()">Get listed</button>'
+    '<div class="offers-submit-tile" onclick="openOfferModal()" role="button" tabindex="0">'
+    +'<div class="offers-submit-icon">+</div>'
+    +'<div class="offers-submit-title">Your offer here</div>'
+    +'<p class="offers-submit-desc">Share a deal with the Darlington First community.</p>'
     +'</div>');
 }
 
+function offerCardHtml(o){
+  var codeBit = o.code
+    ? '<span class="card-code">'+escOf(o.code)+'</span>'
+    : '<span class="card-nocode">No code needed</span>';
+  var subline = escOf(o.sector)+(o.town ? '<span class="dot" aria-hidden="true"></span>'+escOf(o.town) : '');
+  return '<div class="offer-card '+(o.featured?'featured':'')+'" onclick="openOfferDetail(\''+escOf(o.id)+'\')" role="button" tabindex="0" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openOfferDetail(\''+escOf(o.id)+'\');}" aria-label="'+escOf(o.biz+', '+o.headline+' '+o.detail)+'">'
+    + '<div class="card-value"><div class="headline">'+escOf(o.headline)+'</div><div class="detail">'+escOf(o.detail)+'</div></div>'
+    + '<div class="card-body">'
+      + '<div class="card-biz">'+escOf(o.biz)+'</div>'
+      + '<div class="card-subline">'+subline+'</div>'
+      + '<div class="card-desc">'+escOf(o.desc)+'</div>'
+      + '<div class="card-foot">'+codeBit+'<span class="card-view">View &rarr;</span></div>'
+    + '</div>'
+  + '</div>';
+}
+
+function openOfferDetail(id){
+  var o = OF_DATA.find(function(x){return x.id===id;});
+  if(!o) return;
+  OF_LAST_FOCUSED = document.activeElement;
+  var codeBox = o.code
+    ? '<div class="offers-detail-code-box"><div><div class="code-label">Use Code</div><div class="code-value">'+escOf(o.code)+'</div></div><button class="offers-copy-btn" onclick="copyOfferCode(\''+escOf(o.code)+'\',this)">Copy code</button></div>'
+    : '';
+  var createdStr = '';
+  if(o.created){
+    try { createdStr = new Date(o.created).toLocaleDateString('en-GB',{day:'numeric',month:'short'}); } catch(e){}
+  }
+  var metaGrid = '<div class="offers-detail-meta-grid">'
+    + '<div class="offers-meta-item"><div class="meta-label">Sector</div><div class="meta-value">'+escOf(o.sector||'—')+'</div></div>'
+    + '<div class="offers-meta-item"><div class="meta-label">Location</div><div class="meta-value">'+escOf(o.town||'—')+'</div></div>'
+    + '<div class="offers-meta-item"><div class="meta-label">Added</div><div class="meta-value">'+escOf(createdStr||'—')+'</div></div>'
+  + '</div>';
+  var termsSection = o.terms ? '<div class="offers-detail-section"><h4>Terms</h4><p>'+escOf(o.terms)+'</p></div>' : '';
+  var claimSection = o.claim ? '<div class="offers-detail-section"><h4>How to claim</h4><p>'+escOf(o.claim)+'</p></div>' : '';
+  var descSection  = o.desc  ? '<div class="offers-detail-section"><h4>About the offer</h4><p>'+escOf(o.desc)+'</p></div>' : '';
+
+  document.getElementById('offers-detail-modal').innerHTML =
+    '<div class="offers-detail-head">'
+      + '<button class="offers-detail-close" onclick="closeOfferDetail()" aria-label="Close">&times;</button>'
+      + '<div class="offers-detail-biz">'+escOf(o.biz)+(o.sector?' &middot; '+escOf(o.sector):'')+(o.town?' &middot; '+escOf(o.town):'')+'</div>'
+      + '<div class="offers-detail-headline">'+escOf(o.headline)+'</div>'
+      + '<div class="offers-detail-sub">'+escOf(o.detail)+'</div>'
+    + '</div>'
+    + '<div class="offers-detail-body">'
+      + metaGrid
+      + codeBox
+      + descSection
+      + termsSection
+      + claimSection
+    + '</div>'
+    + '<div class="offers-detail-foot">'
+      + '<button class="btn-offers-ghost" onclick="closeOfferDetail()">Close</button>'
+      + '<a href="'+escOf(o.url||'#')+'" target="_blank" rel="noopener" class="btn-offers-gold">Visit '+escOf(o.biz)+' &rarr;</a>'
+    + '</div>';
+  var overlay = document.getElementById('offers-detail-overlay');
+  overlay.classList.add('open');
+  document.body.style.overflow='hidden';
+  setTimeout(function(){var c = overlay.querySelector('.offers-detail-close'); if(c) c.focus();},50);
+}
+
+function closeOfferDetail(){
+  var o = document.getElementById('offers-detail-overlay');
+  if(o) o.classList.remove('open');
+  document.body.style.overflow='';
+  if(OF_LAST_FOCUSED && OF_LAST_FOCUSED.focus) OF_LAST_FOCUSED.focus();
+}
+
+function copyOfferCode(code,btn){
+  if(navigator.clipboard) navigator.clipboard.writeText(code);
+  var orig = btn.textContent;
+  btn.textContent = 'Copied ✓';
+  setTimeout(function(){btn.textContent = orig;},1500);
+}
+
+function focusOffersSearch(){
+  var s = document.getElementById('offers-search');
+  if(s){ s.focus(); s.scrollIntoView({behavior:'smooth',block:'center'}); }
+}
+
+/* Offer submission modal */
 function openOfferModal(){
-  var o=document.getElementById('offer-modal-overlay');
-  if(o){o.classList.add('open');document.body.style.overflow='hidden';}
+  var o = document.getElementById('offer-submit-overlay');
+  if(o){ o.classList.add('open'); document.body.style.overflow='hidden'; }
 }
 function closeOfferModal(e){
-  if(e&&e.type==='click'&&e.target!==document.getElementById('offer-modal-overlay')) return;
-  var o=document.getElementById('offer-modal-overlay');
+  if(e && e.type==='click' && e.target !== document.getElementById('offer-submit-overlay')) return;
+  var o = document.getElementById('offer-submit-overlay');
   if(o) o.classList.remove('open');
   document.body.style.overflow='';
 }
 
 function submitOfferForm(){
-  var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
+  var g = function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
   var biz=g('of-bizname'),sector=g('of-sector'),desc=g('of-desc'),headline=g('of-headline'),
       detail=g('of-detail'),code=g('of-code'),url=g('of-url'),logo=g('of-logo'),
-      town=g('of-town'),cname=g('of-cname'),cemail=g('of-cemail');
+      town=g('of-town'),terms=g('of-terms'),claim=g('of-claim'),
+      cname=g('of-cname'),cemail=g('of-cemail');
 
   if(!biz||!sector||!desc||!headline||!url||!town||!cname||!cemail){
     alert('Please fill in all required fields.');return;
   }
 
-  var btn=document.getElementById('of-submit-btn');
-  var txt=document.getElementById('of-submit-txt');
-  if(btn) btn.disabled=true;
-  if(txt) txt.textContent='Submitting...';
+  var btn = document.getElementById('of-submit-btn');
+  var txt = document.getElementById('of-submit-txt');
+  if(btn) btn.disabled = true;
+  if(txt) txt.textContent = 'Submitting...';
 
-  var fields={
+  var fields = {
     'Business Name':biz,'Sector':sector,'Description':desc,'Offer Headline':headline,
-    'Site':AT_SITE,'Town / City':town,'Contact Name':cname,'Contact Email':cemail
+    'Site':OF_SITE,'Town / City':town,'Contact Name':cname,'Contact Email':cemail
   };
-  if(detail) fields['Offer Detail']=detail;
-  if(code)   fields['Discount Code']=code;
-  if(url)    fields['Website URL']=url;
-  if(logo)   fields['Logo URL']=logo;
+  if(detail)   fields['Offer Detail']=detail;
+  if(code)     fields['Discount Code']=code;
+  if(url)      fields['Website URL']=url;
+  if(logo)     fields['Logo URL']=logo;
+  if(terms)    fields['Terms']=terms;
+  if(claim)    fields['How to Claim']=claim;
 
-  fetch(AT_API+AT_BASE+'/'+AT_TABLE,{
+  fetch(OF_API+OF_BASE+'/'+OF_TABLE,{
     method:'POST',
-    headers:{'Authorization':'Bearer '+AT_TOKEN,'Content-Type':'application/json'},
+    headers:{'Authorization':'Bearer '+OF_TOKEN,'Content-Type':'application/json'},
     body:JSON.stringify({fields:fields})
   })
   .then(function(r){
-    if(r.ok||r.status===200||r.status===201){
-      document.getElementById('offer-form-wrap').style.display='none';
-      document.getElementById('offer-success').style.display='block';
-      offersLoaded=false;
+    if(r.ok || r.status===200 || r.status===201){
+      document.getElementById('of-form-wrap').style.display='none';
+      document.getElementById('of-success').style.display='block';
+      OF_LOADED = false;
       setTimeout(function(){
         closeOfferModal();
-        document.getElementById('offer-form-wrap').style.display='';
-        document.getElementById('offer-success').style.display='none';
+        document.getElementById('of-form-wrap').style.display='';
+        document.getElementById('of-success').style.display='none';
         if(btn) btn.disabled=false;
         if(txt) txt.textContent='Submit for review';
-        var fieldIds=['of-bizname','of-sector','of-desc','of-headline','of-detail','of-code','of-url','of-logo','of-town','of-cname','of-cemail'];
-        fieldIds.forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});
+        ['of-bizname','of-sector','of-desc','of-headline','of-detail','of-code','of-url','of-logo','of-town','of-terms','of-claim','of-cname','of-cemail'].forEach(function(id){
+          var el = document.getElementById(id); if(el) el.value='';
+        });
       },4000);
     } else {
       r.json().then(function(e){console.error('Airtable error:',e);}).catch(function(){});
@@ -2904,6 +3432,16 @@ function submitOfferForm(){
     alert('Connection error. Please try again.');
   });
 }
+
+/* ESC closes offer modals */
+document.addEventListener('keydown',function(e){
+  if(e.key !== 'Escape') return;
+  var detail = document.getElementById('offers-detail-overlay');
+  var submit = document.getElementById('offer-submit-overlay');
+  if(detail && detail.classList.contains('open')) closeOfferDetail();
+  else if(submit && submit.classList.contains('open')) closeOfferModal();
+});
+
 </script>
 </body>
 </html>
