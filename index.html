@@ -1236,6 +1236,71 @@
     .max-900 { max-width: 960px; }
   }
 
+  /* ── COMMUNITY OFFER CARDS ──────────────────────────────── */
+  .community-offers-section { padding: 5rem 2rem; background: var(--light-blue); }
+  .community-offers-section .co-header-wrap { max-width: 900px; margin: 0 auto 2.5rem; text-align: center; }
+  .community-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.25rem; max-width: 1100px; margin: 0 auto 2rem; }
+  .community-offer-card { background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid rgba(30,58,122,0.12); transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column; }
+  .community-offer-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(30,58,122,0.12); }
+  .coc-header { background: var(--navy); padding: 1rem 1.25rem; display: flex; align-items: center; gap: 10px; }
+  .coc-logo { width: 38px; height: 38px; border-radius: 8px; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--gold); flex-shrink: 0; overflow: hidden; }
+  .coc-logo img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+  .coc-name { color: #fff; font-size: 0.88rem; font-weight: 600; margin: 0; font-family: 'DM Sans', sans-serif; }
+  .coc-sector { color: rgba(255,255,255,0.55); font-size: 0.75rem; margin: 0; }
+  .coc-badge { margin-left: auto; background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.7); font-size: 0.68rem; font-weight: 600; padding: 3px 8px; border-radius: 4px; white-space: nowrap; flex-shrink: 0; letter-spacing: 0.04em; }
+  .coc-body { padding: 1rem 1.25rem; flex: 1; display: flex; flex-direction: column; }
+  .coc-offer-badge { background: #eaf3de; border: 1px solid #c0dd97; border-radius: 6px; padding: 8px 10px; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px; }
+  .coc-offer-value { font-size: 1.1rem; font-weight: 700; color: #3b6d11; margin: 0; }
+  .coc-offer-detail { font-size: 0.75rem; color: #639922; margin: 0; }
+  .coc-offer-code { font-size: 0.72rem; color: #3b6d11; font-weight: 600; margin-top: 2px; margin-bottom: 0; }
+  .coc-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; flex: 1; margin-bottom: 0.75rem; }
+  .coc-link { font-size: 0.78rem; color: var(--navy); font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+  .coc-link:hover { color: var(--gold-dark); }
+  .coc-submit-card { background: #fff; border: 2px dashed rgba(30,58,122,0.25); border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1.5rem; text-align: center; min-height: 200px; cursor: pointer; transition: border-color 0.2s ease; }
+  .coc-submit-card:hover { border-color: var(--gold); }
+  .coc-submit-icon { width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(30,58,122,0.25); display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem; font-size: 1.4rem; color: var(--muted); transition: border-color 0.2s ease, color 0.2s ease; }
+  .coc-submit-card:hover .coc-submit-icon { border-color: var(--gold); color: var(--gold-dark); }
+  .coc-submit-title { font-size: 0.92rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+  .coc-submit-desc { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+  .coc-submit-btn { background: var(--gold); color: var(--navy-dark); border: none; border-radius: 6px; font-size: 0.82rem; font-weight: 700; padding: 0.5rem 1.2rem; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+  .coc-submit-btn:hover { background: var(--gold-dark); }
+  .coc-loading, .coc-empty { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.88rem; grid-column: 1/-1; }
+  .coc-spinner { width: 28px; height: 28px; border: 3px solid rgba(30,58,122,0.15); border-top-color: var(--gold); border-radius: 50%; animation: cocSpin 0.8s linear infinite; margin: 0 auto 0.75rem; }
+  @keyframes cocSpin { to { transform: rotate(360deg); } }
+
+  /* ── OFFER SUBMISSION MODAL ──────────────────────────────── */
+  .offer-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(10,20,50,0.75); z-index: 1000; align-items: center; justify-content: center; padding: 1rem; }
+  .offer-modal-overlay.open { display: flex; }
+  .offer-modal { background: #fff; border-radius: 20px; width: 100%; max-width: 580px; max-height: 90vh; overflow-y: auto; position: relative; }
+  .offer-modal-head { background: var(--navy); border-radius: 20px 20px 0 0; padding: 1.75rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+  .offer-modal-head p.kicker { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.25rem; }
+  .offer-modal-head h2 { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900; color: white; margin: 0; }
+  .offer-modal-head h2 em { color: var(--gold); font-style: italic; }
+  .offer-modal-close { background: rgba(255,255,255,0.12); border: none; color: white; width: 36px; height: 36px; border-radius: 50%; font-size: 1.3rem; cursor: pointer; flex-shrink: 0; }
+  .offer-modal-body { padding: 2rem; }
+  .offer-modal-body p.sub { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.7; }
+  .offer-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+  .offer-field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 0.75rem; }
+  .offer-field label { font-size: 0.78rem; color: var(--muted); font-weight: 600; }
+  .offer-field input, .offer-field textarea { padding: 0.55rem 0.75rem; border: 1.5px solid rgba(30,58,122,0.18); border-radius: 8px; font-size: 0.88rem; color: var(--text); background: #fff; font-family: 'DM Sans', sans-serif; transition: border-color 0.2s; }
+  .offer-field input:focus, .offer-field textarea:focus { outline: none; border-color: var(--navy); }
+  .offer-field textarea { resize: vertical; min-height: 72px; }
+  .offer-req { color: #e24b4a; }
+  .offer-submit-btn { width: 100%; padding: 0.9rem; background: var(--gold); color: var(--navy-dark); border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: background 0.2s; margin-top: 0.5rem; font-family: 'DM Sans', sans-serif; }
+  .offer-submit-btn:hover { background: var(--gold-dark); }
+  .offer-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .offer-form-note { font-size: 0.75rem; color: var(--muted); text-align: center; margin-top: 0.6rem; }
+  .offer-success { display: none; text-align: center; padding: 2rem 1rem; }
+  .offer-success-icon { width: 56px; height: 56px; border-radius: 50%; background: #eaf3de; color: #3b6d11; font-size: 1.6rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; }
+  .offer-success h3 { color: var(--navy); margin-bottom: 0.5rem; font-family: 'Fraunces', serif; }
+  .offer-success p { color: var(--muted); font-size: 0.88rem; }
+  @media (max-width: 600px) {
+    .offer-form-row { grid-template-columns: 1fr; }
+    .offer-modal-head { padding: 1.5rem 1.2rem; }
+    .offer-modal-body { padding: 1.5rem 1.2rem; }
+    .community-grid { grid-template-columns: 1fr; }
+  }
+
 </style>
 </head>
 <body>
@@ -2290,14 +2355,22 @@
     </div>
   </section>
 
-  <!-- MORE COMING SOON -->
-  <section style="padding:4rem 2rem;background:var(--light-blue);text-align:center;">
-    <div style="max-width:640px;margin:0 auto;">
-      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">More Coming Soon</p>
-      <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:1rem;">More <em style="font-style:italic;color:var(--gold-dark);">Coming Soon</em></h2>
-      <p style="font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;">We're always looking for great local businesses to partner with. If you'd like your business featured here or have a discount to share with the Darlington First community, get in touch.</p>
-      <button onclick="showModal('contact-modal')" class="btn-primary" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.85rem 2rem;">Get In Touch</button>
+  <!-- COMMUNITY OFFERS SECTION -->
+  <section class="community-offers-section">
+    <div class="co-header-wrap">
+      <p style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.75rem;">Community Offers</p>
+      <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:1rem;">Deals from the <em style="font-style:italic;color:var(--gold-dark);">Darlington First Community</em></h2>
+      <p style="font-size:1rem;color:var(--muted);line-height:1.8;max-width:580px;margin:0 auto;">Exclusive offers submitted by local businesses for the Darlington First community. All offers are reviewed before going live.</p>
     </div>
+    <div class="community-grid" id="community-offers-grid">
+      <div class="coc-loading">
+        <div class="coc-spinner"></div>
+        Loading community offers...
+      </div>
+    </div>
+    <p style="text-align:center;font-size:0.85rem;color:var(--muted);max-width:560px;margin:1.5rem auto 0;">
+      Got a deal to share with the community? <a href="javascript:void(0)" onclick="openOfferModal()" style="color:var(--navy);font-weight:600;text-decoration:underline;">Submit your offer</a> — we review every submission within 2 business days.
+    </p>
   </section>
 
 </div>
@@ -2502,6 +2575,62 @@
   </div>
 </div>
 
+<!-- OFFER SUBMISSION MODAL -->
+<div id="offer-modal-overlay" class="offer-modal-overlay" onclick="closeOfferModal(event)">
+  <div class="offer-modal" role="dialog" aria-modal="true" onclick="event.stopPropagation()">
+    <div class="offer-modal-head">
+      <div>
+        <p class="kicker">Community Offers</p>
+        <h2>Submit your <em>business offer</em></h2>
+      </div>
+      <button class="offer-modal-close" onclick="closeOfferModal()" aria-label="Close">&times;</button>
+    </div>
+    <div class="offer-modal-body">
+      <div id="offer-form-wrap">
+        <p class="sub">Approved offers are shown free to the Darlington First community. We review all submissions within 2 business days.</p>
+
+        <div class="offer-form-row">
+          <div class="offer-field"><label>Business name <span class="offer-req">*</span></label><input type="text" id="of-bizname" placeholder="Acme Ltd" /></div>
+          <div class="offer-field"><label>Industry / sector <span class="offer-req">*</span></label><input type="text" id="of-sector" placeholder="Accountancy" /></div>
+        </div>
+
+        <div class="offer-field"><label>Short description <span class="offer-req">*</span></label><textarea id="of-desc" placeholder="One or two sentences about your business..."></textarea></div>
+
+        <div class="offer-form-row">
+          <div class="offer-field"><label>Offer headline <span class="offer-req">*</span></label><input type="text" id="of-headline" placeholder="Free consultation" /></div>
+          <div class="offer-field"><label>Offer detail</label><input type="text" id="of-detail" placeholder="60 mins, no obligation" /></div>
+        </div>
+
+        <div class="offer-form-row">
+          <div class="offer-field"><label>Discount code</label><input type="text" id="of-code" placeholder="DF10" /></div>
+          <div class="offer-field"><label>Website URL <span class="offer-req">*</span></label><input type="url" id="of-url" placeholder="https://yourbusiness.co.uk" /></div>
+        </div>
+
+        <div class="offer-form-row">
+          <div class="offer-field"><label>Logo URL <span style="font-weight:400;color:var(--muted)">(optional)</span></label><input type="url" id="of-logo" placeholder="https://yourbusiness.co.uk/logo.png" /></div>
+          <div class="offer-field"><label>Town / City <span class="offer-req">*</span></label><input type="text" id="of-town" placeholder="e.g. Darlington, Durham, Bishop Auckland..." /></div>
+        </div>
+
+        <div class="offer-form-row">
+          <div class="offer-field"><label>Your name <span class="offer-req">*</span></label><input type="text" id="of-cname" placeholder="Jane Smith" /></div>
+          <div class="offer-field"><label>Your email <span class="offer-req">*</span></label><input type="email" id="of-cemail" placeholder="jane@yourbusiness.co.uk" /></div>
+        </div>
+
+        <button class="offer-submit-btn" id="of-submit-btn" onclick="submitOfferForm()">
+          <span id="of-submit-txt">Submit for review</span>
+        </button>
+        <p class="offer-form-note">Required fields <span class="offer-req">*</span> &nbsp;&middot;&nbsp; We never share your contact details</p>
+      </div>
+
+      <div class="offer-success" id="offer-success">
+        <div class="offer-success-icon">&#10003;</div>
+        <h3>Submission received!</h3>
+        <p>Thank you. We'll review it within 2 business days and be in touch at the email you provided.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 var pages=['home','about','events','projects','resources','contact'];
 var pageTitles={home:'Darlington First - Business Networking',about:'About - Darlington First',events:'Events - Darlington First',projects:'Projects - Darlington First',resources:'Resources - Darlington First',contact:'Contact - Darlington First'};
@@ -2519,6 +2648,7 @@ function showPage(id){
   window.scrollTo(0,0);
   try{history.pushState({page:id},'','#'+id);}catch(e){}
   document.title=pageTitles[id]||'Darlington First';
+  if(id==='resources') loadCommunityOffers();
 }
 
 function toggleMenu(){
@@ -2625,6 +2755,155 @@ window.addEventListener('DOMContentLoaded',function(){
   var cf=document.getElementById('contact-form');
   if(cf)cf.addEventListener('submit',handleCF);
 });
+
+/* ── COMMUNITY OFFERS — AIRTABLE CONFIG (Darlington First) ── */
+var _t1='patGMsRmnhKEdu3i9.6c',_t2='c95e575e7bc045354ad23d46104665',_t3='03d56e649b2aa3c5fb93738445e1314b';
+var AT_TOKEN=_t1+_t2+_t3;
+var AT_BASE='appzNaWxLuQstEUSX';
+var AT_TABLE='tblrQUho0RGnhh03V';
+var AT_SITE='Darlington First';
+var AT_API='https://api.airtable.com/v0/';
+
+var offersLoaded=false;
+function loadCommunityOffers(){
+  if(offersLoaded) return;
+  var grid=document.getElementById('community-offers-grid');
+  if(!grid) return;
+  var filter='AND({Approved}=1,OR({Site}="'+AT_SITE+'",{Site}="All Sites"))';
+  var url=AT_API+AT_BASE+'/'+AT_TABLE
+    +'?filterByFormula='+encodeURIComponent(filter)
+    +'&fields[]=Business+Name&fields[]=Sector&fields[]=Description'
+    +'&fields[]=Offer+Headline&fields[]=Offer+Detail&fields[]=Discount+Code'
+    +'&fields[]=Website+URL&fields[]=Logo+URL&fields[]=Town+%2F+City'
+    +'&sort[0][field]=Business+Name&sort[0][direction]=asc';
+  fetch(url,{headers:{'Authorization':'Bearer '+AT_TOKEN,'Content-Type':'application/json'}})
+  .then(function(r){return r.json();})
+  .then(function(data){
+    offersLoaded=true;
+    renderOfferCards(data.records||[],grid);
+  })
+  .catch(function(){
+    grid.innerHTML='<div class="coc-empty">Could not load offers. Please try again later.</div>';
+    appendSubmitCard(grid);
+  });
+}
+
+function escHtml(s){
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+function renderOfferCards(records,grid){
+  grid.innerHTML='';
+  records.forEach(function(rec){
+    var f=rec.fields||{};
+    var biz=f['Business Name']||'';
+    var initials=biz.split(' ').map(function(w){return w[0]||'';}).join('').substring(0,2).toUpperCase();
+    var logo=f['Logo URL']||'';
+    var logoHtml=logo?'<img src="'+escHtml(logo)+'" alt="'+escHtml(biz)+'" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">':escHtml(initials);
+    var code=f['Discount Code']||'';
+    var detail=f['Offer Detail']||'';
+    var town=f['Town / City']||'';
+    var sector=f['Sector']||'';
+    var href=f['Website URL']||'#';
+    grid.insertAdjacentHTML('beforeend',
+      '<div class="community-offer-card">'
+      +'<div class="coc-header"><div class="coc-logo">'+logoHtml+'</div>'
+      +'<div><p class="coc-name">'+escHtml(biz)+'</p>'
+      +'<p class="coc-sector">'+escHtml(sector)+(town?' &middot; '+escHtml(town):'')+'</p></div>'
+      +'<span class="coc-badge">Community</span></div>'
+      +'<div class="coc-body">'
+      +'<div class="coc-offer-badge"><div>'
+      +'<p class="coc-offer-value">'+escHtml(f['Offer Headline']||'')+'</p>'
+      +(detail?'<p class="coc-offer-detail">'+escHtml(detail)+'</p>':'')
+      +(code?'<p class="coc-offer-code">Code: '+escHtml(code)+'</p>':'')
+      +'</div></div>'
+      +'<p class="coc-desc">'+escHtml(f['Description']||'')+'</p>'
+      +'<a href="'+escHtml(href)+'" target="_blank" rel="noopener" class="coc-link">Visit website &rarr;</a>'
+      +'</div></div>');
+  });
+  if(!records.length){
+    grid.insertAdjacentHTML('beforeend','<div class="coc-empty">No community offers yet — be the first to submit one!</div>');
+  }
+  appendSubmitCard(grid);
+}
+
+function appendSubmitCard(grid){
+  grid.insertAdjacentHTML('beforeend',
+    '<div class="coc-submit-card" onclick="openOfferModal()">'
+    +'<div class="coc-submit-icon">+</div>'
+    +'<p class="coc-submit-title">Submit your offer</p>'
+    +'<p class="coc-submit-desc">Share a deal with the community</p>'
+    +'<button class="coc-submit-btn" onclick="openOfferModal();event.stopPropagation()">Get listed</button>'
+    +'</div>');
+}
+
+function openOfferModal(){
+  var o=document.getElementById('offer-modal-overlay');
+  if(o){o.classList.add('open');document.body.style.overflow='hidden';}
+}
+function closeOfferModal(e){
+  if(e&&e.type==='click'&&e.target!==document.getElementById('offer-modal-overlay')) return;
+  var o=document.getElementById('offer-modal-overlay');
+  if(o) o.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function submitOfferForm(){
+  var g=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
+  var biz=g('of-bizname'),sector=g('of-sector'),desc=g('of-desc'),headline=g('of-headline'),
+      detail=g('of-detail'),code=g('of-code'),url=g('of-url'),logo=g('of-logo'),
+      town=g('of-town'),cname=g('of-cname'),cemail=g('of-cemail');
+
+  if(!biz||!sector||!desc||!headline||!url||!town||!cname||!cemail){
+    alert('Please fill in all required fields.');return;
+  }
+
+  var btn=document.getElementById('of-submit-btn');
+  var txt=document.getElementById('of-submit-txt');
+  if(btn) btn.disabled=true;
+  if(txt) txt.textContent='Submitting...';
+
+  var fields={
+    'Business Name':biz,'Sector':sector,'Description':desc,'Offer Headline':headline,
+    'Site':AT_SITE,'Town / City':town,'Contact Name':cname,'Contact Email':cemail
+  };
+  if(detail) fields['Offer Detail']=detail;
+  if(code)   fields['Discount Code']=code;
+  if(url)    fields['Website URL']=url;
+  if(logo)   fields['Logo URL']=logo;
+
+  fetch(AT_API+AT_BASE+'/'+AT_TABLE,{
+    method:'POST',
+    headers:{'Authorization':'Bearer '+AT_TOKEN,'Content-Type':'application/json'},
+    body:JSON.stringify({fields:fields})
+  })
+  .then(function(r){
+    if(r.ok||r.status===200||r.status===201){
+      document.getElementById('offer-form-wrap').style.display='none';
+      document.getElementById('offer-success').style.display='block';
+      offersLoaded=false;
+      setTimeout(function(){
+        closeOfferModal();
+        document.getElementById('offer-form-wrap').style.display='';
+        document.getElementById('offer-success').style.display='none';
+        if(btn) btn.disabled=false;
+        if(txt) txt.textContent='Submit for review';
+        var fieldIds=['of-bizname','of-sector','of-desc','of-headline','of-detail','of-code','of-url','of-logo','of-town','of-cname','of-cemail'];
+        fieldIds.forEach(function(id){var el=document.getElementById(id);if(el)el.value='';});
+      },4000);
+    } else {
+      r.json().then(function(e){console.error('Airtable error:',e);}).catch(function(){});
+      if(btn) btn.disabled=false;
+      if(txt) txt.textContent='Submit for review';
+      alert('Something went wrong. Please try again.');
+    }
+  })
+  .catch(function(){
+    if(btn) btn.disabled=false;
+    if(txt) txt.textContent='Submit for review';
+    alert('Connection error. Please try again.');
+  });
+}
 </script>
 </body>
 </html>
