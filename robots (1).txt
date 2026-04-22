@@ -1,0 +1,12 @@
+# robots.txt for darlingtonfirst.network
+# Allow all search engines to crawl everything
+
+User-agent: *
+Allow: /
+
+# Don't crawl the Netlify function endpoints — they're API routes, not pages
+Disallow: /api/
+Disallow: /.netlify/
+
+# Point crawlers to the sitemap
+Sitemap: https://darlingtonfirst.network/sitemap.xml
