@@ -986,6 +986,11 @@
 
     /* Home sponsor cards — keep 2-col on mobile rather than 1-col for better feel */
     div[style*="grid-template-columns:repeat(auto-fit,minmax(170px"] { grid-template-columns: 1fr 1fr !important; }
+    /* Other inline auto-fit grids (about values, contact actions, resource sponsors) — keep 2-col density on tablet/mobile */
+    div[style*="grid-template-columns:repeat(auto-fit,minmax(200px"],
+    div[style*="grid-template-columns:repeat(auto-fit,minmax(160px"] {
+      grid-template-columns: 1fr 1fr !important;
+    }
 
     /* Scroll indicator hide on mobile */
     .hero-scroll { display: none; }
@@ -1001,7 +1006,9 @@
     .hero h1 { font-size: clamp(1.8rem, 7vw, 2.5rem); }
     .section-pad { padding: 3rem 1rem; }
     .page-hero { padding: 2.5rem 1rem; }
-    div[style*="grid-template-columns:repeat(auto-fit,minmax(170px"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns:repeat(auto-fit,minmax(170px"],
+    div[style*="grid-template-columns:repeat(auto-fit,minmax(200px"],
+    div[style*="grid-template-columns:repeat(auto-fit,minmax(160px"] { grid-template-columns: 1fr !important; }
     .hero-buttons a, .hero-buttons button { width: 100%; max-width: 100%; }
     .res-offer-badge { flex-direction: column; text-align: center; }
   }
@@ -1081,6 +1088,20 @@
 
   /* All images responsive by default */
   img { max-width: 100%; height: auto; display: block; }
+
+  /* Inline-styled hero/feature images: cap their fixed pixel heights so they
+     scale down with the viewport instead of staying tall on small screens.
+     Targets <img> tags using width:100% + height:Npx inline styling. */
+  @media (max-width: 768px) {
+    img[style*="height:380px"],
+    img[style*="height: 380px"] { height: clamp(180px, 50vw, 320px) !important; }
+    img[style*="height:360px"],
+    img[style*="height: 360px"] { height: clamp(180px, 48vw, 300px) !important; }
+    img[style*="height:220px"],
+    img[style*="height: 220px"] { height: clamp(140px, 38vw, 220px) !important; }
+    img[style*="max-height:360px"],
+    img[style*="max-height: 360px"] { max-height: clamp(180px, 48vw, 300px) !important; }
+  }
 
   /* Touch targets */
   a, button { min-height: 44px; }
@@ -3165,13 +3186,17 @@ function showPage(id){
 
 function toggleMenu(){
   var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');
-  if(m&&b){m.classList.toggle('open');b.classList.toggle('open');}
+  if(m&&b){
+    m.classList.toggle('open');b.classList.toggle('open');
+    document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+  }
 }
 
 function closeMenu(){
   var m=document.getElementById('mobile-menu'),b=document.getElementById('hamburger');
   if(m)m.classList.remove('open');
   if(b)b.classList.remove('open');
+  document.body.style.overflow='';
 }
 
 function navTo(id){showPage(id);closeMenu();}
