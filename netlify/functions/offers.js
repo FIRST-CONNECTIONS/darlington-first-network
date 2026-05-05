@@ -25,7 +25,11 @@ exports.handler = async (event) => {
 
 // ─── GET: list approved offers for the current site ────────────
 async function handleList(token) {
-  const filter = `AND({Approved}=1,OR({Site}="${SITE_NAME}",{Site}="All Sites"))`;
+  // Use FIND() rather than = so the filter works with both Single-select
+  // and Multi-select Site fields. With Multi-select, Airtable returns the
+  // value as a comma-separated string (e.g. "Darlington First, First Connections")
+  // — exact-match (=) fails, but FIND() searches within the string.
+  const filter = `AND({Approved}=1,OR(FIND("${SITE_NAME}",{Site}),FIND("All Sites",{Site})))`;
   const params = new URLSearchParams();
   params.set('filterByFormula', filter);
   const fields = [
@@ -85,8 +89,11 @@ async function handleSubmit(event, token) {
       fields[k] = String(payload[k]).trim();
     }
   });
-  // Always stamp the Site server-side — prevents client from spoofing it
-  fields['Site'] = SITE_NAME;
+  // Always stamp the Site server-side — prevents client from spoofing it.
+  // Sent as an array because the Site field in Airtable is Multi-select.
+  // If you ever switch the Site field back to Single-select, change this
+  // back to: fields['Site'] = SITE_NAME;
+  fields['Site'] = [SITE_NAME];
 
   const url = `https://api.airtable.com/v0/${AIRTABLE_BASE}/${AIRTABLE_TABLE}`;
   try {
