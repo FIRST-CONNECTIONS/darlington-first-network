@@ -511,6 +511,94 @@
     .res-offer-badge { width: 100%; min-width: unset; }
   }
 
+  /* FUNDING PAGE — First Connections Funding Support, powered by Metrick */
+  .fd-hero { margin-top: 64px; background: var(--navy-deep); padding: 5rem 2rem; position: relative; overflow: hidden; }
+  .fd-hero::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 30px, rgba(255,255,255,0.02) 30px, rgba(255,255,255,0.02) 31px);
+  }
+  .fd-hero-inner { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 1fr; gap: 3rem; align-items: center; position: relative; z-index: 2; }
+  .fd-hero-badge {
+    display: inline-flex; align-items: center; gap: 0.55rem;
+    border: 1px solid rgba(245,197,24,0.45); background: rgba(245,197,24,0.08);
+    border-radius: 100px; padding: 0.4rem 1.1rem; margin-bottom: 1.5rem;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold);
+  }
+  .fd-hero-badge .dot { width: 16px; height: 16px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; color: var(--navy-deep); flex-shrink: 0; }
+  .fd-kicker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .fd-hero h1 { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 900; color: white; line-height: 1.08; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+  .fd-hero h1 em { font-style: italic; color: var(--gold); }
+  .fd-hero-lead { font-size: 1rem; color: rgba(255,255,255,0.85); line-height: 1.75; margin-bottom: 1rem; }
+  .fd-hero-sub { font-size: 0.9rem; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 2rem; }
+  .fd-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .fd-stat-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.14); border-radius: 12px; padding: 1.25rem 1.4rem; }
+  .fd-stat-value { font-family: 'Fraunces', serif; font-size: 1.7rem; font-weight: 900; color: var(--gold); line-height: 1.1; margin-bottom: 0.4rem; }
+  .fd-stat-label { font-size: 0.8rem; font-weight: 700; color: white; margin-bottom: 0.15rem; }
+  .fd-stat-sub { font-size: 0.72rem; color: rgba(255,255,255,0.55); }
+  .fd-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 0.75rem; }
+  .fd-h2 { font-family: 'Fraunces', serif; font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 900; color: var(--navy); letter-spacing: -0.02em; margin-bottom: 1rem; }
+  .fd-h2 em { font-style: italic; color: var(--gold-dark); }
+  .fd-service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+  .fd-service-card {
+    background: white; border: 1px solid rgba(30,58,122,0.1); border-radius: 14px; padding: 1.75rem;
+    text-align: left; display: flex; flex-direction: column; gap: 0.6rem; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .fd-service-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(30,58,122,0.1); }
+  .fd-service-icon {
+    width: 44px; height: 44px; border-radius: 10px; background: var(--light-yellow);
+    border: 1px solid rgba(212,167,0,0.35); display: flex; align-items: center; justify-content: center; margin-bottom: 0.4rem;
+  }
+  .fd-service-card h3 { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 700; color: var(--navy); }
+  .fd-service-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+  .fd-step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
+  .fd-step-card { background: white; border: 1px solid rgba(30,58,122,0.1); border-radius: 14px; padding: 1.6rem; text-align: left; }
+  .fd-step-num {
+    display: inline-block; background: var(--navy); color: var(--gold); font-weight: 700; font-size: 0.8rem;
+    padding: 0.3rem 0.7rem; border-radius: 6px; margin-bottom: 0.9rem; letter-spacing: 0.05em;
+  }
+  .fd-step-card h3 { font-size: 0.98rem; font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; }
+  .fd-step-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.65; }
+  .fd-check-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
+  .fd-check-list li { display: flex; gap: 0.75rem; align-items: center; font-size: 0.92rem; font-weight: 600; color: var(--navy); }
+  .fd-check-list .tick {
+    width: 22px; height: 22px; background: var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: 0.65rem; color: var(--navy-dark); flex-shrink: 0;
+  }
+  .fd-success-card { background: var(--navy-deep); border-radius: 16px; padding: 2rem; color: white; }
+  .fd-success-card .fd-success-eyebrow {
+    display: flex; align-items: center; gap: 0.6rem; font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem;
+  }
+  .fd-success-card h3 { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900; color: white; margin-bottom: 0.9rem; }
+  .fd-success-card p { font-size: 0.9rem; color: rgba(255,255,255,0.8); line-height: 1.75; }
+  .fd-success-foot { margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.15); font-size: 0.75rem; color: rgba(255,255,255,0.55); font-style: italic; line-height: 1.6; }
+  .fd-register-grid { max-width: 1060px; margin: 0 auto; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 2rem; align-items: start; }
+  .fd-form-card { background: white; border: 1px solid rgba(30,58,122,0.1); border-radius: 16px; padding: 2rem; box-shadow: 0 2px 16px rgba(30,58,122,0.07); }
+  .fd-chip-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .fd-chip {
+    border: 1px solid rgba(30,58,122,0.25); background: white; color: var(--navy);
+    font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 600;
+    padding: 0.45rem 0.95rem; border-radius: 100px; cursor: pointer; transition: all 0.15s;
+  }
+  .fd-chip.active { background: var(--navy); color: white; border-color: var(--navy); }
+  .fd-why-card { background: white; border: 1px solid rgba(30,58,122,0.1); border-radius: 16px; padding: 2rem; }
+  .fd-why-item {
+    background: var(--light-yellow); border: 1px solid rgba(212,167,0,0.25); border-radius: 12px;
+    padding: 1rem 1.1rem; display: flex; gap: 0.8rem; align-items: flex-start; margin-bottom: 0.75rem;
+  }
+  .fd-why-item strong { display: block; font-size: 0.88rem; color: var(--navy); margin-bottom: 0.15rem; }
+  .fd-why-item span { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
+  .fd-email-card { background: var(--navy-deep); border-radius: 16px; padding: 2rem; margin-top: 1.5rem; }
+  @media (max-width: 900px) {
+    .fd-hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .fd-register-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 480px) {
+    .fd-hero { padding: 3.5rem 1.25rem; }
+    .fd-stat-grid { gap: 0.75rem; }
+    .fd-form-card, .fd-why-card, .fd-email-card { padding: 1.5rem 1.25rem; }
+  }
+
   /* CONTACT ACTION CARDS */
   .contact-action-card {
     background: white; border: 1px solid rgba(30,58,122,0.1); border-radius: 12px;
@@ -2012,6 +2100,18 @@
           <span class="home-sponsor-link">Visit Website</span>
         </a>
 
+        <a href="javascript:void(0)" onclick="showPage('funding')" class="home-sponsor-card">
+          <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Metrick%20Limited.png" alt="Metrick Limited" class="home-sponsor-logo" />
+          <h3 class="home-sponsor-name">Metrick Limited</h3>
+          <p class="home-sponsor-desc">The North East's specialist grants, funding &amp; tender consultancy — powering our Funding Support service.</p>
+          <span class="home-sponsor-link">Explore Funding Support</span>
+          <div class="home-sponsor-offer" style="background:var(--navy);">
+            <p style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.7;margin-bottom:0.25rem;color:white;">Member Offer</p>
+            <p style="font-size:1rem;font-weight:900;line-height:1.2;color:white;">Free Discovery Call</p>
+            <p style="font-size:0.75rem;font-weight:600;margin-top:0.2rem;color:rgba(255,255,255,0.8);">Grants, funding &amp; tenders</p>
+          </div>
+        </a>
+
       </div>
 
       <p style="font-size:0.9rem;color:var(--muted);">Interested in sponsoring Darlington First? <a href="mailto:hello@first-connections.com" style="color:var(--navy);font-weight:700;">hello@first-connections.com</a></p>
@@ -2546,6 +2646,33 @@
       <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:3rem;">Featured <em style="font-style:italic;color:var(--gold-dark);">Partner Offers</em></h2>
       <p style="font-size:1rem;color:var(--muted);margin-bottom:3rem;margin-top:-2rem;">These partners have made a commitment to the Darlington First community — offering real value and exclusive deals to every member.</p>
 
+      <!-- METRICK — FUNDING SUPPORT -->
+      <div class="res-offer-card" style="margin-bottom:2rem;">
+        <div class="res-offer-body">
+          <div class="res-offer-header">
+            <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Metrick%20Limited.png" alt="Metrick Limited" style="max-height:48px;max-width:100px;object-fit:contain;" />
+            <div>
+              <span style="background:var(--gold);color:var(--navy-dark);font-size:0.65rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:4px;display:inline-block;margin-bottom:0.3rem;">New Resource</span>
+              <h3 class="res-offer-title">First Connections Funding Support</h3>
+              <p class="res-offer-subtitle">Grants, Funding &amp; Tender Support · Powered by Metrick</p>
+            </div>
+          </div>
+          <p class="res-offer-desc">We've teamed up with <strong style="color:var(--navy);">Metrick</strong>, the North East's specialist grants &amp; funding consultancy, to help our community secure the money and contracts that fuel real growth. From Innovate UK and R&amp;D tax relief to decarbonisation grants and public-sector tenders — they do the paperwork, you run your business.</p>
+          <div class="rg-2col" style="margin-bottom:1.25rem">
+            <div class="res-feature-box"><strong>Grant Funding</strong><span>Identification, application &amp; submission — Innovate UK, R&amp;D tax credits, regional &amp; decarbonisation schemes.</span></div>
+            <div class="res-feature-box"><strong>Business Funding</strong><span>Investment introductions plus lender-ready business plans, forecasts and pitch decks.</span></div>
+            <div class="res-feature-box"><strong>Tender Support</strong><span>Bid writing, PQQ support and framework agreements — from strategy to submission.</span></div>
+            <div class="res-feature-box"><strong>Accreditations</strong><span>ISO 9001/14001/27001, Cyber Essentials, SafeContractor and more.</span></div>
+          </div>
+          <a href="javascript:void(0)" onclick="showPage('funding')" class="res-visit-link">Explore Funding Support →</a>
+        </div>
+        <div class="res-offer-badge res-badge-navy">
+          <p class="res-badge-label" style="color:rgba(255,255,255,0.65);">Member Offer</p>
+          <p class="res-badge-value" style="color:var(--gold);font-size:1.1rem;line-height:1.3;">Free Discovery Call</p>
+          <p class="res-badge-sub" style="color:rgba(255,255,255,0.65);">No obligation, no upfront cost</p>
+        </div>
+      </div>
+
       <!-- THE IRONING MAN -->
       <div class="res-offer-card" style="margin-bottom:2rem;">
         <div class="res-offer-body">
@@ -2866,6 +2993,12 @@
           <p>The all-electric train service — connecting Darlington and the North East directly with London.</p>
           <span>Visit Website</span>
         </a>
+        <a href="javascript:void(0)" onclick="showPage('funding')" class="res-sponsor-tile">
+          <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Metrick%20Limited.png" alt="Metrick Limited" />
+          <h4>Metrick Limited</h4>
+          <p>Specialist grants, funding &amp; tender consultancy — powering First Connections Funding Support.</p>
+          <span>Explore Funding Support</span>
+        </a>
       </div>
     </div>
   </section>
@@ -2877,6 +3010,222 @@
       <h2 style="font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.5vw,2.2rem);font-weight:900;color:var(--navy);letter-spacing:-0.02em;margin-bottom:1rem;">More <em style="font-style:italic;color:var(--gold-dark);">Coming Soon</em></h2>
       <p style="font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:2rem;">We're always looking for great local businesses to partner with. If you'd like your business featured here or have a discount to share with the Darlington First community, get in touch.</p>
       <button onclick="showModal('contact-modal')" class="btn-primary" style="cursor:pointer;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.85rem 2rem;">Get In Touch</button>
+    </div>
+  </section>
+
+</div>
+
+<!-- ======================== FUNDING SUPPORT PAGE (POWERED BY METRICK) ======================== -->
+<div class="page" id="page-funding">
+
+  <!-- HERO -->
+  <section class="fd-hero">
+    <div class="fd-hero-inner">
+      <div>
+        <span class="fd-hero-badge"><span class="dot">£</span>First Connections Funding Support &nbsp;·&nbsp; Powered by Metrick</span>
+        <p class="fd-kicker">Grants, Funding &amp; Tender Support</p>
+        <h1>Unlock the funding your <em>business deserves</em></h1>
+        <p class="fd-hero-lead">We've teamed up with <strong style="color:white;">Metrick</strong>, the North East's specialist grants &amp; funding consultancy, to help our community secure the money and contracts that fuel real growth.</p>
+        <p class="fd-hero-sub">From Innovate UK and R&amp;D tax relief to decarbonisation grants and public-sector tenders — we do the paperwork, you run your business.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <button onclick="fdScrollTo('fd-register')" class="btn-primary" style="cursor:pointer;">Register your interest →</button>
+          <button onclick="fdScrollTo('fd-services')" class="btn-outline" style="cursor:pointer;">See what we offer</button>
+        </div>
+      </div>
+      <div class="fd-stat-grid">
+        <div class="fd-stat-card">
+          <p class="fd-stat-value">£2.7m</p>
+          <p class="fd-stat-label">Recent scheme delivered</p>
+          <p class="fd-stat-sub">200-home retrofit · Hull</p>
+        </div>
+        <div class="fd-stat-card">
+          <p class="fd-stat-value">End-to-end</p>
+          <p class="fd-stat-label">Fully managed service</p>
+          <p class="fd-stat-sub">Research, paperwork &amp; submission</p>
+        </div>
+        <div class="fd-stat-card">
+          <p class="fd-stat-value">North East</p>
+          <p class="fd-stat-label">Local &amp; trusted</p>
+          <p class="fd-stat-sub">Founded 2021 · Newton Aycliffe</p>
+        </div>
+        <div class="fd-stat-card">
+          <p class="fd-stat-value">Free</p>
+          <p class="fd-stat-label">Discovery call for members</p>
+          <p class="fd-stat-sub">No obligation, no upfront cost</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUR WAYS WE HELP -->
+  <section id="fd-services" class="section-pad section-center" style="background:white;">
+    <div style="max-width:1060px;margin:0 auto;">
+      <p class="fd-eyebrow">What we can help with</p>
+      <h2 class="fd-h2">Four ways we help you <em>grow</em></h2>
+      <p class="section-muted max-680" style="margin:0 auto;">Chasing a specific grant, bidding for a public-sector contract, or unlocking private investment — Metrick brings the expertise, First Connections members get priority access.</p>
+      <div class="fd-service-grid">
+        <div class="fd-service-card">
+          <div class="fd-service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg></div>
+          <h3>Grant Funding</h3>
+          <p>Full grant identification, application &amp; submission. Innovate UK, R&amp;D tax credits, Made Smarter, regional growth &amp; decarbonisation schemes — we find what you're eligible for and handle the paperwork.</p>
+        </div>
+        <div class="fd-service-card">
+          <div class="fd-service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+          <h3>Business Funding</h3>
+          <p>Investment introductions and support with lender-ready business plans, forecasts and pitch decks. Ideal for start-ups, scale-ups and growth-stage SMEs looking beyond the grants ecosystem.</p>
+        </div>
+        <div class="fd-service-card">
+          <div class="fd-service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></div>
+          <h3>Tender Support</h3>
+          <p>Public &amp; private-sector tender writing, bid management and PQQ support. Win contracts on Find A Tender, Contracts Finder and framework agreements — from strategy through to submission.</p>
+        </div>
+        <div class="fd-service-card">
+          <div class="fd-service-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Accreditations</h3>
+          <p>ISO 9001, ISO 14001, ISO 27001, Cyber Essentials, SafeContractor and more. The credentials that unlock tenders, win larger contracts and prove operational maturity — often grant-eligible themselves.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section-pad section-center" style="background:var(--light-blue);">
+    <div style="max-width:1060px;margin:0 auto;">
+      <p class="fd-eyebrow">The process</p>
+      <h2 class="fd-h2">How it <em>works</em></h2>
+      <p class="section-muted max-680" style="margin:0 auto;">From first conversation to funded project in four simple steps. No obligation, no jargon, no upfront cost to explore.</p>
+      <div class="fd-step-grid">
+        <div class="fd-step-card">
+          <span class="fd-step-num">01</span>
+          <h3>Register interest</h3>
+          <p>A short form below — a few details about your business and what you're hoping to fund.</p>
+        </div>
+        <div class="fd-step-card">
+          <span class="fd-step-num">02</span>
+          <h3>Free discovery call</h3>
+          <p>A friendly, no-obligation conversation to understand your goals and eligibility.</p>
+        </div>
+        <div class="fd-step-card">
+          <span class="fd-step-num">03</span>
+          <h3>Opportunity match</h3>
+          <p>Metrick pinpoints the grants, tenders or accreditations best suited to your business.</p>
+        </div>
+        <div class="fd-step-card">
+          <span class="fd-step-num">04</span>
+          <h3>We handle it</h3>
+          <p>Applications and submissions managed end-to-end — you focus on running your business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE HELP -->
+  <section class="section-pad" style="background:white;">
+    <div class="rg-2col" style="max-width:1060px;margin:0 auto;align-items:center;">
+      <div>
+        <p class="fd-eyebrow">— Who we help</p>
+        <h2 class="fd-h2">Built for <em>North East businesses</em> at every stage</h2>
+        <p class="section-muted">From pre-revenue founders exploring their first grant to established SMEs pursuing seven-figure tenders — if you're based in the region, there's probably funding you don't yet know about.</p>
+        <ul class="fd-check-list">
+          <li><span class="tick">✓</span>Start-ups &amp; early-stage founders</li>
+          <li><span class="tick">✓</span>SMEs &amp; growth-stage businesses</li>
+          <li><span class="tick">✓</span>Charities, CICs &amp; social enterprises</li>
+          <li><span class="tick">✓</span>Manufacturers &amp; industrial businesses</li>
+          <li><span class="tick">✓</span>Net-zero &amp; decarbonisation projects</li>
+          <li><span class="tick">✓</span>Any business tendering for public-sector work</li>
+        </ul>
+      </div>
+      <div class="fd-success-card">
+        <p class="fd-success-eyebrow"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> — Recent success</p>
+        <h3>£2.7m Hull retrofit scheme</h3>
+        <p>Metrick helped deliver a £2.7 million home improvement scheme that retrofitted around 200 properties in Hull with solar panels, modern heating systems and improved insulation — a live example of what's possible with the right partner in your corner.</p>
+        <p class="fd-success-foot">Founded 2021 in Newton Aycliffe · Five-figure investment from Durham Business Growth · Grants platform launching 2026.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTER YOUR INTEREST -->
+  <section id="fd-register" class="section-pad" style="background:var(--light-blue);">
+    <div class="fd-register-grid">
+
+      <div class="fd-form-card">
+        <p class="fd-eyebrow">— Register your interest</p>
+        <h2 class="fd-h2" style="font-size:clamp(1.5rem,3vw,2rem);">Let's find the funding <em>you're eligible for</em></h2>
+        <p class="section-muted" style="font-size:0.92rem;margin-bottom:1.75rem;">Fill in the form and a member of the First Connections team will be in touch to arrange your free discovery call with Metrick. No obligation, no upfront cost.</p>
+        <form id="funding-form">
+          <div class="rg-2col" style="margin-bottom:1rem">
+            <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Jane Smith" required /></div>
+            <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="jane@yourbusiness.co.uk" required /></div>
+          </div>
+          <div class="rg-2col" style="margin-bottom:1rem">
+            <div class="form-group"><label>Business / Organisation</label><input type="text" name="business" placeholder="Your business name" /></div>
+            <div class="form-group"><label>Phone (Optional)</label><input type="tel" name="phone" placeholder="07123 456789" /></div>
+          </div>
+          <div class="form-group" style="margin-bottom:1rem;">
+            <label>What are you interested in?</label>
+            <div class="fd-chip-row">
+              <button type="button" class="fd-chip active" data-v="Grants" onclick="fdToggleChip(this)">Grants</button>
+              <button type="button" class="fd-chip" data-v="Business Funding" onclick="fdToggleChip(this)">Business Funding</button>
+              <button type="button" class="fd-chip" data-v="Tenders" onclick="fdToggleChip(this)">Tenders</button>
+              <button type="button" class="fd-chip" data-v="Accreditations" onclick="fdToggleChip(this)">Accreditations</button>
+              <button type="button" class="fd-chip" data-v="Not sure yet" onclick="fdToggleChip(this)">Not sure yet</button>
+            </div>
+          </div>
+          <div class="form-group" style="margin-bottom:1rem;">
+            <label>Business Stage</label>
+            <select name="stage">
+              <option value="">Select a stage…</option>
+              <option value="Pre-revenue / idea stage">Pre-revenue / idea stage</option>
+              <option value="Start-up (0–2 years)">Start-up (0–2 years)</option>
+              <option value="Established SME (3+ years)">Established SME (3+ years)</option>
+              <option value="Scaling / growth stage">Scaling / growth stage</option>
+              <option value="Charity / CIC / social enterprise">Charity / CIC / social enterprise</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:1.5rem;">
+            <label>Tell Us About Your Project</label>
+            <textarea name="project" placeholder="A few sentences about what you're building, the sector you're in, and what funding or support you're hoping to unlock…"></textarea>
+          </div>
+          <button type="submit" class="btn-navy" style="width:100%;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;padding:0.9rem;">Register Interest →</button>
+          <p style="font-size:0.75rem;color:var(--muted);text-align:center;margin-top:0.75rem;line-height:1.6;">Your details go to the First Connections team, who'll pass them to Metrick to arrange a free discovery call. Typically responded to within 1–2 business days.</p>
+        </form>
+      </div>
+
+      <div>
+        <div class="fd-why-card">
+          <p class="fd-eyebrow">— Why this partnership?</p>
+          <h3 style="font-family:'Fraunces',serif;font-size:1.3rem;font-weight:900;color:var(--navy);margin-bottom:0.9rem;">First Connections, <em style="font-style:italic;color:var(--gold-dark);">powered by Metrick</em></h3>
+          <p class="section-muted" style="font-size:0.9rem;margin-bottom:1.5rem;">First Connections exists to help North East businesses grow. Metrick brings the specialist expertise in grants, tenders and accreditations. Together, we're giving our community priority access to funding support that's usually out of reach.</p>
+          <div class="fd-why-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <div><strong>Free for members to explore</strong><span>Discovery call &amp; eligibility check at no cost.</span></div>
+          </div>
+          <div class="fd-why-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            <div><strong>Managed end-to-end</strong><span>Research, paperwork &amp; submission all handled.</span></div>
+          </div>
+          <div class="fd-why-item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg>
+            <div><strong>Built for the North East</strong><span>Local knowledge of regional funders &amp; programmes.</span></div>
+          </div>
+          <div class="fd-why-item" style="margin-bottom:0;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <div><strong>Confidential &amp; no obligation</strong><span>Your project stays between you, us and Metrick.</span></div>
+          </div>
+          <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(30,58,122,0.1);display:flex;align-items:center;gap:0.9rem;">
+            <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Metrick%20Limited.png" alt="Metrick Limited" style="max-height:52px;max-width:110px;object-fit:contain;flex-shrink:0;" />
+            <p style="font-size:0.78rem;color:var(--muted);line-height:1.6;">Grants &amp; funding service delivered in partnership with <strong style="color:var(--navy);">Metrick Limited</strong>, Newton Aycliffe.</p>
+          </div>
+        </div>
+
+        <div class="fd-email-card">
+          <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:0.75rem;">— Prefer email?</p>
+          <h3 style="font-family:'Fraunces',serif;font-size:1.25rem;font-weight:900;color:white;margin-bottom:0.6rem;">Or drop us a <em style="font-style:italic;color:var(--gold);">line</em></h3>
+          <p style="font-size:0.85rem;color:rgba(255,255,255,0.7);line-height:1.7;margin-bottom:1.25rem;">Rather write directly? Send us an email and we'll route it to the partnership team.</p>
+          <a href="mailto:hello@first-connections.com?subject=Grants%20%26%20Funding%20Enquiry" class="btn-primary" style="display:inline-block;">hello@first-connections.com</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -2999,6 +3348,7 @@
         <li><a href="javascript:void(0)" onclick="showPage('projects')" >Projects</a></li>
         <li><a href="javascript:void(0)" onclick="showPage('offers')" >DF Offers</a></li>
         <li><a href="javascript:void(0)" onclick="showPage('resources')" >Resources</a></li>
+        <li><a href="javascript:void(0)" onclick="showPage('funding')" ><span style="color:var(--gold);">Ⓜ</span> Grants &amp; Funding</a></li>
         <li><a href="javascript:void(0)" onclick="showPage('contact')" >Contact</a></li>
       </ul>
     </div>
@@ -3007,6 +3357,7 @@
       <ul>
         <li><a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank">Book a Ticket</a></li>
         <li><a href="javascript:void(0)" onclick="showPage('contact')" >Newsletter</a></li>
+        <li><a href="javascript:void(0)" onclick="showPage('funding')" >Grants &amp; Funding</a></li>
         <li><a href="javascript:void(0)" onclick="showPage('projects')" >High Street Heroes</a></li>
         <li><a href="javascript:void(0)" onclick="showPage('projects')" >Podcast</a></li>
         <li><a href="mailto:hello@first-connections.com">hello@first-connections.com</a></li>
@@ -3014,7 +3365,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Darlington First. All rights reserved. &nbsp;·&nbsp; Part of the <strong style="color:rgba(255,255,255,0.5);">First Connections Network</strong></p>
+    <p>© 2026 Darlington First. All rights reserved. &nbsp;·&nbsp; Part of the <strong style="color:rgba(255,255,255,0.5);">First Connections Network</strong> &nbsp;·&nbsp; Grants &amp; Funding service delivered in partnership with <a href="javascript:void(0)" onclick="showPage('funding')" style="color:var(--gold);font-weight:600;text-decoration:none;">Metrick Limited</a></p>
   </div>
 </footer>
 <!-- CONTACT MODAL -->
@@ -3144,8 +3495,8 @@
 </div>
 
 <script>
-var pages=['home','about','events','projects','offers','resources','contact'];
-var pageTitles={home:'Darlington First - Business Networking',about:'About - Darlington First',events:'Events - Darlington First',projects:'Projects - Darlington First',offers:'DF Offers - Darlington First',resources:'Resources - Darlington First',contact:'Contact - Darlington First'};
+var pages=['home','about','events','projects','offers','resources','funding','contact'];
+var pageTitles={home:'Darlington First - Business Networking',about:'About - Darlington First',events:'Events - Darlington First',projects:'Projects - Darlington First',offers:'DF Offers - Darlington First',resources:'Resources - Darlington First',funding:'Funding Support - Darlington First · Powered by Metrick',contact:'Contact - Darlington First'};
 
 function showPage(id){
   if(pages.indexOf(id)===-1)id='home';
@@ -3259,6 +3610,41 @@ function handleCF(e){
   .finally(function(){if(btn){btn.disabled=false;btn.textContent='Send Message';}});
 }
 
+/* ── Funding Support page (powered by Metrick) ────────────── */
+
+function fdScrollTo(id){
+  var el=document.getElementById(id);
+  if(el)el.scrollIntoView({behavior:'smooth'});
+}
+
+function fdToggleChip(btn){
+  btn.classList.toggle('active');
+}
+
+function handleFD(e){
+  e.preventDefault();
+  var f=e.target,g=function(n){var el=f.querySelector('[name="'+n+'"]');return el?el.value.trim():'';};
+  var name=g('name'),email=g('email');
+  if(!name||!email){fMsg(f,'Please fill in your name and email.',false);return;}
+  var parts=name.split(/\s+/),fn=parts.shift(),ln=parts.join(' ');
+  var chips=[],cb=f.querySelectorAll('.fd-chip.active');
+  for(var i=0;i<cb.length;i++)chips.push(cb[i].getAttribute('data-v'));
+  var msg='Interested in: '+(chips.length?chips.join(', '):'Not specified')
+    +' | Business stage: '+(g('stage')||'Not specified')
+    +' | Project: '+(g('project')||'-');
+  var d={fn:fn,ln:ln,email:email,co:g('business'),ph:g('phone'),tp:'Grants & Funding (Metrick)',msg:msg};
+  var btn=f.querySelector('button[type="submit"]');
+  if(btn){btn.disabled=true;btn.textContent='Sending...';}
+  bSub(d).then(function(r){
+    if(r.status===201||r.status===204||r.status===200)return bMail(d);
+    return r.json().then(function(j){throw new Error(j.message||'Error');});
+  }).then(function(){
+    fMsg(f,'Registered! We’ll be in touch to arrange your free discovery call with Metrick.',true);
+    f.reset();
+  }).catch(function(err){fMsg(f,'Error: '+err.message,false);})
+  .finally(function(){if(btn){btn.disabled=false;btn.textContent='Register Interest →';}});
+}
+
 window.addEventListener('DOMContentLoaded',function(){
   var rawHash=window.location.hash.replace('#','');
   // Strip off any query parameters (e.g. #offers?o=rec123 → 'offers')
@@ -3269,6 +3655,8 @@ window.addEventListener('DOMContentLoaded',function(){
   for(var i=0;i<nf.length;i++)nf[i].addEventListener('submit',handleNL);
   var cf=document.getElementById('contact-form');
   if(cf)cf.addEventListener('submit',handleCF);
+  var fd=document.getElementById('funding-form');
+  if(fd)fd.addEventListener('submit',handleFD);
 });
 
 /* ═════════════════════════════════════════════════════════════
