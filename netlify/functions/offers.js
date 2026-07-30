@@ -89,6 +89,13 @@ async function handleSubmit(event, token) {
       fields[k] = String(payload[k]).trim();
     }
   });
+  // Normalise scheme-less URLs ("www.foo.co.uk") so approved offers don't
+  // render broken relative links on the site.
+  ['Website URL', 'Logo URL'].forEach((k) => {
+    if (fields[k] && !/^https?:\/\//i.test(fields[k])) {
+      fields[k] = 'https://' + fields[k];
+    }
+  });
   // Always stamp the Site server-side — prevents client from spoofing it.
   // Sent as an array because the Site field in Airtable is Multi-select.
   // If you ever switch the Site field back to Single-select, change this
@@ -100,7 +107,9 @@ async function handleSubmit(event, token) {
     const resp = await fetch(url, {
       method: 'POST',
       headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ fields }),
+      // typecast lets Airtable auto-create select options for free-text values
+      // (Sector, Town / City, Site) instead of rejecting the record with a 422.
+      body: JSON.stringify({ fields, typecast: true }),
     });
     if (resp.ok) {
       return json(200, { ok: true });

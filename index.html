@@ -3676,6 +3676,15 @@ var OF_LAST_FOCUSED = null;
 
 function escOf(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
 
+/* Prepend https:// to scheme-less URLs so offer links never render as
+   broken relative paths (covers older records saved without a scheme). */
+function ofNormUrl(u){
+  u = String(u==null?'':u).trim();
+  if(!u) return '#';
+  if(!/^https?:\/\//i.test(u)) u = 'https://' + u;
+  return u;
+}
+
 /* Parse deep-link like #offers?o=rec123 and open the matching offer */
 function maybeOpenDeepLinkedOffer(){
   var h = window.location.hash || '';
@@ -3696,7 +3705,10 @@ function loadDFOffers(){
   var grid = document.getElementById('offers-community-grid');
   if(!grid) return;
   fetch(OF_API_PROXY,{headers:{'Content-Type':'application/json'}})
-  .then(function(r){return r.json();})
+  .then(function(r){
+    if(!r.ok) throw new Error('Offers API returned '+r.status);
+    return r.json();
+  })
   .then(function(data){
     OF_LOADED = true;
     OF_DATA = (data.records||[]).map(function(rec,i){
@@ -3713,7 +3725,7 @@ function loadDFOffers(){
         desc: f['Description']||'',
         terms: f['Terms']||'',
         claim: f['How to Claim']||'',
-        url: f['Website URL']||'#',
+        url: ofNormUrl(f['Website URL']),
         logo: f['Logo URL']||'',
         created: rec.createdTime || ''
       };
@@ -3803,7 +3815,7 @@ function renderOffersGrid(id, offers, withSubmitTile){
 
 function renderOffersSubmitTile(grid){
   grid.insertAdjacentHTML('beforeend',
-    '<div class="offers-submit-tile" onclick="openOfferModal()" role="button" tabindex="0">'
+    '<div class="offers-submit-tile" onclick="openOfferModal()" role="button" tabindex="0" onkeydown="if(event.key===\'Enter\'||event.key===\' \'){event.preventDefault();openOfferModal();}">'
     +'<div class="offers-submit-icon">+</div>'
     +'<div class="offers-submit-title">Your offer here</div>'
     +'<p class="offers-submit-desc">Share a deal with the Darlington First community.</p>'
@@ -4045,6 +4057,11 @@ function submitOfferForm(){
   if(!biz||!sector||!desc||!headline||!url||!town||!cname||!cemail){
     alert('Please fill in all required fields.');return;
   }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cemail)){
+    alert('Please enter a valid email address so we can contact you about your offer.');return;
+  }
+  if(!/^https?:\/\//i.test(url)) url = 'https://' + url;
+  if(logo && !/^https?:\/\//i.test(logo)) logo = 'https://' + logo;
 
   var btn = document.getElementById('of-submit-btn');
   var txt = document.getElementById('of-submit-txt');
@@ -4103,6 +4120,17 @@ document.addEventListener('keydown',function(e){
   var submit = document.getElementById('offer-submit-overlay');
   if(detail && detail.classList.contains('open')) closeOfferDetail();
   else if(submit && submit.classList.contains('open')) closeOfferModal();
+});
+
+/* Enter inside an offer-form input submits (the modal has no <form>, so
+   the browser's implicit submission never fires without this) */
+document.addEventListener('keydown',function(e){
+  if(e.key !== 'Enter') return;
+  var t = e.target;
+  if(t && t.tagName === 'INPUT' && t.closest && t.closest('#of-form-wrap')){
+    e.preventDefault();
+    submitOfferForm();
+  }
 });
 
 </script>
