@@ -11,6 +11,14 @@
   to   = "/.netlify/functions/:splat"
   status = 200
 
+# SPA fallback: page paths (/about, /funding…) serve index.html and the
+# router shows the right page. Not forced, so real files (robots.txt,
+# sitemap.xml, images) are still served directly.
+[[redirects]]
+  from = "/*"
+  to   = "/index.html"
+  status = 200
+
 # Optional: explicit function settings
 [functions]
   node_bundler = "esbuild"

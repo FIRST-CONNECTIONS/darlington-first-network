@@ -1778,14 +1778,14 @@
 <nav>
   <span class="nav-logo" onclick="showPage('home')">Darlington <em class="nav-logo-em">First</em></span>
   <ul class="nav-links">
-    <li><a href="javascript:void(0)" onclick="showPage('home')"  id="nav-home" class="active">Home</a></li>
-    <li><a href="javascript:void(0)" onclick="showPage('about')"  id="nav-about">About</a></li>
-    <li><a href="javascript:void(0)" onclick="showPage('events')"  id="nav-events">Events</a></li>
-    <li><a href="javascript:void(0)" onclick="showPage('projects')"  id="nav-projects">Projects</a></li>
-    <li><a href="javascript:void(0)" onclick="showPage('offers')"  id="nav-offers" class="nav-offers-link">DF Offers</a></li>
-    <li><a href="javascript:void(0)" onclick="showPage('resources')"  id="nav-resources">Resources</a></li>
-    <li><a href="javascript:void(0)" onclick="showPage('funding')"  id="nav-funding">Funding</a></li>
-    <li><a href="javascript:void(0)" onclick="showPage('contact')"  id="nav-contact">Contact</a></li>
+    <li><a href="/" onclick="showPage('home');return false;"  id="nav-home" class="active">Home</a></li>
+    <li><a href="/about" onclick="showPage('about');return false;"  id="nav-about">About</a></li>
+    <li><a href="/events" onclick="showPage('events');return false;"  id="nav-events">Events</a></li>
+    <li><a href="/projects" onclick="showPage('projects');return false;"  id="nav-projects">Projects</a></li>
+    <li><a href="/offers" onclick="showPage('offers');return false;"  id="nav-offers" class="nav-offers-link">DF Offers</a></li>
+    <li><a href="/resources" onclick="showPage('resources');return false;"  id="nav-resources">Resources</a></li>
+    <li><a href="/funding" onclick="showPage('funding');return false;"  id="nav-funding">Funding</a></li>
+    <li><a href="/contact" onclick="showPage('contact');return false;"  id="nav-contact">Contact</a></li>
     <li><a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" class="nav-cta">Book Free Ticket</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -1794,14 +1794,14 @@
 </nav>
 
 <div class="mobile-menu" id="mobile-menu">
-  <a href="javascript:void(0)" onclick="navTo('home')" >Home</a>
-  <a href="javascript:void(0)" onclick="navTo('about')" >About</a>
-  <a href="javascript:void(0)" onclick="navTo('events')" >Events</a>
-  <a href="javascript:void(0)" onclick="navTo('projects')" >Projects</a>
-  <a href="javascript:void(0)" onclick="navTo('offers')" class="nav-offers-link">DF Offers</a>
-  <a href="javascript:void(0)" onclick="navTo('resources')" >Resources</a>
-  <a href="javascript:void(0)" onclick="navTo('funding')" >Funding</a>
-  <a href="javascript:void(0)" onclick="navTo('contact')" >Contact</a>
+  <a href="/" onclick="navTo('home');return false;" >Home</a>
+  <a href="/about" onclick="navTo('about');return false;" >About</a>
+  <a href="/events" onclick="navTo('events');return false;" >Events</a>
+  <a href="/projects" onclick="navTo('projects');return false;" >Projects</a>
+  <a href="/offers" onclick="navTo('offers');return false;" class="nav-offers-link">DF Offers</a>
+  <a href="/resources" onclick="navTo('resources');return false;" >Resources</a>
+  <a href="/funding" onclick="navTo('funding');return false;" >Funding</a>
+  <a href="/contact" onclick="navTo('contact');return false;" >Contact</a>
   <a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank" onclick="closeMenu()" class="nav-cta">Book Free Ticket</a>
 </div>
 
@@ -2013,14 +2013,14 @@
         <h3 style="font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;color:var(--navy);">Funding</h3>
         <p style="font-size:0.85rem;color:var(--muted);line-height:1.7;flex:1;">Grants, funding &amp; tender support powered by Metrick — helping our community unlock the money and contracts that fuel real growth.</p>
         <span style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#e8f5e9;color:#2e7d32;padding:0.3rem 0.8rem;border-radius:100px;">● Live Now</span>
-        <a href="javascript:void(0)" onclick="showPage('funding')" class="btn-primary" style="font-size:0.8rem;padding:0.55rem 1.1rem;margin-top:0.5rem;text-align:center;cursor:pointer;">Explore Funding →</a>
+        <a href="/funding" onclick="showPage('funding');return false;" class="btn-primary" style="font-size:0.8rem;padding:0.55rem 1.1rem;margin-top:0.5rem;text-align:center;cursor:pointer;">Explore Funding →</a>
       </div>
     </div>
 
     <!-- CLOSING LINE -->
     <div style="max-width:760px;margin:3rem auto 0;padding-top:2.5rem;border-top:1px solid rgba(30,58,122,0.1);text-align:center;">
       <p style="font-size:1.05rem;color:var(--navy);font-weight:600;line-height:1.7;">Together, these three pillars will empower Darlington to fulfil its potential as the <em style="font-style:italic;">first place you come to do business</em> in the North East.</p>
-      <a href="javascript:void(0)" onclick="showPage('projects')"  class="btn-primary" style="cursor:pointer;margin-top:1.5rem;display:inline-block;">Explore Our Projects</a>
+      <a href="/projects" onclick="showPage('projects');return false;"  class="btn-primary" style="cursor:pointer;margin-top:1.5rem;display:inline-block;">Explore Our Projects</a>
     </div>
   </section>
 
@@ -2103,7 +2103,7 @@
           <span class="home-sponsor-link">Visit Website</span>
         </a>
 
-        <a href="javascript:void(0)" onclick="showPage('funding')" class="home-sponsor-card">
+        <a href="/funding" onclick="showPage('funding');return false;" class="home-sponsor-card">
           <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Metrick%20Limited.png" alt="Metrick Limited" class="home-sponsor-logo" />
           <h3 class="home-sponsor-name">Metrick Limited</h3>
           <p class="home-sponsor-desc">The North East's specialist grants, funding &amp; tender consultancy — powering our Funding Support service.</p>
@@ -2254,7 +2254,7 @@
             <p style="font-size:1rem;font-weight:700;color:var(--navy);">First Connections Group</p>
           </div>
         </div>
-        <a href="javascript:void(0)" onclick="showPage('projects')"  class="btn-primary" style="cursor:pointer;">View All Projects</a>
+        <a href="/projects" onclick="showPage('projects');return false;"  class="btn-primary" style="cursor:pointer;">View All Projects</a>
       </div>
     </div>
   </section>
@@ -2391,7 +2391,7 @@
           <span class="project-status">● In Production</span>
           <p style="margin-top:1rem;">A regional podcast spotlighting the stories, insights, and voices driving business forward across the North East.</p>
           <p>Want to be featured? We're looking for inspiring business leaders with a story to tell.</p>
-          <a href="javascript:void(0)" onclick="showPage('contact')"  class="btn-navy" style="font-size:0.85rem;padding:0.65rem 1.25rem;cursor:pointer;">Get Involved</a>
+          <a href="/contact" onclick="showPage('contact');return false;"  class="btn-navy" style="font-size:0.85rem;padding:0.65rem 1.25rem;cursor:pointer;">Get Involved</a>
         </div>
       </div>
     </div>
@@ -2667,7 +2667,7 @@
             <div class="res-feature-box"><strong>Tender Support</strong><span>Bid writing, PQQ support and framework agreements — from strategy to submission.</span></div>
             <div class="res-feature-box"><strong>Accreditations</strong><span>ISO 9001/14001/27001, Cyber Essentials, SafeContractor and more.</span></div>
           </div>
-          <a href="javascript:void(0)" onclick="showPage('funding')" class="res-visit-link">Explore Funding Support →</a>
+          <a href="/funding" onclick="showPage('funding');return false;" class="res-visit-link">Explore Funding Support →</a>
         </div>
         <div class="res-offer-badge res-badge-navy">
           <p class="res-badge-label" style="color:rgba(255,255,255,0.65);">Member Offer</p>
@@ -2996,7 +2996,7 @@
           <p>The all-electric train service — connecting Darlington and the North East directly with London.</p>
           <span>Visit Website</span>
         </a>
-        <a href="javascript:void(0)" onclick="showPage('funding')" class="res-sponsor-tile">
+        <a href="/funding" onclick="showPage('funding');return false;" class="res-sponsor-tile">
           <img src="https://raw.githubusercontent.com/FIRST-CONNECTIONS/darlington-first-network/main/Darlington-First-Logos/Metrick%20Limited.png" alt="Metrick Limited" />
           <h4>Metrick Limited</h4>
           <p>Specialist grants, funding &amp; tender consultancy — powering First Connections Funding Support.</p>
@@ -3345,30 +3345,30 @@
     <div class="footer-col">
       <p class="footer-col-title">Navigate</p>
       <ul>
-        <li><a href="javascript:void(0)" onclick="showPage('home')" >Home</a></li>
-        <li><a href="javascript:void(0)" onclick="showPage('about')" >About</a></li>
-        <li><a href="javascript:void(0)" onclick="showPage('events')" >Events</a></li>
-        <li><a href="javascript:void(0)" onclick="showPage('projects')" >Projects</a></li>
-        <li><a href="javascript:void(0)" onclick="showPage('offers')" >DF Offers</a></li>
-        <li><a href="javascript:void(0)" onclick="showPage('resources')" >Resources</a></li>
-        <li><a href="javascript:void(0)" onclick="showPage('funding')" ><span style="color:var(--gold);">Ⓜ</span> Grants &amp; Funding</a></li>
-        <li><a href="javascript:void(0)" onclick="showPage('contact')" >Contact</a></li>
+        <li><a href="/" onclick="showPage('home');return false;" >Home</a></li>
+        <li><a href="/about" onclick="showPage('about');return false;" >About</a></li>
+        <li><a href="/events" onclick="showPage('events');return false;" >Events</a></li>
+        <li><a href="/projects" onclick="showPage('projects');return false;" >Projects</a></li>
+        <li><a href="/offers" onclick="showPage('offers');return false;" >DF Offers</a></li>
+        <li><a href="/resources" onclick="showPage('resources');return false;" >Resources</a></li>
+        <li><a href="/funding" onclick="showPage('funding');return false;" ><span style="color:var(--gold);">Ⓜ</span> Grants &amp; Funding</a></li>
+        <li><a href="/contact" onclick="showPage('contact');return false;" >Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <p class="footer-col-title">Get Involved</p>
       <ul>
         <li><a href="https://www.eventbrite.com/cc/darlington-first-business-networking-4823611" target="_blank">Book a Ticket</a></li>
-        <li><a href="javascript:void(0)" onclick="showPage('contact')" >Newsletter</a></li>
-        <li><a href="javascript:void(0)" onclick="showPage('funding')" >Grants &amp; Funding</a></li>
-        <li><a href="javascript:void(0)" onclick="showPage('projects')" >High Street Heroes</a></li>
-        <li><a href="javascript:void(0)" onclick="showPage('projects')" >Podcast</a></li>
+        <li><a href="/contact" onclick="showPage('contact');return false;" >Newsletter</a></li>
+        <li><a href="/funding" onclick="showPage('funding');return false;" >Grants &amp; Funding</a></li>
+        <li><a href="/projects" onclick="showPage('projects');return false;" >High Street Heroes</a></li>
+        <li><a href="/projects" onclick="showPage('projects');return false;" >Podcast</a></li>
         <li><a href="mailto:hello@first-connections.com">hello@first-connections.com</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Darlington First. All rights reserved. &nbsp;·&nbsp; Part of the <strong style="color:rgba(255,255,255,0.5);">First Connections Network</strong> &nbsp;·&nbsp; Grants &amp; Funding service delivered in partnership with <a href="javascript:void(0)" onclick="showPage('funding')" style="color:var(--gold);font-weight:600;text-decoration:none;">Metrick Limited</a></p>
+    <p>© 2026 Darlington First. All rights reserved. &nbsp;·&nbsp; Part of the <strong style="color:rgba(255,255,255,0.5);">First Connections Network</strong> &nbsp;·&nbsp; Grants &amp; Funding service delivered in partnership with <a href="/funding" onclick="showPage('funding');return false;" style="color:var(--gold);font-weight:600;text-decoration:none;">Metrick Limited</a></p>
   </div>
 </footer>
 <!-- CONTACT MODAL -->
@@ -3499,9 +3499,46 @@
 
 <script>
 var pages=['home','about','events','projects','offers','resources','funding','contact'];
-var pageTitles={home:'Darlington First - Business Networking',about:'About - Darlington First',events:'Events - Darlington First',projects:'Projects - Darlington First',offers:'DF Offers - Darlington First',resources:'Resources - Darlington First',funding:'Funding Support - Darlington First · Powered by Metrick',contact:'Contact - Darlington First'};
+var SITE_ORIGIN='https://darlingtonfirst.network';
+var pageMeta={
+  home:{title:'Darlington First — Free Business Networking in Darlington, North East',
+        desc:'Darlington First is a free, relaxed business networking group in Darlington. Monthly coffee mornings, events and community for North East business leaders. No membership fees. All sectors welcome.'},
+  about:{title:'About Darlington First — Free, Community-First Networking',
+        desc:'Who we are and what drives us: free, community-first business networking for Darlington and the North East. No fees, no barriers — part of the First Connections Group.'},
+  events:{title:'Networking Events in Darlington — Darlington First',
+        desc:'Free monthly business networking events in Darlington — coffee mornings, creative formats and the High Street Heroes Awards. Book your free ticket via Eventbrite.'},
+  projects:{title:'Our Projects — Darlington First',
+        desc:'The three pillars of Darlington First: free networking events, the North East High Street Heroes Awards, and a regional business podcast.'},
+  offers:{title:'DF Offers — Deals from Darlington Businesses',
+        desc:'Exclusive discounts and offers from local Darlington businesses, for the Darlington First community. Free to browse, free to list your own offer.'},
+  resources:{title:'Business Resources & Partner Offers — Darlington First',
+        desc:'Business resources, tools and exclusive partner offers for the Darlington First community — coworking passes, business services, wellbeing apps and more.'},
+  funding:{title:'Business Grants & Funding Support, North East — Darlington First',
+        desc:'Grants, business funding, tender and accreditation support for North East businesses — powered by Metrick. Free, no-obligation discovery call for Darlington First members.'},
+  contact:{title:'Contact Darlington First',
+        desc:'Get in touch with Darlington First — attend a free networking event, become a sponsor, host a venue, or just say hello.'}
+};
 
-function showPage(id){
+function pathForPage(id){return id==='home' ? '/' : '/'+id;}
+function pageForPath(path){
+  path=(path||'/').split('?')[0].replace(/\/+$/,'')||'/';
+  if(path==='/'||path==='/index.html')return 'home';
+  var id=path.replace(/^\//,'');
+  return pages.indexOf(id)!==-1 ? id : null;
+}
+
+function applyPageMeta(id){
+  var m=pageMeta[id]||pageMeta.home;
+  document.title=m.title;
+  var set=function(sel,attr,val){var el=document.querySelector(sel);if(el)el.setAttribute(attr,val);};
+  set('meta[name="description"]','content',m.desc);
+  set('meta[property="og:title"]','content',m.title);
+  set('meta[property="og:description"]','content',m.desc);
+  set('link[rel="canonical"]','href',SITE_ORIGIN+pathForPage(id));
+  set('meta[property="og:url"]','content',SITE_ORIGIN+pathForPage(id));
+}
+
+function showPage(id,skipPush){
   if(pages.indexOf(id)===-1)id='home';
   var i,p=document.getElementsByClassName('page');
   for(i=0;i<p.length;i++)p[i].classList.remove('active');
@@ -3512,8 +3549,8 @@ function showPage(id){
   var ne=document.getElementById('nav-'+id);
   if(ne)ne.classList.add('active');
   window.scrollTo(0,0);
-  try{history.pushState({page:id},'','#'+id);}catch(e){}
-  document.title=pageTitles[id]||'Darlington First';
+  if(!skipPush){try{history.pushState({page:id},'',pathForPage(id));}catch(e){}}
+  applyPageMeta(id);
   if(id==='offers') loadDFOffers();
 }
 
@@ -3531,7 +3568,8 @@ function closeMenu(){
 function navTo(id){showPage(id);closeMenu();}
 
 window.addEventListener('popstate',function(e){
-  showPage((e.state&&e.state.page)?e.state.page:'home');
+  var id=(e.state&&e.state.page)?e.state.page:pageForPath(window.location.pathname);
+  showPage(id||'home',true);
 });
 
 function showModal(id){
@@ -3649,11 +3687,25 @@ function handleFD(e){
 }
 
 window.addEventListener('DOMContentLoaded',function(){
+  // Legacy hash URLs (#funding, #offers?o=rec123…) redirect to real paths
+  // so old shared links keep working.
   var rawHash=window.location.hash.replace('#','');
-  // Strip off any query parameters (e.g. #offers?o=rec123 → 'offers')
-  var hash=rawHash.split('?')[0];
-  if(hash&&pages.indexOf(hash)!==-1){showPage(hash);}
-  else{try{history.replaceState({page:'home'},'','#home');}catch(e){}}
+  var hashPage=rawHash.split('?')[0],hashQuery=rawHash.split('?')[1]||'';
+  var initial;
+  if(hashPage&&pages.indexOf(hashPage)!==-1){
+    initial=hashPage;
+    try{history.replaceState({page:initial},'',pathForPage(initial)+(hashQuery?'?'+hashQuery:''));}catch(e){}
+  }else{
+    initial=pageForPath(window.location.pathname);
+    if(initial===null){
+      // Unknown path — normalise to the homepage so the URL matches its canonical
+      initial='home';
+      try{history.replaceState({page:'home'},'','/');}catch(e){}
+    }else{
+      try{history.replaceState({page:initial},'',window.location.pathname+window.location.search);}catch(e){}
+    }
+  }
+  showPage(initial,true);
   var nf=document.querySelectorAll('.newsletter-form');
   for(var i=0;i<nf.length;i++)nf[i].addEventListener('submit',handleNL);
   var cf=document.getElementById('contact-form');
@@ -3685,12 +3737,15 @@ function ofNormUrl(u){
   return u;
 }
 
-/* Parse deep-link like #offers?o=rec123 and open the matching offer */
+/* Parse deep-link like /offers?o=rec123 (or legacy #offers?o=rec123)
+   and open the matching offer */
 function maybeOpenDeepLinkedOffer(){
-  var h = window.location.hash || '';
   // Only react if we're on the offers page
-  if(h.indexOf('offers') === -1) return;
-  var m = h.match(/[?&]o=([^&]+)/);
+  var onOffers = pageForPath(window.location.pathname)==='offers'
+    || (window.location.hash||'').indexOf('offers') !== -1;
+  if(!onOffers) return;
+  var m = (window.location.search||'').match(/[?&]o=([^&]+)/)
+    || (window.location.hash||'').match(/[?&]o=([^&]+)/);
   if(!m) return;
   var wanted = decodeURIComponent(m[1]);
   // Wait a tick to make sure data is rendered
@@ -3907,7 +3962,7 @@ function copyOfferCode(code,btn){
 
 function offerShareUrl(id){
   // Build a deep-link URL that auto-opens this offer on arrival
-  return window.location.origin + '/#offers?o=' + encodeURIComponent(id);
+  return window.location.origin + '/offers?o=' + encodeURIComponent(id);
 }
 
 function offerShareText(o){
